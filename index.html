@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121a28">
+  <meta name="description" content="Demonstrações de sites criados por Gunter Bauer Developer.">
+  <title>Demonstrações — Gunter Bauer Developer</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,"Segoe UI",system-ui,sans-serif}
+    *{box-sizing:border-box}
+    body{min-height:100vh;margin:0;background:radial-gradient(ellipse at 75% 15%,#213c5c 0,transparent 44%),#111822;color:#f0f5fa}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid #9bcaff;outline-offset:4px}
+    .container{width:min(990px,calc(100% - 36px));margin:auto}
+    header{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:30px 0}
+    .brand{font-size:15px;font-weight:800;letter-spacing:-.03em}.brand b{color:#8bc1ff}
+    .brand small{display:block;font-weight:600;color:#91a0b1;letter-spacing:.12em;text-transform:uppercase;font-size:9px;margin-top:4px}
+    .back{border:1px solid #3c4b60;border-radius:99px;padding:11px 15px;font-size:12px;font-weight:700}
+    main{padding:66px 0 100px}
+    .pill{display:inline-block;background:rgba(150,196,255,.1);border:1px solid rgba(150,196,255,.2);color:#a7d0ff;border-radius:999px;padding:10px 13px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(46px,8vw,84px);letter-spacing:-.075em;line-height:1;margin:23px 0 18px}
+    h1 em{font-style:normal;color:#91bfff}
+    main>p{color:#adbac8;max-width:600px;line-height:1.8;font-size:15px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px;margin-top:50px}
+    .card{overflow:hidden;display:flex;flex-direction:column;border:1px solid #33445a;border-radius:26px;background:rgba(255,255,255,.055);transition:transform .2s,background .2s}
+    .card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08)}
+    .preview{height:210px;background:#f8eab0;color:#d9252d;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .preview:before{content:"";position:absolute;width:210px;height:210px;border:34px solid rgba(255,255,255,.32);border-radius:50%;right:-56px;top:-80px}
+    .preview:after{content:"🍣";font-size:110px;position:absolute;right:14px;bottom:-28px;transform:rotate(-20deg)}
+    .preview strong{font-size:52px;letter-spacing:-.08em;font-weight:1000;line-height:.85;text-align:left;position:relative;z-index:1;text-shadow:2px 3px 0 #fff0c3;transform:translateX(-26px)}
+    .info{padding:23px}
+    .tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aacbf2;font-weight:850}
+    h2{font-size:25px;margin:10px 0 9px;letter-spacing:-.05em}
+    .info p{font-size:13px;line-height:1.7;color:#aab7c8;margin:0 0 19px}
+    .open{font-size:13px;font-weight:800;color:#b9d7ff}
+    .note{margin-top:32px;color:#90a1b3;font-size:12px}
+    footer{border-top:1px solid #304052;padding:25px 0;color:#8392a7;font-size:12px}
+    @media(max-width:540px){header{padding:20px 0}.back{font-size:11px}main{padding:45px 0 75px}.preview{height:185px}h1{font-size:53px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="./">GUNTER <b>BAUER</b><small>Developer • Projetos</small></a>
+      <a class="back" href="https://gunterbauer.vercel.app/" target="_blank" rel="noopener noreferrer">Ver portfólio ↗</a>
+    </header>
+    <main>
+      <span class="pill">Galeria de modelos</span>
+      <h1>Sites que<br><em>ganham vida.</em></h1>
+      <p>Uma coleção de demonstrações front-end: cada modelo funciona em sua própria pasta, com visual adaptado ao segmento e código simples de reutilizar.</p>
+      <div class="grid">
+        <a class="card" href="./sushimizu/" aria-label="Abrir demonstração Mania Sushi">
+          <div class="preview"><strong>MANIA<br>SUSHI.</strong></div>
+          <div class="info"><span class="tag">Cardápio digital • Restaurante</span><h2>Mania Sushi</h2><p>10 especialidades, busca, filtros, sacola e pedido ilustrativo via WhatsApp.</p><span class="open">Explorar demonstração ↗</span></div>
+        </a>
+      </div>
+      <p class="note">Os serviços, valores e marcas apresentados nos modelos podem ser demonstrativos. Novos modelos ficam em <code>/nomedademo/</code>.</p>
+    </main>
+  </div>
+  <footer><div class="container">© 2026 Gunter Bauer Developer • Demonstrações em HTML, CSS e JavaScript.</div></footer>
+</body>
+</html>
