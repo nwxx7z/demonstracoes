@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8eab0">
+  <meta name="description" content="Mania Sushi — encontre seu sushi favorito, monte seu pedido e envie pelo WhatsApp. Demonstração de cardápio digital.">
+  <title>Mania Sushi | Qual é o seu preferido?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Pular para o cardápio</a>
+  <div class="demo-alert">DEMONSTRAÇÃO DE SITE • Valores e entregas ilustrativos</div>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Mania Sushi, voltar ao início">
+        <span class="brand-logo" aria-hidden="true">寿</span>
+        <span>MANIA <strong>SUSHI</strong><small>UMA NOVA MANEIRA DE PEDIR</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#cardapio">Cardápio</a>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#entregas">Entregas</a>
+      </div>
+      <div class="nav-right">
+        <a class="btn btn-outline nav-whatsapp" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Vim%20pelo%20site%20demo%20Mania%20Sushi." target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+        <button type="button" class="cart-button" data-open-cart aria-label="Abrir sacola de pedidos">
+          <span aria-hidden="true">🛍</span> <span class="cart-text">Sacola</span> <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-line"></span> APAIXONADOS POR SUSHI</span>
+          <h1 id="hero-title" class="hero-title">
+            <span class="kinetic-line"><span>QUAL É</span></span>
+            <span class="kinetic-line"><span>O SEU</span></span>
+            <span class="kinetic-line"><span class="red">PREFERIDO?</span></span>
+          </h1>
+          <p>Dos clássicos aos mais criativos: um universo de sabores para você explorar. Escolha suas peças, monte sua sacola e peça pelo WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn btn-red" href="#cardapio">Explorar cardápio <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-light" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20Mania%20Sushi." target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
+          </div>
+          <div class="hero-caption"><span aria-hidden="true">✳</span> Feito para quem ama sushi <span class="caption-rule" aria-hidden="true"></span> Arapiraca • AL</div>
+        </div>
+        <div class="hero-art" aria-label="Ilustrações de sushis e sashimis">
+          <div class="hero-orbit">
+            <span class="hero-spark spark-one" aria-hidden="true">✳</span>
+            <span class="hero-spark spark-two" aria-hidden="true">✦</span>
+            <svg class="hero-piece piece-a" viewBox="0 0 240 200" aria-hidden="true"><use href="./assets/sushi.svg#sashimi"/></svg>
+            <svg class="hero-piece piece-b" viewBox="0 0 240 200" aria-hidden="true"><use href="./assets/sushi.svg#uramaki"/></svg>
+            <svg class="hero-piece piece-c" viewBox="0 0 240 200" aria-hidden="true"><use href="./assets/sushi.svg#temaki"/></svg>
+            <svg class="hero-piece piece-d" viewBox="0 0 240 200" aria-hidden="true"><use href="./assets/sushi.svg#niguiri"/></svg>
+          </div>
+          <div class="glass-tag tag-top"><strong>10 tipos</strong><span>para descobrir</span></div>
+          <div class="glass-tag tag-bottom"><span>✳ SEU SUSHI,</span><strong>SUA ESCOLHA.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track">
+      <span>URAMAKI ✳ SASHIMI ✳ FUTOMAKI ✳ TEMAKI ✳ HOT ✳ JOY ✳ NIGUIRI ✳ DRAGON ✳ SANDUSHI ✳ SUSHI BOX ✳</span>
+      <span>URAMAKI ✳ SASHIMI ✳ FUTOMAKI ✳ TEMAKI ✳ HOT ✳ JOY ✳ NIGUIRI ✳ DRAGON ✳ SANDUSHI ✳ SUSHI BOX ✳</span>
+    </div></div>
+
+    <section class="section menu-section" id="cardapio" aria-labelledby="menu-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow"><span class="eyebrow-line"></span> ESCOLHA SEU FAVORITO</span><h2 class="section-title" id="menu-title">UM MUNDO DE <em>SABORES.</em></h2></div>
+          <p>Inspirado nos dez tipos da referência “Qual o seu preferido?”. Clique em + para adicionar à sua sacola.</p>
+        </div>
+        <div class="filter-bar reveal">
+          <div class="filters" role="group" aria-label="Filtrar itens do cardápio">
+            <button type="button" class="filter active" data-filter="todos" aria-pressed="true">Todos</button>
+            <button type="button" class="filter" data-filter="classicos" aria-pressed="false">Clássicos</button>
+            <button type="button" class="filter" data-filter="especiais" aria-pressed="false">Especiais</button>
+            <button type="button" class="filter" data-filter="quentes" aria-pressed="false">Quentes</button>
+          </div>
+          <label class="search-box"><span class="sr-only">Buscar sushi</span><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="search" type="search" placeholder="Buscar um favorito…" autocomplete="off"></label>
+        </div>
+        <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+        <p class="menu-disclaimer">* Catálogo, descrições, porções e preços fictícios para fins de demonstração. Confirme as opções com o restaurante antes de pedir.</p>
+      </div>
+    </section>
+
+    <section class="feature-section" id="favoritos" aria-labelledby="feature-title">
+      <div class="wrap feature-grid">
+        <div class="feature-visual reveal">
+          <div class="feature-circle"></div>
+          <svg class="feature-sushi" viewBox="0 0 240 200" aria-hidden="true"><use href="./assets/sushi.svg#dragon"/></svg>
+          <span class="feature-glass">O queridinho <strong>DA VEZ ✳</strong></span>
+        </div>
+        <div class="feature-copy reveal">
+          <span class="eyebrow light"><span class="eyebrow-line"></span> DESTAQUE DO CARDÁPIO</span>
+          <h2 id="feature-title">NÃO É SÓ<br><em>SUSHI.</em><br>É MANIA.</h2>
+          <p>Uma experiência visual feita para dar água na boca — com identidade forte, movimentos suaves e o caminho mais curto entre a vontade e o pedido.</p>
+          <div class="chips"><span>✳ Feito com carinho</span><span>✳ Peças favoritas</span><span>✳ Pedido fácil</span></div>
+          <a class="btn btn-cream" href="#cardapio">Escolher meus favoritos <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delivery-section" id="entregas" aria-labelledby="delivery-title">
+      <div class="wrap delivery-grid">
+        <div class="delivery-copy reveal">
+          <span class="eyebrow"><span class="eyebrow-line"></span> ENTREGA EM ARAPIRACA</span>
+          <h2 class="section-title" id="delivery-title">SUA FOME<br>VAI <em>LONGE.</em></h2>
+          <p>Selecione seu bairro na sacola para incluir a taxa demonstrativa no pedido. A região de referência é o entorno da UPA Noel Macedo, no Itapoã.</p>
+          <div class="location-pill">📍 Referência: Itapoã • Arapiraca, AL</div>
+          <p class="delivery-notice">Áreas listadas e valores são somente exemplos de apresentação — não indicam cobertura, sede ou frete real do Mania Sushi.</p>
+        </div>
+        <div class="delivery-card reveal">
+          <div class="delivery-card-head"><h3>Áreas ilustrativas</h3><span>FRETE EXEMPLO</span></div>
+          <div id="delivery-list"></div>
+          <div class="delivery-card-foot">✳ Escolha o bairro na sacola para calcular o total.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps-section" aria-labelledby="steps-title">
+      <div class="wrap">
+        <div class="section-head reveal"><div><span class="eyebrow"><span class="eyebrow-line"></span> PRÁTICO, DO SEU JEITO</span><h2 id="steps-title" class="section-title">PEDIR É <em>FÁCIL.</em></h2></div></div>
+        <div class="steps">
+          <article class="step reveal"><span>01</span><h3>Escolha</h3><p>Explore os dez estilos e coloque suas peças favoritas na sacola.</p></article>
+          <article class="step reveal"><span>02</span><h3>Personalize</h3><p>Informe seu bairro, endereço e observações para o pedido.</p></article>
+          <article class="step reveal"><span>03</span><h3>Envie</h3><p>O WhatsApp abre com a mensagem pronta para você revisar e enviar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title"><div class="wrap reveal">
+      <span class="eyebrow light"><span class="eyebrow-line"></span> BATEU A VONTADE?</span>
+      <h2 id="cta-title">SEU PRÓXIMO<br>FAVORITO TE ESPERA.</h2>
+      <p>Que tal escolher uma combinação agora? Converse pelo WhatsApp ou monte sua sacola aqui.</p>
+      <div class="final-actions">
+        <a class="btn btn-white" href="https://wa.me/5582993188030?text=Oi%21%20Vim%20pelo%20site%20demo%20Mania%20Sushi." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-transparent" href="#cardapio">Ver cardápio</a>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap footer-inner">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-logo" aria-hidden="true">寿</span><span>MANIA <strong>SUSHI</strong><small>UM SITE DE DEMONSTRAÇÃO</small></span></a>
+    <p>Site demonstrativo • Arapiraca — AL<br>Valores, produtos e áreas de entrega ilustrativos. Nenhum pedido é enviado automaticamente.</p>
+    <a href="https://wa.me/5582993188030" target="_blank" rel="noopener noreferrer">Fale pelo WhatsApp ↗</a>
+  </div></footer>
+
+  <nav class="mobile-nav" aria-label="Navegação móvel">
+    <a href="#inicio" data-nav="inicio" class="current"><span aria-hidden="true">⌂</span><small>Início</small></a>
+    <a href="#cardapio" data-nav="cardapio"><span aria-hidden="true">▦</span><small>Cardápio</small></a>
+    <a href="#entregas" data-nav="entregas"><span aria-hidden="true">⌖</span><small>Entregas</small></a>
+    <button type="button" data-open-cart><span aria-hidden="true">🛍</span><small>Sacola <b data-cart-count>0</b></small></button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div class="scrim" data-close-cart></div>
+  <aside class="cart-drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-top"><div><span class="eyebrow"><span class="eyebrow-line"></span> O SEU PEDIDO</span><h2 id="cart-title">MINHA SACOLA.</h2></div><button type="button" class="close-cart" data-close-cart aria-label="Fechar sacola">×</button></div>
+    <div class="cart-scroll">
+      <div id="cart-items"></div>
+      <form id="order-form">
+        <label class="form-label" for="customer-name">Seu nome <span aria-hidden="true">*</span><input id="customer-name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required maxlength="80"></label>
+        <label class="form-label" for="delivery-neighborhood">Bairro para entrega <span aria-hidden="true">*</span><select id="delivery-neighborhood" name="neighborhood" required><option value="">Selecione uma opção</option></select></label>
+        <label class="form-label" for="customer-address">Rua, número e complemento <span aria-hidden="true">*</span><input id="customer-address" name="address" type="text" autocomplete="street-address" placeholder="Ex.: Rua das Flores, 123" maxlength="160" required></label>
+        <label class="form-label" for="customer-note">Observações (opcional)<textarea id="customer-note" name="note" maxlength="300" placeholder="Ex.: sem cream cheese"></textarea></label>
+      </form>
+    </div>
+    <div class="cart-bottom">
+      <div class="total-line"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+      <div class="total-line"><span>Entrega <small>(ilustrativa)</small></span><strong id="shipping">A escolher</strong></div>
+      <div class="total-line total"><span>Total demonstrativo</span><strong id="total">R$ 0,00</strong></div>
+      <button class="btn btn-red checkout-button" type="submit" form="order-form" id="checkout">Enviar pedido no WhatsApp ↗</button>
+      <small class="cart-warning">Você revisa e envia a mensagem no WhatsApp. Este modelo não confirma pedidos e não efetua pagamentos.</small>
+    </div>
+  </aside>
+</body>
+</html>
