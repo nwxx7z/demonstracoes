@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 430"><defs>
+<linearGradient id="bread" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#ffda6e"/><stop offset=".48" stop-color="#e99c3b"/><stop offset="1" stop-color="#ac5022"/></linearGradient>
+<linearGradient id="meat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#763923"/><stop offset=".5" stop-color="#3a201b"/><stop offset="1" stop-color="#1e1818"/></linearGradient>
+<linearGradient id="cheese" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#fff77d"/><stop offset=".6" stop-color="#ffae25"/><stop offset="1" stop-color="#ee771b"/></linearGradient>
+<filter id="shadow"><feGaussianBlur stdDeviation="11"/></filter></defs>
+<ellipse cx="264" cy="384" rx="218" ry="22" fill="#180e0d" opacity=".55" filter="url(#shadow)"/>
+<path d="M78 317Q98 284 434 290Q463 315 446 341Q410 381 261 380Q107 375 71 343Z" fill="url(#bread)" stroke="#9b481f" stroke-width="8"/>
+<path d="M82 314Q263 334 439 308" fill="none" stroke="#ffe3a1" stroke-width="9" opacity=".65"/>
+<path d="M73 270Q269 291 452 267Q457 299 438 319Q268 339 80 318Z" fill="url(#meat)" stroke="#231615" stroke-width="8"/>
+<path d="M75 269Q200 241 439 267L425 292L358 286L330 317L284 285L244 313L204 283L142 306Z" fill="url(#cheese)" stroke="#e3911a" stroke-width="5"/>
+<path d="M70 254Q136 225 197 251Q248 228 313 252Q394 226 456 251L431 274Q389 261 342 273L283 268L205 273L150 262L87 274Z" fill="#4c9b45" stroke="#255d35" stroke-width="8"/>
+<path d="M70 249Q149 232 214 240Q333 222 447 249" fill="none" stroke="#e44323" stroke-width="17" stroke-linecap="round"/>
+<path d="M78 239Q94 116 255 108Q416 108 447 237Q279 261 78 239Z" fill="url(#bread)" stroke="#a45124" stroke-width="9"/>
+<path d="M91 221Q255 246 434 217" stroke="#ffe49a" stroke-width="11" fill="none" opacity=".65"/>
+<g fill="#fff1b4" transform="rotate(-11 250 180)"><ellipse cx="163" cy="156" rx="9" ry="4"/><ellipse cx="224" cy="141" rx="9" ry="4"/><ellipse cx="291" cy="156" rx="9" ry="4"/><ellipse cx="346" cy="186" rx="9" ry="4"/><ellipse cx="133" cy="202" rx="9" ry="4"/><ellipse cx="254" cy="187" rx="9" ry="4"/><ellipse cx="378" cy="210" rx="9" ry="4"/></g>
+<path d="M104 257Q191 264 277 249Q355 255 424 246" stroke="#a31a1b" stroke-width="11" fill="none" opacity=".8"/>
+</svg>
