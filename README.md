@@ -6,6 +6,7 @@ Demonstrações front-end independentes, compatíveis com GitHub Pages, sem buil
 
 - `/sushimizu/` — Mania Sushi, cardápio demonstrativo.
 - `/quintino/` — Quintino, restaurante e lanchonete; homepage, 16 itens, configurador P/G e toolbar mobile.
+- `/fogazzadanilce/` — Fogazza da Nice, homepage animada, catálogo parcial dos prints, filtros, sacola e homebar mobile.
 - Outras demonstrações podem ser criadas como `/nomedademo/`, cada uma contendo seu próprio `index.html`.
 
 ## Publicação no GitHub Pages
