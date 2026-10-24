@@ -103,7 +103,6 @@
       `<div class="option-list size-list"><div class="option"><input id="size-p" type="radio" name="product-size" value="p" checked><label for="size-p"><strong>P · ${price(prices[p.group].p)}</strong><small>${isMeal?'Uma opção':'Porção pequena'}</small></label></div><div class="option"><input id="size-g" type="radio" name="product-size" value="g"><label for="size-g"><strong>G · ${price(prices[p.group].g)}</strong><small>${isMeal?'Duas opções':'Porção grande'}</small></label></div></div>`)+
       (choices?`<div id="second-protein" hidden><div class="choice-label">Segunda proteína (marmita G)</div><p class="choice-hint">A primeira opção é ${esc(p.title)}. Escolha mais uma do mesmo grupo.</p><label class="field" for="extra-protein">Complementar com<select id="extra-protein"><option value="">Selecione a segunda opção</option>${flavorChoices.filter(name=>name!==p.title).map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('')}</select></label></div>`:'')+
       (isMeal?`<div class="choice-label">Preferências de acompanhamento</div><p class="choice-hint">Selecione as opções desejadas para constarem na mensagem. Não altera o preço exibido nesta demonstração.</p><div class="addon-list">${sides.map(s=>`<label><input type="checkbox" value="${esc(s)}" ${['Arroz','Feijão caseiro','Salada'].includes(s)?'checked':''}><span>${esc(s)}</span></label>`).join('')}</div>`:'');
-    qs('#product-options').addEventListener('change',updateCustomization,{once:true});
     showOverlay('product-overlay');
     updateCustomization();
   }
