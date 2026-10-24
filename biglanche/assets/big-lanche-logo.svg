@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 310" role="img" aria-labelledby="title desc">
+<title id="title">Big Lanche — Marca</title><desc id="desc">Marca vermelha e amarela em estilo esportivo, com coroa e hambúrguer.</desc>
+<defs><linearGradient id="fire" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ff713f"/><stop offset=".47" stop-color="#ec3321"/><stop offset="1" stop-color="#a91612"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#fff2a1"/><stop offset=".45" stop-color="#ffcb35"/><stop offset="1" stop-color="#d88a1d"/></linearGradient><filter id="shadow" x="-30%" y="-50%" width="160%" height="220%"><feDropShadow dx="0" dy="9" stdDeviation="4" flood-color="#1f0c0a" flood-opacity=".65"/></filter></defs>
+<g filter="url(#shadow)">
+ <path d="M55 238Q172 252 283 234L267 260Q161 277 54 258Z" fill="#b91c13"/>
+ <path d="M513 235Q640 253 746 218L715 262Q610 289 506 265Z" fill="#ffad27"/>
+ <g transform="translate(24 16)">
+ <path d="M65 58L74 19 102 45 129 2 151 46 183 22 188 62Z" fill="url(#gold)" stroke="#311d12" stroke-width="6" stroke-linejoin="round"/>
+ <circle cx="129" cy="22" r="7" fill="#fa3521"/><path d="M74 64h117" stroke="#fff3c1" stroke-width="8" stroke-linecap="round"/>
+ <path d="M39 123Q42 74 110 69Q180 70 187 125Z" fill="url(#gold)" stroke="#27160e" stroke-width="9"/>
+ <path d="M44 126Q113 143 184 123" stroke="#fdf0bf" stroke-width="10" stroke-linecap="round"/>
+ <path d="M40 144Q113 164 190 142" stroke="#4b9b54" stroke-width="20" stroke-linecap="round"/>
+ <path d="M41 160Q113 174 192 160" stroke="#b3261b" stroke-width="16" stroke-linecap="round"/>
+ <path d="M42 177Q116 195 193 177" stroke="#442516" stroke-width="24" stroke-linecap="round"/>
+ <path d="M40 192Q116 218 192 192" stroke="url(#gold)" stroke-width="20" stroke-linecap="round"/>
+ <g fill="#fff5bb"><ellipse cx="78" cy="99" rx="5" ry="2.5" transform="rotate(-17 78 99)"/><ellipse cx="112" cy="90" rx="5" ry="2.5" transform="rotate(16 112 90)"/><ellipse cx="150" cy="99" rx="5" ry="2.5" transform="rotate(-11 150 99)"/></g>
+ </g>
+ <g transform="skewX(-9)">
+ <text x="290" y="140" font-family="Impact,Anton,Arial Black,sans-serif" font-size="112" font-weight="900" letter-spacing="-5" fill="#1b1010" stroke="#1b1010" stroke-width="14" paint-order="stroke">BIG</text>
+ <text x="284" y="137" font-family="Impact,Anton,Arial Black,sans-serif" font-size="112" font-weight="900" letter-spacing="-5" fill="#fff7e5" stroke="#fff7e5" stroke-width="3" paint-order="stroke">BIG</text>
+ <text x="283" y="237" font-family="Impact,Anton,Arial Black,sans-serif" font-size="121" font-weight="900" letter-spacing="-6" fill="#1b1010" stroke="#1b1010" stroke-width="18" paint-order="stroke">LANCHE</text>
+ <text x="283" y="232" font-family="Impact,Anton,Arial Black,sans-serif" font-size="121" font-weight="900" letter-spacing="-6" fill="url(#fire)" stroke="#fff1c8" stroke-width="2.5" paint-order="stroke">LANCHE</text>
+ </g>
+ <path d="M299 263Q522 300 729 271" fill="none" stroke="url(#gold)" stroke-width="11" stroke-linecap="round"/>
+ <path d="M311 282Q522 304 694 289" fill="none" stroke="#bc2a16" stroke-width="4" stroke-linecap="round"/>
+ <text x="313" y="306" font-family="Arial,sans-serif" font-size="18" font-weight="900" letter-spacing="4" fill="#fff0d7">MARAGOGI • SÃO BENTO • AL</text>
+</g>
+</svg>
