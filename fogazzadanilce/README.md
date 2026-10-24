@@ -13,7 +13,7 @@ URL prevista: https://nwxx7z.github.io/demonstracoes/fogazzadanilce/
 ## Catálogo (parcial)
 Há **32 produtos/variações** transcritos de **nove capturas de tela fornecidas pelo usuário**. Alguns registros apresentam nomes ou ingredientes cortados: esses são marcados como "Detalhes a confirmar". Itens sinalizados como indisponíveis nas capturas não podem ser incluídos no carrinho.
 
-**Atenção:** os dados refletem somente o que estava visível nas capturas; **não representam uma verificação em tempo real** da disponibilidade ou dos preços. Há produtos não contemplados nas imagens. Consulte o cardápio original: https://whatsmenu.com.br/fogazzadanice .
+**Atenção:** os dados refletem somente o que estava visível nas capturas; **não representam uma verificação em tempo real** da disponibilidade ou dos preços. Há produtos não contemplados nas imagens. Consulte diretamente o estabelecimento para confirmar o catálogo.
 
 ## WhatsApp
 O checkout usa o número do desenvolvedor **5582993188030**, indicado como *demonstração*. Não é o contato do estabelecimento; o cliente deve conferir o cardápio oficial. Nenhuma mensagem é enviada automaticamente.
