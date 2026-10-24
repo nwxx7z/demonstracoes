@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090a0b">
+  <meta name="description" content="Quintino Restaurante e Lanchonete: sabor caseiro todo dia. Confira nosso cardápio ilustrativo com marmitas, porções e feijoada.">
+  <title>Quintino | Restaurante e Lanchonete — Demonstração</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a href="#cardapio" class="skip">Pular para o cardápio</a>
+  <div class="demo-note">✦ SITE DEMONSTRATIVO • PEDIDOS E TAXAS ILUSTRATIVOS</div>
+  <header class="header" id="topo">
+    <a href="#inicio" class="wordmark" aria-label="Quintino, voltar ao início"><span class="emblem" aria-hidden="true">Q<span>✦</span></span><span><b>Quintino</b><small>RESTAURANTE E LANCHONETE</small></span></a>
+    <nav class="desktop-links" aria-label="Menu principal"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+    <button class="header-bag" id="header-bag" type="button" data-open-cart aria-label="Abrir sacola de pedidos"><span aria-hidden="true">🛍</span><span>Sacola</span><b data-count>0</b></button>
+  </header>
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-light" aria-hidden="true"></div>
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <div class="kicker"><span class="kicker-line"></span> DE ARAPIRACA PARA SUA MESA</div>
+          <div class="hero-seal"><span aria-hidden="true">✳</span> SABOR CASEIRO TODO DIA!</div>
+          <h1 id="hero-title"><span class="type-line">COMIDA</span><span class="type-line yellow">DE VERDADE.</span><span class="type-line italic">DO SEU JEITO.</span></h1>
+          <p>Almoço com gostinho de casa. Marmitas caprichadas, porções irresistíveis e aquela feijoada do fim de semana.</p>
+          <div class="hero-actions"><a class="button yellow-button" href="#cardapio">Ver cardápio <span aria-hidden="true">↗</span></a><a class="button ghost-button" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Vim%20pela%20demonstra%C3%A7%C3%A3o%20do%20site%20Quintino." target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-points"><span>✳ Feito na hora</span><span>✳ Sabor de casa</span><span>✳ Pedido fácil</span></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="plate-orbit"></div><div class="hero-photo"></div><span class="star large">✴</span><span class="star small">✳</span><span class="glass-label"><b>QUENTINHO</b><small>e cheio de sabor ♡</small></span>
+          <div class="chef-stamp"><span>♨</span><strong>RECEITAS<br>DA CASA</strong></div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>📍 Arapiraca — AL</span><span>◷ Ter–Dom, 11h20 às 14h</span><a href="#cardapio" aria-label="Ir para cardápio">Descubra o cardápio <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div>✦ QUINTINO ✦ MARMITAS CAPRICHADAS ✦ SABOR CASEIRO ✦ PORÇÕES DELICIOSAS ✦ QUINTINO ✦ MARMITAS CAPRICHADAS ✦ SABOR CASEIRO ✦ PORÇÕES DELICIOSAS ✦ </div></div>
+    <section id="cardapio" class="menu-section section container" aria-labelledby="menu-title">
+      <div class="section-intro reveal"><div><div class="mini-label">✦ ESCOLHA SEU FAVORITO</div><h2 id="menu-title">NOSSO <em>CARDÁPIO.</em></h2><p>Escolha o tamanho, combine proteínas e monte seu pedido.</p></div><span class="menu-stamp">MUITO<br><strong>SABOR!</strong><small>✷</small></span></div>
+      <div class="menu-tools reveal"><div class="filter-track" role="group" aria-label="Filtrar cardápio"><button type="button" class="filter active" data-filter="todos" aria-pressed="true">Tudo</button><button type="button" class="filter" data-filter="marmitas" aria-pressed="false">🍱 Marmitas</button><button type="button" class="filter" data-filter="porcoes" aria-pressed="false">🍟 Porções</button><button type="button" class="filter" data-filter="feijoada" aria-pressed="false">🥘 Feijoada</button></div><label class="searchbox"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"></circle><path d="m16 16 5 5"></path></svg><input type="search" id="search" aria-label="Buscar prato" placeholder="Qual prato você procura?"></label></div>
+      <div id="menu-results" aria-live="polite"></div>
+      <p class="menu-remark">* Valores reproduzidos do cardápio fornecido. Fotos ilustrativas, apresentação e fluxo de pedido demonstrativos. Confirme disponibilidade e condições com o restaurante.</p>
+    </section>
+    <section class="story" id="sobre"><div class="container story-grid"><div class="story-photo" aria-hidden="true"><div class="story-food"></div><span>QUINTINO ✹</span></div><div class="story-copy reveal"><div class="mini-label">✦ O PRAZER DE COMER BEM</div><h2>O SABOR<br>QUE TEM <em>HISTÓRIA.</em></h2><p>O Quintino é a inspiração deste modelo: comida caseira para deixar o dia mais gostoso. Um cardápio fácil de explorar, bonito no celular e simples de pedir.</p><div class="story-benefits"><span>🍚 Marmitas</span><span>🍟 Porções</span><span>🥘 Feijoada</span></div><a class="button yellow-button" href="#cardapio">Escolher meu almoço ↗</a></div></div></section>
+    <section class="hours section" id="contato"><div class="container hours-inner reveal"><div class="hours-text"><div class="mini-label">✦ BATEU AQUELA FOME?</div><h2>SEU ALMOÇO<br><em>COMEÇA AQUI.</em></h2><p><strong>Atendimento anunciado no cardápio:</strong> terça a domingo, das 11h20 às 14h. Feijoada aos sábados e domingos.</p><div class="hours-buttons"><a class="button yellow-button" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Vim%20pelo%20site%20demonstrativo%20Quintino." target="_blank" rel="noopener noreferrer">Falar no WhatsApp ↗</a><a class="button ghost-button" href="#cardapio">Ver cardápio</a></div></div><div class="hours-art" aria-hidden="true"><span class="big-q">Q</span><span class="sparklet">✷</span><span class="clock">11:20 <small>às</small> 14:00</span></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><div class="footer-name">QUINTINO <span>✳</span><small>RESTAURANTE E LANCHONETE</small></div><p>Site conceitual desenvolvido para demonstração. Não representa o canal oficial de pedidos do restaurante.</p><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+  <nav class="bottom-toolbar" aria-label="Navegação rápida"><div class="toolbar-inner" id="toolbar">
+    <span class="nav-indicator" aria-hidden="true"></span>
+    <a class="tool-tab selected" href="#inicio" data-tab="inicio" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Início</span></a>
+    <a class="tool-tab" href="#cardapio" data-tab="cardapio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2v9m4-9v9M5 6h4M7 11v11M16 2v20m0-20c7 3 7 10 0 10"/></svg><span>Cardápio</span></a>
+    <button class="tool-tab" type="button" data-open-cart data-tab="carrinho"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="19" cy="20" r="1"/><path d="M2 3h2l3 13h13l2-10H5"/></svg><span>Carrinho</span><b data-count>0</b></button>
+    <a class="tool-tab" href="#contato" data-tab="contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8 9q1 5 7 6l1.2-1.5-2.6-1.4-1 1.1a7 7 0 0 1-2.4-2.4l1.2-1-1.4-2.6Z"/></svg><span>Contato</span></a>
+  </div></nav>
+
+  <div class="overlay" id="product-overlay" hidden><section class="sheet product-sheet" role="dialog" aria-modal="true" aria-labelledby="product-heading"><div class="sheet-grip" aria-hidden="true"></div><div class="sheet-header"><h2 id="product-heading">Monte seu prato</h2><button class="icon-close" data-close-product type="button" aria-label="Fechar opções">×</button></div><div class="sheet-body" id="product-options"></div><div class="sheet-footer"><div><small>Subtotal</small><strong id="product-total">R$ 0,00</strong></div><button type="button" class="button yellow-button" id="add-custom">Adicionar à sacola <span aria-hidden="true">↗</span></button></div></section></div>
+  <div class="overlay" id="cart-overlay" hidden><section class="sheet cart-sheet" role="dialog" aria-modal="true" aria-labelledby="cart-heading"><div class="sheet-grip" aria-hidden="true"></div><div class="sheet-header"><div><div class="mini-label">✦ QUASE LÁ</div><h2 id="cart-heading">SUA SACOLA <span data-count>0</span></h2></div><button class="icon-close" data-close-cart type="button" aria-label="Fechar sacola">×</button></div><div class="sheet-body cart-body"><div id="cart-items" aria-live="polite"></div><form id="checkout-form"><div class="form-heading">📍 ENTREGA OU RETIRADA</div><label class="field">Seu nome <span>*</span><input type="text" name="customer" id="customer" required maxlength="80" autocomplete="name" placeholder="Como podemos chamar você?"></label><label class="field">Recebimento <span>*</span><select id="delivery" name="delivery" required><option value="retirada">Retirar no local (demonstrativo)</option><option value="centro">Centro — R$ 5,00 (simulação)</option><option value="brasilia">Brasília — R$ 6,00 (simulação)</option><option value="capiata">Capiatã — R$ 7,00 (simulação)</option><option value="primavera">Primavera — R$ 8,00 (simulação)</option></select></label><label class="field" id="address-field" hidden>Endereço completo <span>*</span><input type="text" name="address" id="address" placeholder="Rua, número e referência" autocomplete="street-address" maxlength="180"></label><label class="field">Observações (opcional)<textarea name="note" id="note" placeholder="Alguma observação para o pedido?" maxlength="400" rows="2"></textarea></label></form><p class="cart-legal">Atenção: esta é uma simulação. As taxas e a opção de retirada não são ofertas reais. O WhatsApp abrirá com sua mensagem para revisão; nada é enviado automaticamente.</p></div><div class="sheet-footer cart-footer"><div class="totals"><div><span>Itens</span><strong id="subtotal">R$ 0,00</strong></div><div><span>Entrega ilustrativa</span><strong id="shipping">R$ 0,00</strong></div><div class="final-total"><span>Total demonstrativo</span><strong id="grand-total">R$ 0,00</strong></div></div><button class="button whatsapp-button" id="checkout" type="submit" form="checkout-form">Continuar pelo WhatsApp <span aria-hidden="true">↗</span></button></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
