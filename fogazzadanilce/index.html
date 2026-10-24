@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8efdf">
+  <meta name="description" content="Fogazza da Nice — demonstração de cardápio digital com visual próprio, sabores e carrinho pelo WhatsApp.">
+  <title>Fogazza da Nice | O sabor que abraça</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,30,1;9..144,700,30,1;9..144,800,30,1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Ir ao cardápio</a>
+  <div class="demo-banner">✳ DEMONSTRAÇÃO DE DESIGN • SABORES E PREÇOS ILUSTRATIVOS — <a href="https://whatsmenu.com.br/fogazzadanice" target="_blank" rel="noopener noreferrer">CONSULTE O CARDÁPIO ORIGINAL ↗</a></div>
+
+  <header class="header" id="inicio">
+    <div class="page nav">
+      <a class="identity" href="#inicio" aria-label="Fogazza da Nice, início"><span class="identity-seal" aria-hidden="true">N.</span><span>fogazza <em>da nice</em><small>COM CARINHO, SEMPRE.</small></span></a>
+      <nav class="nav-links" aria-label="Menu principal"><a href="#cardapio">Cardápio</a><a href="#historia">Nossa essência</a><a href="#informacoes">Informações</a></nav>
+      <button class="bag-top" type="button" data-open-cart aria-label="Abrir sacola"><span aria-hidden="true">▣</span><span>Sacola</span><b data-count>0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="page hero-layout">
+        <div class="hero-text">
+          <span class="eyebrow"><i></i> INSPIRADA NAS COISAS BOAS DA VIDA</span>
+          <h1><span class="slide-in">MASSA</span><span class="slide-in"><em>DOURADA.</em></span><span class="slide-in">CORAÇÃO</span><span class="slide-in"><em>RECHEADO.</em></span></h1>
+          <p>Aquele sabor que transforma qualquer momento em uma pausa gostosa. Descubra uma nova experiência de cardápio para a Fogazza da Nice.</p>
+          <div class="hero-actions"><a href="#cardapio" class="button button-dark">Explorar sabores <span aria-hidden="true">↗</span></a><a href="https://whatsmenu.com.br/fogazzadanice" class="button button-quiet" target="_blank" rel="noopener noreferrer">Cardápio original ↗</a></div>
+          <div class="hero-foot"><span class="icon-sun">✳</span> Feito com afeto <span class="dot">•</span> Matriz de Camaragibe, AL</div>
+        </div>
+        <div class="hero-stage">
+          <div class="round-backdrop"></div>
+          <span class="doodle star1" aria-hidden="true">✳</span><span class="doodle star2" aria-hidden="true">✦</span>
+          <img class="hero-food" src="./assets/fogazza.svg" alt="Ilustração de uma fogazza dourada com recheio">
+          <div class="floating-note note-a"><span>❤️</span><strong>Feita para<br>apaixonar.</strong></div>
+          <div class="floating-note note-b"><span>✷</span><strong>Uma mordida,<br>uma história.</strong></div>
+          <span class="hero-badge">DA NICE <b>✷</b></span>
+        </div>
+      </div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div>FEITO COM CARINHO ✳ FOGAZZAS RECHEADAS ✳ MOMENTOS DELICIOSOS ✳ FEITO COM CARINHO ✳ FOGAZZAS RECHEADAS ✳ MOMENTOS DELICIOSOS ✳ </div></div>
+
+    <section class="menu-section section" id="cardapio">
+      <div class="page">
+        <div class="section-heading reveal"><div><span class="eyebrow"><i></i> EXPLORE NOSSO UNIVERSO</span><h2>QUAL VAI SER<br><em>A SUA ESCOLHA?</em></h2></div><p>Um cardápio demonstrativo para sentir a experiência. Nomes, combinações e valores desta prévia precisam ser conferidos com o estabelecimento.</p></div>
+        <div class="menu-tools reveal">
+          <div class="filters" id="filters" role="group" aria-label="Filtrar cardápio"><button class="selected" data-filter="todos" aria-pressed="true">Todos</button><button data-filter="tradicionais" aria-pressed="false">Tradicionais</button><button data-filter="especiais" aria-pressed="false">Especiais</button><button data-filter="doces" aria-pressed="false">Doces</button></div>
+          <label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar sabores</span><input id="search" type="search" placeholder="Qual sabor você procura?" autocomplete="off"></label>
+        </div>
+        <div class="cards" id="products" aria-live="polite"></div>
+        <p class="catalog-warning">* Produtos, descrições, preços e condições são exemplos de demonstração. <a href="https://whatsmenu.com.br/fogazzadanice" target="_blank" rel="noopener noreferrer">Veja os itens e valores oficiais no WhatsMenu.</a></p>
+      </div>
+    </section>
+
+    <section class="story" id="historia">
+      <div class="page story-grid">
+        <div class="story-visual reveal"><div class="story-plate"><img src="./assets/fogazza.svg" alt="Ilustração de fogazza pronta para saborear" loading="lazy"></div><span class="story-sticker">UMA DELÍCIA<br>EM CADA PEDAÇO ✳</span></div>
+        <div class="story-copy reveal"><span class="eyebrow pale"><i></i> NOSSA IDENTIDADE VISUAL</span><h2>SIMPLES,<br><em>ACOLHEDORA</em><br>E CHEIA DE<br>PERSONALIDADE.</h2><p>Uma combinação de terracota, creme e verde sálvia, com tipografia expressiva e movimento sutil. Criada para destacar sabores sem deixar a navegação pesada.</p><a class="button button-cream" href="#cardapio">Voltar aos sabores ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section details" id="informacoes">
+      <div class="page details-grid">
+        <div class="reveal"><span class="eyebrow"><i></i> PARA CONHECER MAIS</span><h2>O SABOR MORA<br><em>NOS DETALHES.</em></h2><p>Esta vitrine é um projeto de demonstração. Consulte horários, endereços, entrega e disponibilidade no canal oficial antes de fazer um pedido.</p></div>
+        <div class="info-stack reveal"><div><span class="info-icon">⌖</span><div><strong>Em Matriz de Camaragibe, AL</strong><small>Localização de referência; confira no canal oficial.</small></div></div><div><span class="info-icon">◷</span><div><strong>Horários sujeitos a confirmação</strong><small>A disponibilidade pode mudar sem aviso.</small></div></div><div><span class="info-icon">↗</span><div><strong>Cardápio e preços oficiais</strong><small><a href="https://whatsmenu.com.br/fogazzadanice" target="_blank" rel="noopener noreferrer">Abrir o WhatsMenu da Fogazza da Nice ↗</a></small></div></div></div>
+      </div>
+    </section>
+    <section class="closing"><div class="page reveal"><span class="eyebrow pale"><i></i> ACHE SEU FAVORITO</span><h2>VAI UMA<br><em>FOGAZZA AÍ?</em></h2><a href="#cardapio" class="button button-cream">Ver sabores da demonstração ↗</a></div></section>
+  </main>
+
+  <footer><div class="page footer-inner"><div class="identity"><span class="identity-seal" aria-hidden="true">N.</span><span>fogazza <em>da nice</em><small>SITE CONCEITUAL</small></span></div><p>Projeto demonstrativo, independente do estabelecimento. Não substitui o cardápio nem os preços oficiais.</p><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+  <nav class="mobile-toolbar" aria-label="Navegação móvel">
+    <span class="active-pill" aria-hidden="true"></span>
+    <a class="toolbar-link active" href="#inicio" data-nav="inicio"><span aria-hidden="true">⌂</span><small>Início</small></a>
+    <a class="toolbar-link" href="#cardapio" data-nav="cardapio"><span aria-hidden="true">▦</span><small>Cardápio</small></a>
+    <button class="toolbar-link" type="button" data-open-cart><span aria-hidden="true">▣</span><small>Sacola <b data-count>0</b></small></button>
+    <a class="toolbar-link" href="#informacoes" data-nav="informacoes"><span aria-hidden="true">ⓘ</span><small>Info</small></a>
+  </nav>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow"><i></i> SEU PEDIDO</span><h2 id="drawer-title">MINHA SACOLA.</h2></div><button type="button" class="close" data-close-cart aria-label="Fechar sacola">×</button></div>
+    <div class="drawer-scroll"><div id="cart-items"></div><form id="order-form">
+      <label>Seu nome <span>*</span><input id="customer" type="text" required maxlength="80" autocomplete="name" placeholder="Como podemos chamar você?"></label>
+      <label>Forma de receber <span>*</span><select id="receive"><option value="consultar">Consultar entrega/retirada pelo WhatsApp</option></select></label>
+      <label>Endereço ou bairro (opcional)<input id="address" type="text" maxlength="180" placeholder="Para consultar entrega"></label>
+      <label>Observações (opcional)<textarea id="note" maxlength="400" rows="3" placeholder="Alguma preferência para os itens?"></textarea></label>
+    </form></div>
+    <div class="drawer-foot"><div class="summary-row"><span>Subtotal ilustrativo</span><strong id="subtotal">R$ 0,00</strong></div><div class="summary-row"><span>Entrega</span><strong>A consultar</strong></div><button class="button button-dark checkout" id="checkout" form="order-form" type="submit">Continuar pelo WhatsApp ↗</button><small>O WhatsApp do desenvolvedor abre com uma mensagem demonstrativa. Nenhum pedido é enviado automaticamente, e os valores não são oficiais.</small></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
