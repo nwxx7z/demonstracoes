@@ -53,3 +53,18 @@ footer{background:#242b22;color:#efeddf;padding:34px 0}.footer-inner{display:fle
 .partial-label{display:block;margin-top:4px}
 }
 @media(prefers-reduced-motion:reduce){.product-card:hover .art-emoji{transform:none}}
+
+
+/* Ajustes para celulares estreitos (320–360 px): títulos íntegros e homebar fácil de tocar */
+@media(max-width:360px){
+  .hero-text h1{font-size:clamp(43px,12vw,48px)}
+  .hero-actions{gap:9px}
+  .hero-actions .button{padding:10px 12px;font-size:10px}
+  .nav{gap:10px}
+  .identity{font-size:18px}
+  .section-heading h2{font-size:36px}
+  .story-copy h2{font-size:39px}
+  .product-body h3{font-size:16px;overflow-wrap:anywhere}
+  .filters button{font-size:11px;padding:11px 12px}
+  .toolbar-link small{font-size:9px}
+}
