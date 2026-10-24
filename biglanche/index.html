@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#191712">
+<meta name="description" content="Big Lanche — demonstração visual independente inspirada no catálogo, com cardápio, adicionais, carrinho e cozinha de teste.">
+<title>Big Lanche | A fome não tem chance — Demonstração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css"><script defer src="./data.js"></script><script defer src="./app.js"></script>
+</head><body>
+<a class="skip" href="#cardapio">Pular ao cardápio</a>
+<div class="demo-alert">PROJETO CONCEITUAL • NÃO É O SITE OFICIAL • NENHUM PEDIDO É ENVIADO À COZINHA REAL</div>
+<header class="site-header"><div class="container header-inner">
+  <a class="nav-brand" href="#inicio" aria-label="Big Lanche - início"><img src="./assets/big-lanche-logo.svg" alt="Big Lanche" width="158" height="68"></a>
+  <nav class="desktop-nav" aria-label="Navegação principal"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#sobre">Destaques</a><a href="./kitchen/">Cozinha demo</a></nav>
+  <div class="header-end"><span class="status-pill"><span class="dot-green"></span><span id="store-status">Modo demonstração</span></span><button class="circle-cart" type="button" data-cart-open aria-label="Abrir carrinho">▣ <b data-cart-count>0</b></button></div>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="container hero-grid">
+ <div class="hero-text">
+  <span class="kicker"><span class="kicker-line"></span> SÃO BENTO • MARAGOGI • AL</span>
+  <h1><span class="kinetic"><span>ENTROU NA</span></span><span class="kinetic"><span class="red">ZONA DA</span></span><span class="kinetic"><span><em>FOME?</em></span></span></h1>
+  <p>Seu próximo lanche épico começa aqui. Os clássicos do Big Lanche em uma nova experiência — com visual gamer, muito sabor e pedidos fáceis.</p>
+  <div class="hero-buttons"><a class="btn btn-hot" href="#cardapio">VER CARDÁPIO <span>↗</span></a><button type="button" class="btn btn-outline" data-cart-open>MINHA SACOLA <span>▣</span></button></div>
+  <div class="hero-facts"><span>✦ <strong>112 itens</strong> do catálogo</span><span>✦ <strong>Adicionais</strong> personalizados</span></div>
+ </div>
+ <div class="hero-stage" aria-label="Mascote fictício de ação estilo battle royale ao lado de um hambúrguer">
+  <span class="orbit orbit-1"></span><span class="orbit orbit-2"></span>
+  <span class="cross cross-a" aria-hidden="true">✳</span><span class="cross cross-b" aria-hidden="true">✳</span>
+  <div class="mascot-halo"></div>
+  <img class="gamer-character" src="./assets/gamer-mascot.svg" width="470" height="650" alt="Mascote gamer original inspirado em jogos battle royale, com roupa tática e visor luminoso" fetchpriority="high">
+  <img class="hero-burger" src="./assets/burger.svg" width="520" height="430" alt="Ilustração de hambúrguer artesanal suculento" fetchpriority="high">
+  <div class="glass-float float-top"><span class="bolt">✦</span><div><strong>LEVEL UP!</strong><small>Seu lanche, sua partida.</small></div></div>
+  <div class="glass-float float-bottom"><span>★</span><div><strong>BIG LANCHE</strong><small>O sabor venceu.</small></div></div>
+ </div>
+</div><div class="hero-scroll">EXPLORE O CARDÁPIO <span>↓</span></div></section>
+<div class="ticker" aria-hidden="true"><div>BIG LANCHE ✳ HAMBÚRGUERES ARTESANAIS ✳ COMBOS ✳ SABOR ÉPICO ✳ BIG LANCHE ✳ HAMBÚRGUERES ARTESANAIS ✳ COMBOS ✳ SABOR ÉPICO ✳ </div></div>
+<section class="features container" id="sobre">
+ <div class="feat"><div class="feat-icon">🔥</div><div><strong>Artesanais de verdade</strong><small>Combinações para todos os gostos</small></div></div>
+ <div class="feat"><div class="feat-icon">🥡</div><div><strong>Monte do seu jeito</strong><small>Adicionais, sabores e observações</small></div></div>
+ <div class="feat"><div class="feat-icon">🛵</div><div><strong>Entrega e retirada</strong><small>Taxas do catálogo de referência</small></div></div>
+</section>
+<section class="menu-section section" id="cardapio"><div class="container">
+ <div class="section-heading reveal"><div><span class="eyebrow">CARDÁPIO COMPLETO</span><h2>ESCOLHA SUA <span>PRÓXIMA MISSÃO.</span></h2></div><p>Os 112 produtos cadastrados na versão de referência, com busca, categorias e opções de personalização.</p></div>
+ <div class="menu-tools"><div class="menu-tabs" id="category-tabs" role="group" aria-label="Categorias do cardápio"></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Buscar lanches, bebidas, combos..." aria-label="Buscar no cardápio"></label></div>
+ <div class="results-line"><span id="result-count">Carregando itens...</span><button type="button" class="text-link" id="reset-catalog">Limpar filtros ↺</button></div>
+ <div class="product-grid" id="products" aria-live="polite"></div>
+ <p class="menu-note">Preços e opções reproduzidos de uma versão do catálogo do Big Lanche, podendo não refletir atualizações posteriores. Algumas opções podem estar indisponíveis na operação real. Esta é uma demonstração isolada.</p>
+</div></section>
+<section class="special" aria-labelledby="special-heading"><div class="container special-grid">
+ <div class="special-pic reveal"><img src="./assets/burger.svg" loading="lazy" alt="Hambúrguer artesanal em destaque"><span class="sticker">PRA QUEM TEM FOME<br>DE VITÓRIA ★</span></div>
+ <div class="special-info reveal"><span class="eyebrow gold">DESTAQUE DA ARENA</span><h2 id="special-heading">UM BIG DE<br><span>RESPEITO.</span></h2><p>Do artesanal ao tradicional, do suco gelado à sobremesa: explore o catálogo e finalize seu pedido demonstrativo sem conectar-se aos sistemas da lanchonete.</p><a class="btn btn-sun" href="#cardapio">ESCOLHER MEU LANCHE ↗</a></div>
+</div></section>
+<section class="how section"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">PEDIDO RÁPIDO</span><h2>JOGADA <span>SIMPLES.</span></h2></div></div><div class="how-grid"><article><b>01</b><h3>ESCOLHA</h3><p>Explore as categorias e encontre seu favorito.</p></article><article><b>02</b><h3>PERSONALIZE</h3><p>Adicione extras, sabores e observações por item.</p></article><article><b>03</b><h3>FINALIZE</h3><p>Calcule o pedido e confira a mensagem no WhatsApp de demonstração.</p></article></div></div></section>
+<section class="bottom-cta"><div class="container"><h2>PARTIU <span>BIG LANCHE?</span></h2><p>Seu próximo combo pode estar a um clique.</p><a href="#cardapio" class="btn btn-sun">EXPLORAR SABORES ↗</a></div></section>
+</main>
+<footer><div class="container footer-content"><img src="./assets/big-lanche-logo.svg" alt="Big Lanche" width="170" height="76"><p>Reformulação visual demonstrativa e independente. Marca usada para ilustrar o projeto; não representa uma implantação no site oficial.</p><a href="./kitchen/">Abrir cozinha demo ↗</a></div></footer>
+<nav class="mobile-bar" aria-label="Navegação móvel">
+ <span class="mobile-indicator" aria-hidden="true"></span>
+ <a class="mobile-link active" href="#inicio" data-mobile="inicio"><span aria-hidden="true">⌂</span><small>Início</small></a>
+ <a class="mobile-link" href="#cardapio" data-mobile="cardapio"><span aria-hidden="true">▦</span><small>Cardápio</small></a>
+ <button class="mobile-link" type="button" data-cart-open><span aria-hidden="true">▣</span><small>Sacola <b data-cart-count>0</b></small></button>
+ <a class="mobile-link" href="./kitchen/"><span aria-hidden="true">♨</span><small>Cozinha demo</small></a>
+</nav>
+<div class="veil" id="veil" hidden></div>
+<section class="modal product-modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-title" aria-hidden="true">
+ <div class="modal-top"><div><span class="eyebrow">PERSONALIZE SUA ESCOLHA</span><h2 id="product-title"></h2></div><button class="close" type="button" data-close aria-label="Fechar">×</button></div>
+ <div class="modal-scroll"><div class="product-cover"><img id="detail-image" src="./assets/burger.svg" alt="Ilustração ilustrativa do produto"><p id="detail-desc"></p></div>
+ <form id="customize-form"><div id="flavor-area"></div><div id="addon-area"></div><label class="field">Observação do item<textarea id="item-note" placeholder="Ex.: sem cebola, ponto da carne, molho separado..." maxlength="260" rows="2"></textarea></label><label class="field">Quantidade<div class="stepper"><button type="button" id="qty-minus" aria-label="Diminuir quantidade">−</button><output id="quantity">1</output><button type="button" id="qty-plus" aria-label="Aumentar quantidade">+</button></div></label></form></div>
+ <div class="modal-foot"><div><small>Total do item</small><strong id="detail-total">R$ 0,00</strong></div><button type="submit" form="customize-form" class="btn btn-hot">ADICIONAR À SACOLA ＋</button></div>
+</section>
+<section class="modal cart-modal" id="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+ <div class="modal-top"><div><span class="eyebrow">ESTÁ QUASE LÁ</span><h2 id="cart-title">SUA SACOLA <span id="cart-title-count">0</span></h2></div><button class="close" type="button" data-close aria-label="Fechar sacola">×</button></div>
+ <div class="modal-scroll"><div id="cart-list"></div><form id="checkout-form">
+  <h3 class="form-heading">DADOS PARA O PEDIDO</h3>
+  <label class="field">Nome <input id="customer" type="text" maxlength="80" placeholder="Como podemos chamar você?" required autocomplete="name"></label>
+  <label class="field">Recebimento<select id="delivery" required></select></label>
+  <label class="field" id="local-area">Localidade de São Bento<select id="delivery-local"><option value="">Selecionar região...</option></select></label>
+  <label class="field" id="address-field">Rua, número e referência<input id="address" type="text" maxlength="180" autocomplete="street-address" placeholder="Seu endereço"></label>
+  <label class="field">Pagamento<select id="payment"><option>Pix</option><option>Dinheiro</option><option>Cartão</option></select></label>
+  <label class="field">Observações gerais<textarea id="general-note" rows="2" maxlength="300" placeholder="Alguma instrução para o pedido?"></textarea></label>
+  <p class="checkout-disclaimer">DEMONSTRAÇÃO: o pedido não entra na cozinha verdadeira. A mensagem será endereçada ao WhatsApp do desenvolvedor, não ao restaurante.</p>
+ </form></div>
+ <div class="modal-foot cart-foot"><div class="totals"><div><span>Subtotal</span><b id="subtotal">R$ 0,00</b></div><div><span>Taxa de entrega (referência)</span><b id="shipping">R$ 0,00</b></div><div class="grand"><span>Total demonstrativo</span><strong id="grand-total">R$ 0,00</strong></div></div>
+ <div class="cart-actions"><button type="submit" form="checkout-form" class="btn btn-hot" id="checkout">CONTINUAR NO WHATSAPP ↗</button><button type="button" id="save-local" class="btn btn-outline" title="Cria pedido apenas na cozinha simulada deste navegador">TESTAR COZINHA DEMO</button></div>
+ </div>
+</section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
