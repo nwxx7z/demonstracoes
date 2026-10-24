@@ -168,8 +168,13 @@
       '', '⚠️ *DEMONSTRAÇÃO DE SITE.* Pedido e taxas fictícios; confira com o estabelecimento. Mensagem direcionada ao desenvolvedor, não ao restaurante.'
     ].filter(x=>x!=='').join('\n');
     const url='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message);
-    const popup=window.open(url,'_blank','noopener,noreferrer');
-    if(!popup)window.location.assign(url);
+    const link=document.createElement('a');
+    link.href=url;
+    link.target='_blank';
+    link.rel='noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 
   // Evento delegado para que cards recriados pela busca continuem interativos.
