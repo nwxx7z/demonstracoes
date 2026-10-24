@@ -8,8 +8,15 @@ const $=(q,parent=document)=>parent.querySelector(q),$$=(q,parent=document)=>Arr
 const brl=n=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(n);
 const esc=s=>String(s??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const norm=s=>String(s??"").toLocaleLowerCase("pt-BR").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-const products=Object.entries(DATA.products).map(([id,p])=>({...p,id,section:Number(id.split("-")[0])})).sort((a,b)=>a.section-b.section);
-const byId=new Map(products.map(p=>[p.id,p]));
+const EDIT_KEY="biglanche_demo_custom_v1",HIDDEN_KEY="biglanche_demo_hidden_sections_v1";
+let products=[];let byId=new Map();
+function loadProducts(){
+ const overrides=getJSON(EDIT_KEY,{});
+ products=Object.entries(DATA.products).map(([id,p])=>({...p,...(overrides[id]||{}),id,section:overrides[id]?.section??Number(id.split("-")[0])}));
+ for(const [id,p] of Object.entries(overrides)){if(id.startsWith("custom-")&&p.name&&Number.isFinite(Number(p.price)))products.push({...p,id,section:Number(p.section)});}
+ products.sort((a,b)=>a.section-b.section||a.name.localeCompare(b.name,"pt-BR"));
+ byId=new Map(products.map(p=>[p.id,p]));
+}
 function getJSON(key,fallback){try{const obj=JSON.parse(localStorage.getItem(key)||"null");return obj??fallback}catch{return fallback}}
 function store(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
 let cart=getJSON(CART_KEY,[]);if(!Array.isArray(cart))cart=[];
@@ -29,10 +36,11 @@ function updateCount(){$$("[data-cart-count]").forEach(el=>el.textContent=String
 function categories(){
  const tabs=$("#category-tabs");
  tabs.innerHTML='<button type="button" data-category="-1" class="'+(filter===-1?"active":"")+'" aria-pressed="'+String(filter===-1)+'">✳ Todos</button>'+
- DATA.sections.filter((_,i)=>i<12).map((name,i)=>'<button type="button" data-category="'+i+'" aria-pressed="'+String(filter===i)+'" class="'+(filter===i?"active":"")+'">'+esc(name)+'</button>').join("");
+ DATA.sections.map((name,i)=>'<button type="button" data-category="'+i+'" aria-pressed="'+String(filter===i)+'" class="'+(filter===i?"active":"")+'">'+esc(name)+'</button>').join("");
 }
 function render(){
- const visible=products.filter(p=>(filter<0||p.section===filter)&&norm(p.name+" "+(p.description||"")).includes(term));
+ const hiddenSections=getJSON(HIDDEN_KEY,{});
+ const visible=products.filter(p=>hiddenSections[p.section]!==true&&(filter<0||p.section===filter)&&norm(p.name+" "+(p.description||"")).includes(term));
  $("#result-count").textContent=visible.length+" produto"+(visible.length===1?"":"s")+" encontrado"+(visible.length===1?"":"s")+" • catálogo original: "+products.length;
  $("#products").innerHTML=visible.length?visible.map(p=>{
   const blockedItem=blocked[p.id]===false;
@@ -180,7 +188,7 @@ function attach(){
   if(e.shiftKey&&document.activeElement===focusables[0]){e.preventDefault();focusables[focusables.length-1].focus()}
   else if(!e.shiftKey&&document.activeElement===focusables[focusables.length-1]){e.preventDefault();focusables[0].focus()}
  });
- window.addEventListener("storage",e=>{if(e.key===MENU_KEY){blocked=getJSON(MENU_KEY,{});render()}if(e.key===MODE_KEY)updateStatus()});
+ window.addEventListener("storage",e=>{if([MENU_KEY,EDIT_KEY,HIDDEN_KEY].includes(e.key)){blocked=getJSON(MENU_KEY,{});loadProducts();render()}if(e.key===MODE_KEY)updateStatus()});
 }
 function animate(){
  if("IntersectionObserver" in window){
@@ -188,5 +196,5 @@ function animate(){
   $$(".reveal").forEach(el=>o.observe(el));
  }else $$(".reveal").forEach(el=>el.classList.add("visible"));
 }
-prepareDelivery();render();drawCart();attach();updateStatus();animate();setMobile(0);
+loadProducts();prepareDelivery();render();drawCart();attach();updateStatus();animate();setMobile(0);
 })();
