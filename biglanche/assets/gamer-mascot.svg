@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 650" role="img" aria-labelledby="title desc">
+<title id="title">Mascote gamer do Big Lanche</title><desc id="desc">Personagem fictício em estilo battle royale, vestindo traje tático vermelho e preto, com óculos luminosos e tênis.</desc>
+<defs>
+<linearGradient id="jacket" x1=".15" y1=".1" x2=".85" y2="1"><stop stop-color="#fb4733"/><stop offset=".48" stop-color="#9b1d20"/><stop offset="1" stop-color="#36171d"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6a737a"/><stop offset=".43" stop-color="#1a2429"/><stop offset="1" stop-color="#0d1217"/></linearGradient>
+<linearGradient id="skin" x1="0" y1=".1" x2="1" y2=".9"><stop stop-color="#e8a46d"/><stop offset=".5" stop-color="#b36d4e"/><stop offset="1" stop-color="#754637"/></linearGradient>
+<linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff3ab"/><stop offset=".5" stop-color="#f6b338"/><stop offset="1" stop-color="#e64c27"/></linearGradient>
+<filter id="flare" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="11"/></filter>
+</defs>
+<ellipse cx="233" cy="615" rx="180" ry="21" fill="#151313" opacity=".6"/>
+<path d="M128 134L77 179 107 232 151 200Z" fill="#16181d" stroke="#5c2020" stroke-width="7"/>
+<path d="M291 131L378 191 337 247 302 199Z" fill="#101519" stroke="#7f2527" stroke-width="8"/>
+<path d="M155 382L307 382L336 566L285 591L241 491L220 591L153 587Z" fill="url(#metal)" stroke="#090d11" stroke-width="10" stroke-linejoin="round"/>
+<path d="M155 411L209 437L193 546L155 579M265 431L307 421L327 559L291 583" stroke="#7a2624" stroke-width="12" fill="none"/>
+<path d="M147 572L199 569L206 609Q166 632 120 612Z" fill="#0d1418" stroke="#89281c" stroke-width="7"/>
+<path d="M275 582L332 568L361 607Q336 628 276 609Z" fill="#0d1418" stroke="#f6af2f" stroke-width="7"/>
+<path d="M121 609q37 14 85-2M276 612q44 12 81-5" fill="none" stroke="#e9d0a4" stroke-width="7"/>
+<path d="M142 201Q166 151 223 150L284 163Q323 176 337 215L347 356Q305 420 149 398L129 308Z" fill="url(#jacket)" stroke="#151115" stroke-width="12"/>
+<path d="M184 171L237 213L290 174M195 219L240 242L293 205" stroke="#fd8e5c" stroke-width="7" opacity=".8" fill="none"/>
+<path d="M164 252L197 374M296 240L299 386" stroke="#1a1719" stroke-width="22"/>
+<path d="M215 242L265 244L259 377L214 382Z" fill="url(#metal)" stroke="#511718" stroke-width="6"/>
+<path d="M221 255h35v105h-35z" fill="#262b2c"/><path d="M236 269L248 289L239 309L254 324L237 344" fill="none" stroke="#efa83c" stroke-width="6"/>
+<path d="M138 212L105 269Q87 327 126 377L172 355L174 292L195 229Z" fill="url(#jacket)" stroke="#1b1517" stroke-width="11"/>
+<path d="M316 211Q364 255 378 318L343 376L299 345L308 287L279 233Z" fill="url(#jacket)" stroke="#231316" stroke-width="11"/>
+<path d="M116 358L151 335L177 372L149 414L113 401Z" fill="url(#metal)" stroke="#a34c2c" stroke-width="6"/>
+<path d="M337 353L377 328L393 357L356 413L318 396Z" fill="url(#metal)" stroke="#a74e2b" stroke-width="6"/>
+<g transform="rotate(6 238 113)">
+<path d="M159 79Q180 14 240 22Q302 19 324 85L312 170L176 169Z" fill="#191e24" stroke="#131116" stroke-width="10"/>
+<path d="M158 83Q207 62 244 61Q290 58 321 78L305 99L171 101Z" fill="#ef3d2c"/>
+<path d="M180 88Q178 49 233 39Q284 43 300 90" fill="none" stroke="#5b6065" stroke-width="11"/>
+<path d="M188 118Q188 84 240 85Q293 89 293 121L283 166Q260 188 222 182L197 162Z" fill="url(#skin)" stroke="#25191c" stroke-width="9"/>
+<path d="M178 120Q194 90 234 98L288 110L296 130L177 144Z" fill="#1d2027" stroke="#111316" stroke-width="8"/>
+<path d="M184 119L224 112L223 134L180 139ZM247 112L292 123L289 140L248 134Z" fill="url(#glow)"/>
+<path d="M223 120L247 123" stroke="#060a0b" stroke-width="12"/>
+<path d="M197 151L285 153L281 183L238 204L202 183Z" fill="#181d22" stroke="#681d1b" stroke-width="8"/>
+<path d="M212 165L224 174L240 166L255 174L271 165" fill="none" stroke="#ff4b28" stroke-width="5"/>
+<path d="M182 92Q146 115 165 150M303 94Q333 120 310 156" fill="none" stroke="#121519" stroke-width="18"/>
+<path d="M176 61Q230 3 290 63" fill="none" stroke="#fbb934" stroke-width="7" stroke-linecap="round"/>
+</g>
+<path d="M162 405Q237 423 323 401" fill="none" stroke="#f0b13b" stroke-width="12"/>
+<path d="M189 210Q230 232 283 201" fill="none" stroke="#f3c064" stroke-width="3" opacity=".7"/>
+<circle cx="351" cy="314" r="33" fill="#f14724" opacity=".22" filter="url(#flare)"/>
+<path d="M356 294Q370 312 361 332Q343 341 331 326Q339 305 356 294Z" fill="url(#glow)" opacity=".82"/>
+</svg>
