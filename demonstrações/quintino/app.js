@@ -195,7 +195,7 @@
   qs('#delivery').addEventListener('change',updateTotals);
   qs('#checkout-form').addEventListener('submit',checkout);
   function setTab(name){const index={inicio:0,cardapio:1,carrinho:2,contato:3}[name]??0;qs('#toolbar').style.setProperty('--active',index);qsa('[data-tab]').forEach(btn=>{btn.classList.toggle('selected',btn.dataset.tab===name);if(btn.tagName==='A'){if(btn.dataset.tab===name)btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');}});}
-  function restoreTab(){const target=['inicio','cardapio','contato'].findLast(id=>{const el=qs('#'+id);const box=el.getBoundingClientRect();return box.top<=window.innerHeight*.5&&box.bottom>=window.innerHeight*.25;})||'inicio';setTab(target);}
+  function restoreTab(){const target=['contato','cardapio','inicio'].find(id=>{const el=qs('#'+id);const box=el.getBoundingClientRect();return box.top<=window.innerHeight*.5&&box.bottom>=window.innerHeight*.25;})||'inicio';setTab(target);}
   qsa('.tool-tab[href]').forEach(a=>a.addEventListener('click',()=>setTab(a.dataset.tab)));
   document.addEventListener('keydown',e=>{
     const overlay=!qs('#product-overlay').hidden?qs('#product-overlay'):!qs('#cart-overlay').hidden?qs('#cart-overlay'):null;
