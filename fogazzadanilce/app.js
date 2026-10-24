@@ -7,7 +7,7 @@
   "use strict";
 
   const WHATSAPP_DEMO = "5582993188030";
-  const OFFICIAL_MENU = "https://whatsmenu.com.br/fogazzadanice";
+
   const categories = [
     {id:"todos",label:"Todos"},
     {id:"fogazza",label:"Fogazza"},
@@ -227,8 +227,7 @@
       address?"*Bairro/endereço:* "+address:"",
       note?"*Observações:* "+note:"",
       "",
-      "⚠️ PRÉVIA: disponibilidade, opções e preços devem ser confirmados no cardápio original.",
-      OFFICIAL_MENU
+      "⚠️ PRÉVIA: disponibilidade, opções e preços precisam ser confirmados diretamente com o estabelecimento."
     ].filter(Boolean).join("\n");
     const url="https://wa.me/"+WHATSAPP_DEMO+"?text="+encodeURIComponent(message);
     const win=window.open(url,"_blank","noopener,noreferrer");
