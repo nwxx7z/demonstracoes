@@ -154,7 +154,7 @@
     activeNav=id;
     const cartTab=$('.mobile-toolbar [data-open-cart]');
     if(cartTab)cartTab.classList.remove("active");
-    $("[data-nav]").forEach(a=>{
+    $$("[data-nav]").forEach(a=>{
       const selected=a.dataset.nav===id;
       a.classList.toggle("active",selected);
       if(selected)a.setAttribute("aria-current","location");else a.removeAttribute("aria-current");
@@ -167,7 +167,7 @@
     overlay.hidden=false;overlay.classList.add("open");
     drawer.classList.add("open");drawer.setAttribute("aria-hidden","false");
     document.body.classList.add("modal-open");
-    $(".toolbar-link").forEach(a=>a.classList.remove("active"));
+    $$(".toolbar-link").forEach(a=>a.classList.remove("active"));
     const cartTab=$('.mobile-toolbar [data-open-cart]');
     if(cartTab)cartTab.classList.add("active");
     setPill(2);
