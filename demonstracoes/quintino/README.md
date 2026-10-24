@@ -5,9 +5,9 @@ Demonstração front-end estática, responsiva e independente de framework.
 ## Abrir
 Publique o repositório no GitHub Pages (branch main, pasta raiz) e visite:
 
-`/demonstrações/quintino/`
+`/demonstracoes/quintino/`
 
-No GitHub Pages deste repositório: `https://nwxx7z.github.io/demonstracoes/demonstra%C3%A7%C3%B5es/quintino/`
+No GitHub Pages deste repositório: `https://nwxx7z.github.io/demonstracoes/demonstracoes/quintino/`
 
 Para pré-visualização local, abra `index.html` no navegador, sem servidor de API.
 
