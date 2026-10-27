@@ -15,7 +15,7 @@ function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("show")
 function nav(id){activeNav=id;const idx=id==="inicio"?0:id==="cardapio"?1:id==="sacola"?2:3;$(".mobile-indicator").style.transform="translateX("+(idx*100)+"%)";$$(".mobile-tab").forEach(el=>{const selected=id==="sacola"?el.hasAttribute("data-cart-open"):el.dataset.nav===id;el.classList.toggle("active",selected);if(el.tagName==="A"){if(selected)el.setAttribute("aria-current","location");else el.removeAttribute("aria-current")}})}
 function count(){return cart.reduce((n,x)=>n+x.qty,0)}
 function subtotal(){return cart.reduce((n,x)=>n+x.unitPrice*x.qty,0)}
-function deliveryFee(){return $("#delivery").value==="Entrega"?D.deliveryFee:0}
+function deliveryFee(){return cart.length&&$("#delivery").value==="Entrega"?D.deliveryFee:0}
 function badge(){$$("[data-cart-count]").forEach(x=>x.textContent=count())}
 function picture(p){if(p.image)return '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" loading="lazy">';if(["pizzas","sanduiches"].includes(p.category))return '<img src="./assets/hero.svg" alt="Ilustração gastronômica" loading="lazy">';return '<span class="art-emoji" role="img" aria-label="Ícone do item">'+icons[p.category]+'</span>'}
 function render(){
@@ -32,7 +32,7 @@ function chosenExtras(){return $$(".extra:checked").map(e=>({name:e.value,price:
 function eachPrice(){
  if(!chosen)return 0;
  const sz=$('input[name="size"]:checked')?.value||"P",base=chosen.prices?chosen.prices[sz]:chosen.price;
- return base+($('input[name="crust"]:checked')?.value?8:0)+chosenExtras().reduce((s,x)=>s+x.price,0);
+ return base+(chosen.prices&&$('input[name="crust"]:checked')?.value?8:0)+chosenExtras().reduce((s,x)=>s+x.price,0);
 }
 function itemTotal(){$("#item-total").textContent=brl(eachPrice()*quantity)}
 function choose(id){
