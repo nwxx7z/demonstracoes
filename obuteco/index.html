@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#121110">
+<meta name="description" content="O Buteco — Choperia e Pizzaria: demonstração visual de cardápio digital com pizzas, sanduíches, petiscos, bebidas, carrinho e WhatsApp.">
+<title>O Buteco • Choperia & Pizzaria | Demonstração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css"><script defer src="./data.js"></script><script defer src="./app.js"></script>
+</head><body>
+<a href="#cardapio" class="skip">Ir para o cardápio</a>
+<div class="demo-banner">✳ PROJETO DEMONSTRATIVO — NÃO É O SITE OFICIAL • CONTATO DIRETO COM O DESENVOLVEDOR</div>
+<header class="header"><div class="wrap header-inner">
+<a href="#inicio" class="brand" aria-label="O Buteco — início"><img src="./assets/logo.svg" width="155" height="64" alt="O Buteco Choperia e Pizzaria"></a>
+<nav class="desktop-nav" aria-label="Navegação principal"><a href="#inicio">Início</a><a href="#conceito">O Buteco</a><a href="#cardapio">Cardápio</a><a href="#contato">Contato</a></nav>
+<div class="header-actions"><span class="header-label"><span class="online-dot"></span> DEMONSTRAÇÃO</span><button type="button" class="header-cart" data-cart-open aria-label="Abrir sacola">▣ <b data-cart-count>0</b></button></div>
+</div></header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-grain"></div><div class="hero-glow a"></div><div class="hero-glow b"></div>
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<span class="eyebrow gold"><span class="eyebrow-line"></span> CHOPERIA & PIZZARIA • O SABOR TEM ENDEREÇO</span>
+<h1><span class="kinetic"><span>A FOME</span></span><span class="kinetic"><span class="outline">NÃO TEM</span></span><span class="kinetic"><span class="yellow">VEZ AQUI.</span></span></h1>
+<p>Entre uma pizza caprichada, aquele sanduíche do chefe e petiscos para dividir, o melhor plano é sempre terminar no <strong>O Buteco</strong>.</p>
+<div class="hero-actions"><a href="#cardapio" class="btn btn-gold">EXPLORAR O CARDÁPIO ↗</a><button type="button" data-cart-open class="btn btn-outline">MINHA SACOLA ▣</button></div>
+<div class="hero-stat"><div><strong>106</strong><small>produtos do catálogo</small></div><i></i><div><strong>7</strong><small>seções para explorar</small></div><i></i><div><strong>P / G</strong><small>pizzas personalizáveis</small></div></div>
+</div>
+<div class="hero-stage" aria-label="Ilustração original de pizza, hambúrguer e chope"><span class="hero-orbit orb1"></span><span class="hero-orbit orb2"></span><span class="oversized-word" aria-hidden="true">BUTECAR</span>
+<img src="./assets/hero.svg" alt="Pizza, hambúrguer e chope ilustrados" class="hero-art" width="790" height="660" fetchpriority="high">
+<div class="float-note note-top"><span>★</span><div><strong>CLIMA DE BOTECO</strong><small>Sabor e boas histórias</small></div></div>
+<div class="float-note note-bottom"><span>✳</span><div><strong>SEU PEDIDO</strong><small>Do jeitinho que você gosta</small></div></div>
+</div>
+</div><div class="hero-scroll">DESLIZE E DESCUBRA MAIS <span>↓</span></div></section>
+<div class="ticker" aria-hidden="true"><div>O BUTECO ✳ PIZZAS ARTESANAIS ✳ SANDUÍCHES RECHEADOS ✳ PETISCOS ✳ DRINKS ✳ O BUTECO ✳ PIZZAS ARTESANAIS ✳ SANDUÍCHES RECHEADOS ✳ PETISCOS ✳ DRINKS ✳ </div></div>
+<section class="concept section" id="conceito"><div class="wrap">
+<div class="section-title reveal"><div><span class="eyebrow gold">UM LUGAR PARA VOLTAR</span><h2>O ENCONTRO TEM <em>MAIS SABOR.</em></h2></div><p>Uma identidade renovada a partir do preto, amarelo e vermelho do cardápio original: energia de boteco, textura de tijolo, animações cinematográficas e navegação moderna.</p></div>
+<div class="highlights">
+<article class="highlight reveal"><span class="highlight-icon">♨</span><div><strong>Pizzas do seu jeito</strong><small>Sabores, tamanhos P/G e bordas recheadas</small></div></article>
+<article class="highlight reveal"><span class="highlight-icon">✦</span><div><strong>Petiscos pra dividir</strong><small>Porções, caldinhos e clássicos da casa</small></div></article>
+<article class="highlight reveal"><span class="highlight-icon">◉</span><div><strong>Sacola inteligente</strong><small>Monte e envie a mensagem pronta no WhatsApp</small></div></article>
+</div>
+</div></section>
+<section class="menu section" id="cardapio"><div class="wrap">
+<div class="section-title reveal"><div><span class="eyebrow gold">O CARDÁPIO COMPLETO</span><h2>ESCOLHE QUE <em>A GENTE CAPRICHA.</em></h2></div><p>Os itens e valores das imagens enviadas, divididos por categoria. As opções e os preços apresentados são uma referência do material fotografado.</p></div>
+<div class="menu-top reveal"><div class="tab-scroll" id="filters" role="group" aria-label="Categorias"></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Busque pizza, petisco, sanduíche..." autocomplete="off" aria-label="Buscar produto por nome ou ingrediente"></label></div>
+<div class="menu-meta"><span id="result-count">Preparando o cardápio...</span><button id="reset" type="button">Limpar filtros ↺</button></div>
+<div class="products" id="products" aria-live="polite"></div>
+<p class="menu-disclaimer">* Preços transcritos das nove imagens fornecidas. Alguns nomes e descrições foram padronizados para leitura; valores e disponibilidade precisam ser confirmados com o estabelecimento. Esta demonstração não envia pedidos à operação verdadeira.</p>
+</div></section>
+<section class="feature-pizza"><div class="wrap pizza-feature">
+<div class="pizza-image reveal"><img src="./assets/hero.svg" loading="lazy" alt="Ilustração de pizza e hambúrguer"><div class="stamp">O SABOR<br><strong>MANDOU!</strong></div></div>
+<div class="pizza-copy reveal"><span class="eyebrow gold">DEU VONTADE?</span><h2>ESCOLHE O SABOR.<br><em>QUE A NOITE COMEÇA.</em></h2><p>Da mussarela à nordestina, do misto ao Buteco do Chefe. Um cardápio completo, interativo e pronto para converter visitas em pedidos.</p><a class="btn btn-gold" href="#cardapio">PEDIR MEU FAVORITO ↗</a></div>
+</div></section>
+<section class="contact section" id="contato"><div class="wrap"><div class="contact-panel reveal"><div><span class="eyebrow gold">QUER UM SITE ASSIM?</span><h2>SEU NEGÓCIO <em>PODE TER ESSA EXPERIÊNCIA.</em></h2><p>Modelo criado por Gunter Bauer Developer. Para conversar sobre uma implantação personalizada, fale diretamente com o desenvolvedor.</p></div><a class="btn btn-gold" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20do%20O%20Buteco%20e%20gostaria%20de%20um%20site%20assim." target="_blank" rel="noopener noreferrer">FALAR PELO WHATSAPP ↗</a></div></div></section>
+</main>
+<footer><div class="wrap foot-inner"><img src="./assets/logo.svg" width="150" height="60" alt="O Buteco" loading="lazy"><p>Demonstração independente, sem vínculo operacional com a choperia. <br>Cardápio de referência fornecido em imagens; preços e serviços sujeitos a alterações.</p><a href="#inicio">VOLTAR AO TOPO ↑</a></div></footer>
+<nav class="mobile-bar" aria-label="Barra de navegação rápida"><span class="mobile-indicator" aria-hidden="true"></span><a href="#inicio" class="mobile-tab active" data-nav="inicio" aria-current="location"><span>⌂</span><small>Início</small></a><a href="#cardapio" class="mobile-tab" data-nav="cardapio"><span>▦</span><small>Cardápio</small></a><button type="button" class="mobile-tab" data-cart-open><span>▣</span><small>Sacola <b data-cart-count>0</b></small></button><a href="#contato" class="mobile-tab" data-nav="contato"><span>✉</span><small>Contato</small></a></nav>
+<div class="overlay" id="overlay" hidden></div>
+<section class="drawer" id="product-drawer" role="dialog" aria-modal="true" aria-labelledby="product-title" aria-hidden="true">
+<div class="drawer-top"><div><span class="eyebrow gold">MONTE DO SEU JEITO</span><h2 id="product-title">PERSONALIZE SEU PEDIDO.</h2></div><button class="close" type="button" data-close aria-label="Fechar detalhes">×</button></div>
+<div class="drawer-scroll"><div class="detail-art"><span id="detail-icon">🍕</span><p id="detail-desc"></p></div><form id="custom-form">
+<div id="size-options"></div><div id="flavor-options"></div><div id="extras-options"></div>
+<label class="form-label">Observação do item<textarea id="item-note" rows="2" maxlength="220" placeholder="Ex.: sem cebola, bem passada, retirar ingrediente..."></textarea></label>
+<label class="form-label">Quantidade<div class="qty-control"><button type="button" id="qty-minus" aria-label="Diminuir quantidade">−</button><output id="quantity">1</output><button type="button" id="qty-plus" aria-label="Aumentar quantidade">+</button></div></label>
+</form></div><div class="drawer-bottom"><div><span>Total do item</span><strong id="item-total">R$ 0,00</strong></div><button class="btn btn-gold" type="submit" form="custom-form">ADICIONAR À SACOLA ＋</button></div></section>
+<section class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+<div class="drawer-top"><div><span class="eyebrow gold">ESTÁ QUASE PRONTO</span><h2 id="cart-title">SUA SACOLA.</h2></div><button class="close" type="button" data-close aria-label="Fechar sacola">×</button></div>
+<div class="drawer-scroll"><div id="cart-items"></div><form id="checkout-form">
+<h3 class="form-heading">DADOS DO PEDIDO</h3>
+<label class="form-label">Nome <input id="customer" type="text" autocomplete="name" maxlength="90" placeholder="Qual seu nome?" required></label>
+<label class="form-label">Recebimento<select id="delivery"><option value="Entrega">Entrega</option><option value="Retirada">Retirada</option></select></label>
+<label class="form-label" id="address-label">Endereço para entrega<input id="address" type="text" maxlength="220" autocomplete="street-address" placeholder="Rua, número, bairro, referência..." required></label>
+<label class="form-label">Forma de pagamento<select id="payment"><option>Pix</option><option>Dinheiro</option><option>Cartão</option><option>Combinar</option></select></label>
+<label class="form-label">Observações gerais<textarea id="order-note" rows="2" maxlength="300" placeholder="Algum detalhe para o pedido?"></textarea></label>
+<p class="demo-hint">Este é um carrinho demonstrativo. O envio abre o WhatsApp do desenvolvedor, não a cozinha real do estabelecimento.</p>
+</form></div><div class="drawer-bottom cart-summary"><div class="summary"><div><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div><div><span>Taxa de entrega de referência</span><strong id="shipping">R$ 2,00</strong></div><div class="summary-total"><span>Total estimado</span><strong id="grand-total">R$ 0,00</strong></div></div><button type="submit" form="checkout-form" class="btn btn-gold" id="finish">ENVIAR PEDIDO AO WHATSAPP ↗</button><small>O WhatsApp é aberto com o texto preenchido para conferência; nenhuma mensagem é enviada automaticamente.</small></div></section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
