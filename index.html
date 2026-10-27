@@ -26,8 +26,8 @@
     .card{overflow:hidden;display:flex;flex-direction:column;border:1px solid #33445a;border-radius:26px;background:rgba(255,255,255,.055);transition:transform .2s,background .2s}
     .card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08)}
     .preview{height:210px;background:#f8eab0;color:#d9252d;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .preview:before{content:"";position:absolute;width:210px;height:210px;border:34px solid rgba(255,255,255,.32);border-radius:50%;right:-56px;top:-80px}
-    .preview:after{content:"🍣";font-size:110px;position:absolute;right:14px;bottom:-28px;transform:rotate(-20deg)}
+    .preview--sushi::before{content:"";position:absolute;width:210px;height:210px;border:34px solid rgba(255,255,255,.32);border-radius:50%;right:-56px;top:-80px}
+    .preview--sushi::after{content:"🍣";font-size:110px;position:absolute;right:14px;bottom:-28px;transform:rotate(-20deg)}
     .preview strong{font-size:52px;letter-spacing:-.08em;font-weight:1000;line-height:.85;text-align:left;position:relative;z-index:1;text-shadow:2px 3px 0 #fff0c3;transform:translateX(-26px)}
     .info{padding:23px}
     .tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aacbf2;font-weight:850}
@@ -52,7 +52,7 @@
       <p>Uma coleção de demonstrações front-end: cada modelo funciona em sua própria pasta, com visual adaptado ao segmento e código simples de reutilizar.</p>
       <div class="grid">
         <a class="card" href="./sushimizu/" aria-label="Abrir demonstração Mania Sushi">
-          <div class="preview"><strong>MANIA<br>SUSHI.</strong></div>
+          <div class="preview preview--sushi"><strong>MANIA<br>SUSHI.</strong></div>
           <div class="info"><span class="tag">Cardápio digital • Restaurante</span><h2>Mania Sushi</h2><p>10 especialidades, busca, filtros, sacola e pedido ilustrativo via WhatsApp.</p><span class="open">Explorar demonstração ↗</span></div>
         </a>
         <a class="card" href="./quintino/" aria-label="Abrir demonstração Quintino Restaurante e Lanchonete">
