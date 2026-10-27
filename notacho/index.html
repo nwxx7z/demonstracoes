@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7c3b17">
+  <meta name="description" content="No Tacho Restaurante — demonstração visual em estilo sertanejo com cardápio, hero animado, homebar e apresentação responsiva.">
+  <title>No Tacho Restaurante | Demonstração</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Alfa+Slab+One&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Pular para o cardápio</a>
+
+  <div class="top-note">DEMONSTRAÇÃO FRONT-END • IDENTIDADE VISUAL CONCEITUAL • ROTA SUGERIDA: <strong>/notacho</strong></div>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <img src="./assets/notacho-logo.svg" alt="Logo do restaurante No Tacho">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#apresentacao">Apresentação</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#entrega">Contato</a>
+      </nav>
+
+      <button class="cart-button" id="openCartDesktop" type="button" aria-label="Abrir sacola">
+        <span>🧺</span>
+        <b id="cartCountDesktop">0</b>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-sun"></div>
+      <div class="hero-cactus cactus-left"></div>
+      <div class="hero-cactus cactus-right"></div>
+      <div class="hero-sand sand-one"></div>
+      <div class="hero-sand sand-two"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">SABOR DO SERTÃO • MAR E TERRA • COZINHA REGIONAL CONTEMPORÂNEA</span>
+          <h1>
+            <span class="kinetic-row">NO TACHO</span>
+            <span class="kinetic-row highlight">É BRASA,</span>
+            <span class="kinetic-row">AFETO E</span>
+            <span class="kinetic-row">RAIZ.</span>
+          </h1>
+          <p>
+            Uma demonstração visual com identidade inspirada no sertão: tons terrosos, cactos,
+            texturas quentes, animações leves e um cardápio organizado para navegação prática no mobile.
+          </p>
+          <div class="hero-actions">
+            <a href="#cardapio" class="btn btn-primary">Ver cardápio</a>
+            <a href="https://wa.me/5582993188030?text=Ol%C3%A1!%20Vi%20a%20demonstra%C3%A7%C3%A3o%20do%20No%20Tacho%20e%20quero%20saber%20mais." target="_blank" rel="noopener" class="btn btn-secondary">Falar no WhatsApp</a>
+          </div>
+          <div class="hero-badges">
+            <div class="glass-badge">🥘 Cardápio visual completo</div>
+            <div class="glass-badge">🌵 Identidade sertaneja</div>
+            <div class="glass-badge">📱 Homebar mobile</div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-card glass-panel floating-panel panel-a">
+            <strong>Pratos autorais</strong>
+            <span>Mar, sertão e sobremesas regionais</span>
+          </div>
+          <div class="hero-card glass-panel floating-panel panel-b">
+            <strong>Experiência leve</strong>
+            <span>animações suaves e acessíveis</span>
+          </div>
+          <img class="hero-pot" src="./assets/notacho-hero.svg" alt="Ilustração de um tacho com vapor, cactos e sol do sertão">
+        </div>
+      </div>
+    </section>
+
+    <section class="presentation section" id="apresentacao">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">APRESENTAÇÃO</span>
+            <h2>UM RESTAURANTE COM <span>ALMA NORDESTINA.</span></h2>
+          </div>
+          <p>
+            A proposta visual combina rusticidade elegante, calor humano e referências do sertão.
+            Os ícones dos itens foram gerados para servir como placeholders e podem ser trocados depois por fotos reais.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon">🌵</div>
+            <h3>Identidade própria</h3>
+            <p>Paleta terrosa, verde cacto, dourado queimado e grafismos inspirados em mandacaru e barro.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">✨</div>
+            <h3>Motion leve</h3>
+            <p>Hero animado, painéis glassmorphism, entradas suaves e rolagem confortável no mobile.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">🍽️</div>
+            <h3>Cardápio organizado</h3>
+            <p>Seções filtráveis, busca, sacola simulada e CTA pronto para WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="cardapio">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">CARDÁPIO</span>
+            <h2>SABORES DA CASA, DO <span>COMEÇO AO FINAL FELIZ.</span></h2>
+          </div>
+          <p>
+            Baseado no PDF enviado. Os itens estão organizados em categorias e podem ser substituídos,
+            expandidos e conectados futuramente a um painel administrativo.
+          </p>
+        </div>
+
+        <div class="menu-toolbar glass-panel reveal">
+          <label class="search-field">
+            <span>🔎</span>
+            <input type="search" id="searchInput" placeholder="Buscar item por nome ou descrição">
+          </label>
+          <div class="menu-filters" id="categoryFilters" aria-label="Filtros do cardápio"></div>
+        </div>
+
+        <div class="menu-meta">
+          <strong id="menuCount">0 itens</strong>
+          <button type="button" id="clearFilters" class="text-button">Limpar filtros</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cta-strip section" id="entrega">
+      <div class="container cta-strip-inner reveal">
+        <div>
+          <span class="eyebrow">CONTATO</span>
+          <h2>QUER ESSA DEMONSTRAÇÃO <span>ADAPTADA PARA UM CLIENTE?</span></h2>
+          <p>O fluxo já está preparado para publicação em uma rota como <strong>/notacho</strong> dentro do repositório de demonstrações.</p>
+        </div>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5582993188030?text=Ol%C3%A1!%20Quero%20a%20demonstra%C3%A7%C3%A3o%20do%20No%20Tacho.">Solicitar no WhatsApp</a>
+          <button class="btn btn-secondary" type="button" id="openCartBottom">Abrir sacola</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="./assets/notacho-logo.svg" alt="No Tacho Restaurante">
+      <p>Demonstração front-end com homebar, hero, animações leves e ícones substituíveis por imagens reais no futuro.</p>
+      <span>Rota sugerida: <strong>/notacho</strong></span>
+    </div>
+  </footer>
+
+  <nav class="mobile-bar" aria-label="Barra de navegação móvel">
+    <a href="#inicio" class="mobile-link active"><span>🏠</span><small>Início</small></a>
+    <a href="#apresentacao" class="mobile-link"><span>✨</span><small>Sobre</small></a>
+    <a href="#cardapio" class="mobile-link"><span>🍽️</span><small>Cardápio</small></a>
+    <button type="button" class="mobile-link" id="openCartMobile"><span>🧺</span><small>Sacola <b id="cartCountMobile">0</b></small></button>
+  </nav>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <div>
+        <span class="eyebrow">SACOLA</span>
+        <h2>SEU PEDIDO</h2>
+      </div>
+      <button type="button" class="close-button" id="closeCart">×</button>
+    </div>
+
+    <div class="cart-body">
+      <div id="cartItems" class="cart-items"></div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <label>
+          Nome
+          <input type="text" id="customerName" placeholder="Seu nome" required>
+        </label>
+        <label>
+          Forma de entrega
+          <select id="deliveryType">
+            <option value="retirada">Retirada no local</option>
+            <option value="entrega">Entrega</option>
+          </select>
+        </label>
+        <label>
+          Endereço ou referência
+          <input type="text" id="customerAddress" placeholder="Rua, número e ponto de referência">
+        </label>
+        <label>
+          Observações
+          <textarea id="customerNotes" rows="3" placeholder="Ex.: sem cebola, pedido urgente..."></textarea>
+        </label>
+      </form>
+    </div>
+
+    <div class="cart-foot">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <div class="cart-actions">
+        <button type="button" class="btn btn-secondary" id="clearCart">Limpar</button>
+        <button type="submit" form="checkoutForm" class="btn btn-primary">Enviar no WhatsApp</button>
+      </div>
+    </div>
+  </aside>
+
+  <template id="menuCardTemplate">
+    <article class="menu-card reveal">
+      <div class="menu-card-icon"></div>
+      <div class="menu-card-content">
+        <div class="menu-card-top">
+          <div>
+            <span class="menu-card-category"></span>
+            <h3 class="menu-card-title"></h3>
+          </div>
+          <strong class="menu-card-price"></strong>
+        </div>
+        <p class="menu-card-description"></p>
+        <div class="menu-card-actions">
+          <button type="button" class="add-button">Adicionar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+</body>
+</html>
