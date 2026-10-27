@@ -9,6 +9,7 @@ Demonstrações front-end independentes, compatíveis com GitHub Pages, sem buil
 - `/fogazzadanilce/` — Fogazza da Nice, homepage animada, catálogo parcial dos prints, filtros, sacola e homebar mobile.
 - `/biglanche/` — Big Lanche (demo isolada), 112 itens do catálogo, hero gamer, carrinho e cozinha de testes em `/biglanche/kitchen/`.
 - `/notacho/` — No Tacho Restaurante, identidade sertaneja, cactos, hero animado, menu regional, homebar, ícones e sacola demonstrativa.
+- `/recheadob/` — Recheada Burguer, 54 itens transcritos do vídeo, design preto/amarelo/branco, homebar, sacola e checkout WhatsApp.
 - Outras demonstrações podem ser criadas como `/nomedademo/`, cada uma contendo seu próprio `index.html`.
 
 ## Publicação no GitHub Pages
