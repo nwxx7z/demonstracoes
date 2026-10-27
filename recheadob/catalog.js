@@ -34,7 +34,7 @@ window.RECHEADA_MENU=[
     "section": "comidas",
     "description": "Pão seda prensado, salsicha…",
     "icon": "hotdog",
-    "category": "cachorros-quentes"
+    "category": "passaportes"
   },
   {
     "id": "passaporte-carne",
