@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" role="img" aria-labelledby="title">
+<title id="title">Tacho de comida regional com cactos, sol e vapor</title>
+<defs>
+ <linearGradient id="sun" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#ffe8ad"/><stop offset="1" stop-color="#e9a63b"/></linearGradient>
+ <linearGradient id="clay" x1="0" y1="0" x2=".75" y2="1"><stop stop-color="#a65a30"/><stop offset=".5" stop-color="#67341f"/><stop offset="1" stop-color="#351e19"/></linearGradient>
+ <radialGradient id="soup"><stop stop-color="#f5c76b"/><stop offset="1" stop-color="#cb7525"/></radialGradient>
+ <filter id="shade" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<circle cx="397" cy="120" r="75" fill="url(#sun)" opacity=".83"/>
+<path d="M15 405Q104 339 186 391Q281 322 377 387Q465 336 550 394V510H15Z" fill="#c5a06b" opacity=".22"/>
+<g fill="#648043" opacity=".6">
+ <rect x="51" y="265" width="35" height="151" rx="17"/>
+ <path d="M51 346c-37 0-39-27-39-59h20c0 20 1 38 19 38Zm35-32c21 0 24-20 24-38h20c0 43-14 61-44 61Z"/>
+ <rect x="466" y="231" width="31" height="192" rx="15"/>
+ <path d="M466 339c-29 0-33-22-33-52h18c0 18 2 30 15 30Zm31-22c17 0 19-15 19-34h18c0 37-10 54-37 54Z"/>
+</g>
+<ellipse cx="280" cy="454" rx="205" ry="28" fill="#6d3e25" opacity=".26" filter="url(#shade)"/>
+<path d="M147 287C147 386 197 440 280 449C363 440 413 386 413 287Z" fill="url(#clay)" stroke="#3c2519" stroke-width="10"/>
+<path d="M150 298C163 342 208 373 280 373C352 373 397 342 410 298" stroke="#c78c48" stroke-width="8" opacity=".6" fill="none"/>
+<path d="M150 284q-46-14-62 8q-9 30 50 29" stroke="#623521" stroke-width="15" stroke-linecap="round" fill="none"/>
+<path d="M411 284q46-14 62 8q9 30-50 29" stroke="#623521" stroke-width="15" stroke-linecap="round" fill="none"/>
+<ellipse cx="280" cy="285" rx="134" ry="45" fill="#492717" stroke="#3c221a" stroke-width="12"/>
+<ellipse cx="280" cy="282" rx="118" ry="32" fill="url(#soup)"/>
+<g fill="#5a8c47"><ellipse cx="213" cy="286" rx="17" ry="10" transform="rotate(-25 213 286)"/><ellipse cx="326" cy="277" rx="12" ry="9"/><ellipse cx="299" cy="302" rx="13" ry="8"/></g>
+<g fill="#fbe0b7"><ellipse cx="245" cy="272" rx="18" ry="12"/><ellipse cx="350" cy="296" rx="20" ry="11"/><ellipse cx="275" cy="287" rx="15" ry="8"/></g>
+<g fill="none" stroke="#fff6dc" stroke-width="9" stroke-linecap="round" opacity=".8">
+<path d="M220 231Q201 201 221 178Q241 160 223 132"/>
+<path d="M280 225Q260 198 280 172Q302 150 283 124"/>
+<path d="M339 230Q319 199 340 178Q355 160 346 143"/>
+</g>
+<g fill="#cc8f3c"><path d="M150 443h260v13H150z"/><path d="M196 449l-11 20h17l14-20zm147 0 14 20h17l-11-20z"/></g>
+</svg>
