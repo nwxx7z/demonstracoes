@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 250" role="img" aria-labelledby="title">
+<title id="title">Recheada Burguer — logo demonstrativa</title>
+<defs><linearGradient id="gold" x1=".1" y1="0" x2=".8" y2="1"><stop stop-color="#fff380"/><stop offset=".56" stop-color="#f7d22e"/><stop offset="1" stop-color="#cf9b00"/></linearGradient></defs>
+<rect width="660" height="250" fill="#101112" rx="27"/>
+<g fill="#fff" font-family="Impact,Arial Black,Arial,sans-serif" font-weight="1000">
+<text x="50" y="195" font-size="70" transform="rotate(-90 50 195)" textLength="174" lengthAdjust="spacingAndGlyphs">RECHEADA</text>
+<text x="87" y="180" font-size="167" letter-spacing="-10" textLength="525" lengthAdjust="spacingAndGlyphs">BURGUER</text>
+</g>
+<path d="M97 213Q294 227 558 208" stroke="url(#gold)" stroke-width="17" stroke-linecap="round" fill="none"/>
+<path d="M113 239Q320 248 520 232" stroke="#e0af16" opacity=".65" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>
