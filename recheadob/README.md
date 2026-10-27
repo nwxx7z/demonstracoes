@@ -7,13 +7,13 @@ Endereço de publicação: https://nwxx7z.github.io/demonstracoes/recheadob/
 Foram transcritas **54 entradas** visíveis no vídeo enviado, com nomes e preços exibidos no catálogo da Recheada Burguer. A distribuição no site é:
 - 22 hambúrgueres;
 - 14 sanduíches e filés;
-- 1 passaporte e 1 cachorro-quente;
+- 2 itens em **Passaportes e Cachorros-quentes** (1 passaporte e 1 cachorro-quente);
 - 2 acompanhamentos (batatas fritas);
 - 8 sucos (inclui as duas entradas de goiaba repetidas no vídeo);
 - 5 refrigerantes;
 - 1 água.
 
-O site exibe **oito categorias específicas**, além de “Todos”, com filtros, contadores e títulos de seção. O campo original `section` é mantido no catálogo para rastrear os grupos de origem; `category` é usado na navegação.
+O site exibe **sete categorias específicas**, além de “Todos”, com filtros, contadores e títulos de seção. O campo original `section` é mantido no catálogo para rastrear os grupos de origem; `category` é usado na navegação.
 
 Partes das descrições não eram visíveis devido ao truncamento na gravação. Esses casos foram preservados com reticências, sem completar ingredientes por suposição. As designações das porções pequena/grande decorrem do texto parcialmente visível; devem ser confirmadas. O preço/estoque pode ter mudado depois da gravação.
 
