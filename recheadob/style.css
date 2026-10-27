@@ -19,3 +19,20 @@ footer{background:#0d0e0e;padding:36px 0;color:#ddd}.footer-content{display:flex
 @media(max-width:550px){.wrap{width:calc(100% - 26px)}.demo-bar{font-size:8px;letter-spacing:.045em;line-height:1.6;padding:7px 9px}.nav{min-height:65px;gap:9px}.brand img{width:125px}.nav-wa{display:none}.cart-trigger{padding:8px;min-height:40px}.hero{padding:32px 0 29px}.eyebrow{font-size:9px}.hero h1{font-size:clamp(61px,14vw,83px);margin:20px 0 18px}.hero-copy>p{font-size:13px}.hero-actions .btn{font-size:11px;min-height:45px;padding:10px 15px}.hero-foot{margin-top:30px}.hero-art{min-height:355px}.word-behind{font-size:64px}.floating-glass strong{font-size:15px}.floating-glass small{font-size:8px}.floating-glass>span{font-size:18px}.glass-a{top:7%}.glass-b{bottom:8%}.marquee>div{font-size:15px}.feature-section{padding-top:34px}.section{padding:64px 0}.menu-intro h2{font-size:clamp(47px,11vw,70px)}.menu-logo{width:min(100%,370px)}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-visual{min-height:130px}.product-visual img{height:130px}.product-emoji{font-size:67px}.product-tag{font-size:8px;padding:5px 7px}.product-body{padding:12px}.product-body h3{font-size:19px}.product-body p{font-size:10px}.product-price{font-size:21px}.add{min-width:35px;height:35px;font-size:24px;border-radius:11px}.spotlight{padding:55px 0}.spotlight-art{min-height:290px}.spotlight-copy h2{font-size:64px}.contact-panel{padding:23px}.contact-panel h2{font-size:45px}.footer-content img{width:130px}.cart-head,.cart-scroll,.cart-foot{padding-left:16px;padding-right:16px}}
 @media(max-width:360px){.hero h1{font-size:clamp(53px,14vw,61px)}.hero-art{min-height:290px}.burger-hero{width:100%}.floating-glass{padding:8px;font-size:8px}.product-body h3{font-size:17px}.product-visual{min-height:112px}.product-visual img{height:112px}.product-emoji{font-size:57px}.filter{padding:11px}.home-link small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}.product-card:hover .product-emoji{transform:none}}
+
+/* Categorias específicas: abas horizontais, títulos de seção e contadores. */
+.filter-count{display:inline-grid;place-items:center;min-width:23px;height:22px;padding:0 5px;margin-left:4px;border-radius:99px;font-size:10px;font-weight:900;background:#ffffff13;color:#eeead7}
+.filter.selected .filter-count{background:#12131322;color:#111}
+.category-heading{grid-column:1/-1;display:flex;align-items:center;gap:13px;margin:27px 0 2px;padding:12px 0 14px;border-bottom:1px solid #4b4631;color:#fdfbf0;font:900 clamp(29px,3vw,40px)/1 "Barlow Condensed",sans-serif;letter-spacing:.015em}
+.category-heading:first-child{margin-top:8px}
+.category-heading-icon{height:43px;min-width:43px;border-radius:14px;display:grid;place-items:center;background:#f5c729;color:#171717;font:700 22px "DM Sans",sans-serif}
+.category-heading small{display:block;margin-top:5px;font:700 11px "DM Sans",sans-serif;color:#afb2ac;letter-spacing:.01em}
+.product-body h4{font:900 24px/1.04 "Barlow Condensed",sans-serif;margin:0 0 10px;letter-spacing:.01em;overflow-wrap:anywhere}
+@media(max-width:550px){
+ .category-heading{font-size:30px;margin-top:23px}
+ .category-heading-icon{height:40px;min-width:40px}
+ .product-body h4{font-size:19px}
+ .filter-row{scroll-padding-left:8px;scroll-snap-type:x proximity}
+ .filter{scroll-snap-align:start}
+}
+@media(max-width:360px){.product-body h4{font-size:17px}}

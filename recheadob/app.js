@@ -11,7 +11,25 @@ const normalize=s=>String(s||"").toLocaleLowerCase("pt-BR").normalize("NFD").rep
 const esc=s=>String(s||"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const byId=new Map(MENU.map(p=>[p.id,p]));
 const icons={burger:"🍔",sandwich:"🥪",hotdog:"🌭",fries:"🍟",juice:"🥤",soda:"🥤",water:"💧"};
-const categoryLabel={comidas:"COMIDAS",bebidas:"BEBIDAS",acompanhamentos:"ACOMPANHAMENTOS"};
+const CATEGORIES=[
+ {id:"todos",label:"Todos",icon:"✳"},
+ {id:"hamburgueres",label:"Hambúrgueres",icon:"🍔"},
+ {id:"passaportes",label:"Passaportes",icon:"🥪"},
+ {id:"cachorros-quentes",label:"Cachorros-quentes",icon:"🌭"},
+ {id:"sanduiches",label:"Sanduíches e filés",icon:"🥪"},
+ {id:"acompanhamentos",label:"Acompanhamentos",icon:"🍟"},
+ {id:"sucos",label:"Sucos",icon:"🥤"},
+ {id:"refrigerantes",label:"Refrigerantes",icon:"🥤"},
+ {id:"agua",label:"Água",icon:"💧"}
+];
+const categoryMap=new Map(CATEGORIES.map(c=>[c.id,c]));
+const categoryLabel=Object.fromEntries(CATEGORIES.map(c=>[c.id,c.label.toLocaleUpperCase("pt-BR")]));
+function renderFilters(){
+ $("#category-filters").innerHTML=CATEGORIES.map(c=>
+ '<button class="filter'+(c.id===activeCategory?" selected":"")+'" type="button" data-category="'+c.id+'" aria-pressed="'+String(c.id===activeCategory)+'">'+
+ '<span aria-hidden="true">'+c.icon+'</span> '+esc(c.label)+' <span class="filter-count">'+(c.id==="todos"?MENU.length:MENU.filter(p=>p.category===c.id).length)+'</span></button>'
+ ).join("");
+}
 const getSaved=()=>{try{const data=JSON.parse(localStorage.getItem(KEY)||"{}");return data&&typeof data==="object"&&!Array.isArray(data)?data:{}}catch{return {}}};
 let cart={};
 for(const [id,quantity] of Object.entries(getSaved())){
@@ -35,18 +53,24 @@ function cardImage(p){
  return '<span class="product-emoji" role="img" aria-label="Ícone ilustrativo">'+(icons[p.icon]||"🍽️")+'</span>';
 }
 function render(){
- const list=MENU.filter(p=>(activeCategory==="todos"||p.section===activeCategory)&&normalize(p.name+" "+p.description).includes(normalize(query)));
- $("#count-all").textContent="("+MENU.length+")";
- $("#result-count").textContent=list.length+" item"+(list.length===1?"":"s")+" • "+(activeCategory==="todos"?"Catálogo completo":categoryLabel[activeCategory]);
+ const list=MENU.filter(p=>(activeCategory==="todos"||p.category===activeCategory)&&normalize(p.name+" "+p.description).includes(normalize(query)));
+ $("#result-count").textContent=list.length+" item"+(list.length===1?"":"s")+" • "+(activeCategory==="todos"?"Todas as categorias":categoryMap.get(activeCategory)?.label||"Cardápio");
  $$(".filter").forEach(btn=>{const selected=btn.dataset.category===activeCategory;btn.classList.toggle("selected",selected);btn.setAttribute("aria-pressed",String(selected))});
- $("#products").innerHTML=list.length?list.map(p=>
+ const card=p=>
   '<article class="product-card">'+
-   '<div class="product-visual">'+cardImage(p)+'<span class="product-tag">'+esc(categoryLabel[p.section])+'</span></div>'+
-   '<div class="product-body"><h3>'+esc(p.name)+'</h3>'+
+   '<div class="product-visual">'+cardImage(p)+'<span class="product-tag">'+esc(categoryLabel[p.category])+'</span></div>'+
+   '<div class="product-body"><h4>'+esc(p.name)+'</h4>'+
    '<p>'+esc(p.description||"Detalhes disponíveis mediante confirmação.")+'</p>'+
    '<div class="product-foot"><strong class="product-price">'+money(p.price)+'</strong>'+
-   '<button type="button" class="add" data-add="'+p.id+'" aria-label="Adicionar '+esc(p.name)+' à sacola">+</button></div></div>'+
-  '</article>').join(""):'<div class="empty">Nenhum item encontrado. Experimente outra palavra ou escolha “Tudo”.</div>';
+   '<button type="button" class="add" data-add="'+esc(p.id)+'" aria-label="Adicionar '+esc(p.name)+' à sacola">+</button></div></div>'+
+  '</article>';
+ const groups=CATEGORIES.filter(c=>c.id!=="todos"&&(activeCategory==="todos"||activeCategory===c.id))
+   .map(c=>({...c,items:list.filter(p=>p.category===c.id)})).filter(c=>c.items.length);
+ $("#products").innerHTML=list.length?groups.map(c=>
+  '<h3 class="category-heading"><span class="category-heading-icon" aria-hidden="true">'+c.icon+'</span><span>'+esc(c.label)+
+  '<small>'+c.items.length+' '+(c.items.length===1?"opção":"opções")+'</small></span></h3>'+
+  c.items.map(card).join("")
+ ).join(""):'<div class="empty">Nenhum item encontrado. Experimente outra palavra ou escolha “Todos”.</div>';
 }
 function renderCart(){
  const selected=MENU.filter(p=>cart[p.id]>0);
@@ -161,5 +185,5 @@ if("IntersectionObserver" in window){
  ["inicio","cardapio","contato"].forEach(id=>{const el=document.getElementById(id);if(el)observer.observe(el)});
 }
 $("#address").required=true;
-activateReveals();render();renderCart();setBar("inicio");
+renderFilters();activateReveals();render();renderCart();setBar("inicio");
 })();

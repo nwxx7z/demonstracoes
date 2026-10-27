@@ -1,4 +1,4 @@
-/* Transcrição de 54 entradas legíveis do vídeo fornecido. Reticências assinalam descrições truncadas na filmagem. */
+/* Catálogo do vídeo fornecido, 54 entradas. Campos category organizam a experiência; section preserva grupo original. Reticências sinalizam descrição cortada. */
 window.RECHEADA_MENU=[
   {
     "id": "big-rechy",
@@ -6,7 +6,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão bola, ovo, filé de carne…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "sanduiches"
   },
   {
     "id": "gulositos",
@@ -14,7 +15,8 @@ window.RECHEADA_MENU=[
     "price": 20,
     "section": "comidas",
     "description": "Pão bola, 2 ovos, 2 queijos…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "sanduiches"
   },
   {
     "id": "bicho-doido",
@@ -22,7 +24,8 @@ window.RECHEADA_MENU=[
     "price": 19,
     "section": "comidas",
     "description": "Pão gourmet, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "cachorro-quente",
@@ -30,7 +33,8 @@ window.RECHEADA_MENU=[
     "price": 13,
     "section": "comidas",
     "description": "Pão seda prensado, salsicha…",
-    "icon": "hotdog"
+    "icon": "hotdog",
+    "category": "cachorros-quentes"
   },
   {
     "id": "passaporte-carne",
@@ -38,7 +42,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão seda, salsicha, carne…",
-    "icon": "hotdog"
+    "icon": "hotdog",
+    "category": "passaportes"
   },
   {
     "id": "file-frango",
@@ -46,7 +51,8 @@ window.RECHEADA_MENU=[
     "price": 17,
     "section": "comidas",
     "description": "Pão bola, ovo, frango…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "big-burguer-duplo",
@@ -54,7 +60,8 @@ window.RECHEADA_MENU=[
     "price": 24,
     "section": "comidas",
     "description": "Pão gourmet, 2 hambúrgueres…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "brutos-burguer",
@@ -62,7 +69,8 @@ window.RECHEADA_MENU=[
     "price": 30,
     "section": "comidas",
     "description": "Pão gourmet, 3 hambúrgueres…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "big-burguer",
@@ -70,7 +78,8 @@ window.RECHEADA_MENU=[
     "price": 20,
     "section": "comidas",
     "description": "Pão gourmet, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "tentacao",
@@ -78,7 +87,8 @@ window.RECHEADA_MENU=[
     "price": 29,
     "section": "comidas",
     "description": "Pão gourmet, 2 hambúrgueres…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "beirute",
@@ -86,7 +96,8 @@ window.RECHEADA_MENU=[
     "price": 27,
     "section": "comidas",
     "description": "Pão gourmet, queijo coalho…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "supremo-burguer",
@@ -94,7 +105,8 @@ window.RECHEADA_MENU=[
     "price": 25,
     "section": "comidas",
     "description": "Pão gourmet, ovo, 2 hambúrgueres…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "polemico",
@@ -102,7 +114,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão gourmet, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "parasita",
@@ -110,7 +123,8 @@ window.RECHEADA_MENU=[
     "price": 13,
     "section": "comidas",
     "description": "Pão gourmet, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "gulosao",
@@ -118,7 +132,8 @@ window.RECHEADA_MENU=[
     "price": 21,
     "section": "comidas",
     "description": "Pão gourmet, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "dorinho",
@@ -126,7 +141,8 @@ window.RECHEADA_MENU=[
     "price": 19,
     "section": "comidas",
     "description": "Pão gourmet, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "misto",
@@ -134,7 +150,8 @@ window.RECHEADA_MENU=[
     "price": 7,
     "section": "comidas",
     "description": "Pão bola, presunto, queijo…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "americano",
@@ -142,7 +159,8 @@ window.RECHEADA_MENU=[
     "price": 10,
     "section": "comidas",
     "description": "Pão bola, ovo, queijo, presunto…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "minuano",
@@ -150,7 +168,8 @@ window.RECHEADA_MENU=[
     "price": 13,
     "section": "comidas",
     "description": "Pão bola, ovo, queijo, presunto…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "x-burguer",
@@ -158,7 +177,8 @@ window.RECHEADA_MENU=[
     "price": 11,
     "section": "comidas",
     "description": "Pão bola, hambúrguer, queijo…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "x-bacon",
@@ -166,7 +186,8 @@ window.RECHEADA_MENU=[
     "price": 14,
     "section": "comidas",
     "description": "Pão bola, bacon, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "x-burguer-duplo",
@@ -174,7 +195,8 @@ window.RECHEADA_MENU=[
     "price": 16,
     "section": "comidas",
     "description": "Pão bola, 2x mussarela, 2x…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "x-burguer-especial",
@@ -182,7 +204,8 @@ window.RECHEADA_MENU=[
     "price": 13,
     "section": "comidas",
     "description": "Pão bola, 2x hambúrguer, 2x…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "maluquinho",
@@ -190,7 +213,8 @@ window.RECHEADA_MENU=[
     "price": 16,
     "section": "comidas",
     "description": "Pão bola, ovo, frango, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "cala-frango",
@@ -198,7 +222,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão bola, hambúrguer, calabresa…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "x-frango",
@@ -206,7 +231,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão bola, ovo, frango, barbecue…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "big-kids",
@@ -214,7 +240,8 @@ window.RECHEADA_MENU=[
     "price": 12,
     "section": "comidas",
     "description": "Pão bola, hambúrguer, catupiry…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "cala-carne",
@@ -222,7 +249,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão bola, filé de carne, calabresa…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "x-calabresa",
@@ -230,7 +258,8 @@ window.RECHEADA_MENU=[
     "price": 14,
     "section": "comidas",
     "description": "Pão bola, ovo, calabresa, queijo…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "cala-burguer",
@@ -238,7 +267,8 @@ window.RECHEADA_MENU=[
     "price": 15,
     "section": "comidas",
     "description": "Pão bola, calabresa, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "x-mega",
@@ -246,7 +276,8 @@ window.RECHEADA_MENU=[
     "price": 14,
     "section": "comidas",
     "description": "Pão bola, calabresa, frango…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "file-especial-frango",
@@ -254,7 +285,8 @@ window.RECHEADA_MENU=[
     "price": 19,
     "section": "comidas",
     "description": "Pão bola, ovo, frango…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "file-carne",
@@ -262,7 +294,8 @@ window.RECHEADA_MENU=[
     "price": 17,
     "section": "comidas",
     "description": "Pão bola, ovo, filé de carne…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "file-especial-carne",
@@ -270,7 +303,8 @@ window.RECHEADA_MENU=[
     "price": 19,
     "section": "comidas",
     "description": "Pão bola, ovo, filé de carne…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "file-duplo",
@@ -278,7 +312,8 @@ window.RECHEADA_MENU=[
     "price": 19,
     "section": "comidas",
     "description": "Pão bola, ovo, frango…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "mistao",
@@ -286,7 +321,8 @@ window.RECHEADA_MENU=[
     "price": 12,
     "section": "comidas",
     "description": "Pão bola, calabresa, cebola…",
-    "icon": "sandwich"
+    "icon": "sandwich",
+    "category": "sanduiches"
   },
   {
     "id": "hamburguer",
@@ -294,7 +330,8 @@ window.RECHEADA_MENU=[
     "price": 9,
     "section": "comidas",
     "description": "Pão bola, 2x mussarela, hambúrguer…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "x-tudo",
@@ -302,7 +339,8 @@ window.RECHEADA_MENU=[
     "price": 23,
     "section": "comidas",
     "description": "Pão bola, ovo, frango…",
-    "icon": "burger"
+    "icon": "burger",
+    "category": "hamburgueres"
   },
   {
     "id": "batata-pequena",
@@ -310,7 +348,8 @@ window.RECHEADA_MENU=[
     "price": 13,
     "section": "acompanhamentos",
     "description": "Porção de batata frita pequena.",
-    "icon": "fries"
+    "icon": "fries",
+    "category": "acompanhamentos"
   },
   {
     "id": "batata-grande",
@@ -318,7 +357,8 @@ window.RECHEADA_MENU=[
     "price": 20,
     "section": "acompanhamentos",
     "description": "Porção de batata frita grande.",
-    "icon": "fries"
+    "icon": "fries",
+    "category": "acompanhamentos"
   },
   {
     "id": "suco-abacaxi",
@@ -326,7 +366,8 @@ window.RECHEADA_MENU=[
     "price": 5,
     "section": "bebidas",
     "description": "",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-laranja",
@@ -334,7 +375,8 @@ window.RECHEADA_MENU=[
     "price": 7,
     "section": "bebidas",
     "description": "",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-maracuja",
@@ -342,7 +384,8 @@ window.RECHEADA_MENU=[
     "price": 7,
     "section": "bebidas",
     "description": "Com leite ou com água.",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-goiaba-a",
@@ -350,7 +393,8 @@ window.RECHEADA_MENU=[
     "price": 6,
     "section": "bebidas",
     "description": "Com água ou leite.",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-caju",
@@ -358,7 +402,8 @@ window.RECHEADA_MENU=[
     "price": 5,
     "section": "bebidas",
     "description": "",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-goiaba-b",
@@ -366,7 +411,8 @@ window.RECHEADA_MENU=[
     "price": 6,
     "section": "bebidas",
     "description": "Opção repetida no vídeo; com água ou leite.",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-graviola",
@@ -374,7 +420,8 @@ window.RECHEADA_MENU=[
     "price": 6,
     "section": "bebidas",
     "description": "Com água ou leite.",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "suco-caja",
@@ -382,7 +429,8 @@ window.RECHEADA_MENU=[
     "price": 6,
     "section": "bebidas",
     "description": "",
-    "icon": "juice"
+    "icon": "juice",
+    "category": "sucos"
   },
   {
     "id": "refrigerante-lata",
@@ -390,7 +438,8 @@ window.RECHEADA_MENU=[
     "price": 6,
     "section": "bebidas",
     "description": "",
-    "icon": "soda"
+    "icon": "soda",
+    "category": "refrigerantes"
   },
   {
     "id": "agua-500",
@@ -398,7 +447,8 @@ window.RECHEADA_MENU=[
     "price": 3,
     "section": "bebidas",
     "description": "",
-    "icon": "water"
+    "icon": "water",
+    "category": "agua"
   },
   {
     "id": "refrigerante-2l",
@@ -406,7 +456,8 @@ window.RECHEADA_MENU=[
     "price": 14,
     "section": "bebidas",
     "description": "",
-    "icon": "soda"
+    "icon": "soda",
+    "category": "refrigerantes"
   },
   {
     "id": "guarina",
@@ -414,7 +465,8 @@ window.RECHEADA_MENU=[
     "price": 3,
     "section": "bebidas",
     "description": "",
-    "icon": "soda"
+    "icon": "soda",
+    "category": "refrigerantes"
   },
   {
     "id": "schweppes",
@@ -422,7 +474,8 @@ window.RECHEADA_MENU=[
     "price": 6,
     "section": "bebidas",
     "description": "",
-    "icon": "soda"
+    "icon": "soda",
+    "category": "refrigerantes"
   },
   {
     "id": "refrigerante-1l",
@@ -430,6 +483,7 @@ window.RECHEADA_MENU=[
     "price": 9,
     "section": "bebidas",
     "description": "",
-    "icon": "soda"
+    "icon": "soda",
+    "category": "refrigerantes"
   }
 ];

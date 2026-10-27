@@ -36,7 +36,7 @@
      <h1><span class="kinetic"><span>SUA FOME</span></span><span class="kinetic"><span class="outline-text">MERECE</span></span><span class="kinetic"><span class="yellow">RESPEITO.</span></span></h1>
      <p>O lanche que rouba a cena. Uma nova experiência de cardápio para a <strong>Recheada Burguer</strong> — rápida, ousada e feita para dar água na boca.</p>
      <div class="hero-actions"><a href="#cardapio" class="btn btn-yellow">EXPLORAR CARDÁPIO <span>↗</span></a><button class="btn btn-ghost" type="button" data-open-cart>MINHA SACOLA <span>▣</span></button></div>
-     <div class="hero-foot"><div><strong>54</strong><small>Entradas do catálogo</small></div><span class="foot-rule"></span><div><strong>3</strong><small>Seções para escolher</small></div></div>
+     <div class="hero-foot"><div><strong>54</strong><small>Entradas do catálogo</small></div><span class="foot-rule"></span><div><strong>8</strong><small>Categorias do cardápio</small></div></div>
     </div>
     <div class="hero-art" aria-label="Ilustração estilizada de hambúrguer em dourado e preto">
      <div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div>
@@ -65,15 +65,10 @@
      <span class="eyebrow gold"><i></i> O CATÁLOGO RECHEADO</span>
      <img class="menu-logo" src="./assets/logo.svg" alt="Recheada Burguer — marca em preto, branco e amarelo" loading="lazy">
      <h2>ESCOLHE O QUE <em>TE CHAMA.</em></h2>
-     <p>Separei os itens do vídeo para você encontrar seu lanche, bebida ou acompanhamento favorito sem ficar rolando uma lista infinita.</p>
+     <p>Separei o cardápio por tipos de produtos: hambúrgueres, passaportes, cachorros-quentes, sanduíches, acompanhamentos e bebidas. Encontre tudo mais rápido.</p>
     </div>
     <div class="menu-tools">
-     <div class="filter-row" role="group" aria-label="Selecionar seção do cardápio">
-      <button class="filter selected" type="button" data-category="todos" aria-pressed="true">Tudo <span id="count-all"></span></button>
-      <button class="filter" type="button" data-category="comidas" aria-pressed="false">🍔 Comidas</button>
-      <button class="filter" type="button" data-category="bebidas" aria-pressed="false">🥤 Bebidas</button>
-      <button class="filter" type="button" data-category="acompanhamentos" aria-pressed="false">🍟 Acompanhamentos</button>
-     </div>
+     <div class="filter-row" id="category-filters" role="group" aria-label="Selecionar categoria do cardápio"></div>
      <label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Buscar por nome ou ingrediente..." aria-label="Pesquisar no cardápio" autocomplete="off"></label>
     </div>
     <div class="catalog-head"><span id="result-count">Carregando...</span><button type="button" id="reset" class="reset">Limpar filtros ↺</button></div>
