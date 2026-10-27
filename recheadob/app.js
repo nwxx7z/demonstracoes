@@ -14,8 +14,8 @@ const icons={burger:"🍔",sandwich:"🥪",hotdog:"🌭",fries:"🍟",juice:"�
 const CATEGORIES=[
  {id:"todos",label:"Todos",icon:"✳"},
  {id:"hamburgueres",label:"Hambúrgueres",icon:"🍔"},
- {id:"passaportes",label:"Passaportes",icon:"🥪"},
- {id:"cachorros-quentes",label:"Cachorros-quentes",icon:"🌭"},
+ {id:"passaportes",label:"Passaportes e Cachorros-quentes",icon:"🌭"},
+
  {id:"sanduiches",label:"Sanduíches e filés",icon:"🥪"},
  {id:"acompanhamentos",label:"Acompanhamentos",icon:"🍟"},
  {id:"sucos",label:"Sucos",icon:"🥤"},
