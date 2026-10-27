@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" role="img" aria-labelledby="title desc"><title id="title">O Buteco — Choperia e Pizzaria</title><desc id="desc">Marca conceitual vermelha, amarela e escura em forma de losango.</desc><defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffec89"/><stop offset=".54" stop-color="#ffd54e"/><stop offset="1" stop-color="#be7d17"/></linearGradient><linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d64230"/><stop offset="1" stop-color="#78221e"/></linearGradient><filter id="ds"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0a0908" flood-opacity=".42"/></filter></defs><g filter="url(#ds)"><path d="M65 124 162 35h332l90 89-90 91H162Z" fill="url(#red)" stroke="#f4c04d" stroke-width="7"/><path d="M104 125 180 66h299l66 59-66 59H180Z" fill="url(#gold)" stroke="#8e3722" stroke-width="8"/><path d="M162 88h332M163 160h332" stroke="#732c23" stroke-width="3" opacity=".45"/><text x="325" y="118" text-anchor="middle" font-family="Impact,Arial Black,Arial,sans-serif" font-size="43" font-weight="900" fill="#7c221b" letter-spacing="4">CHOPERIA &amp; PIZZARIA</text><text x="323" y="161" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="82" font-weight="900" fill="#882e22" stroke="#fff0ac" stroke-width="1" paint-order="stroke">O Buteco</text><path d="M183 193h285" stroke="#ffdc6e" stroke-width="5" stroke-linecap="round"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" role="img" aria-labelledby="title desc">
+<title id="title">O Buteco — Choperia e Pizzaria</title>
+<desc id="desc">Logo horizontal ajustada para leitura no cabeçalho: losango vermelho e amarelo, O Buteco em destaque, com subtítulo Choperia e Pizzaria.</desc>
+<defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1a1"/><stop offset=".55" stop-color="#ffdb5d"/><stop offset="1" stop-color="#df9d22"/></linearGradient>
+<linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d94a35"/><stop offset="1" stop-color="#80241b"/></linearGradient>
+<filter id="shadow" x="-20%" y="-30%" width="140%" height="175%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#060403" flood-opacity=".55"/></filter>
+</defs>
+<g filter="url(#shadow)">
+<path d="M12 110 102 18H497l91 92-91 92H102Z" fill="url(#red)" stroke="#f1c45b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M41 110 116 43H485l74 67-74 67H116Z" fill="url(#gold)" stroke="#7c2c20" stroke-width="6" stroke-linejoin="round"/>
+<path d="M135 51H463" stroke="#fff5c0" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+<text x="300" y="79" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="900" letter-spacing="3.5" fill="#62221a" text-anchor="middle" textLength="328" lengthAdjust="spacingAndGlyphs">CHOPERIA • PIZZARIA</text>
+<text x="300" y="152" font-family="Georgia,'Times New Roman',serif" font-size="81" font-style="italic" font-weight="900" fill="#84291f" stroke="#fff3b9" stroke-width="2.5" paint-order="stroke" text-anchor="middle" textLength="394" lengthAdjust="spacingAndGlyphs">O Buteco</text>
+<path d="M158 163Q300 176 442 163" stroke="#9c3925" stroke-width="4" stroke-linecap="round" fill="none"/>
+</g></svg>
