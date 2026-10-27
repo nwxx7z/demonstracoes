@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 98" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">O Buteco</title>
+<desc id="desc">Marca horizontal do O Buteco, com caneca de chope, letras claras, amarelo-douradas e detalhe vermelho. Adaptada para o cabeçalho.</desc>
+<defs>
+ <linearGradient id="beer" x1="0" y1="0" x2=".2" y2="1">
+  <stop stop-color="#FFF1A3"/><stop offset=".26" stop-color="#FFD351"/><stop offset="1" stop-color="#D79326"/>
+ </linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+  <stop stop-color="#FFE777"/><stop offset="1" stop-color="#E6AA32"/>
+ </linearGradient>
+</defs>
+<!-- Símbolo compacto para manter leitura no celular -->
+<path d="M11 26h48l-5 47c-.6 6-5.5 10-11.5 10H27c-5.9 0-10.9-4.2-11.5-10L11 26Z" fill="url(#beer)" stroke="#AD5C2B" stroke-width="3"/>
+<path d="M57 36h8c13 0 15 9 15 19 0 11-7 18-20 18h-5" stroke="#E5B44F" stroke-width="8" stroke-linecap="round"/>
+<path d="M10 25c-6-7-2-17 6-19 4-1 8 0 10 3 6-6 18-6 24 1 5-4 13-3 17 2 5 6 2 14-4 17-8 3-13 1-18-1-9 5-17 4-23-1-4 3-9 3-12-2Z" fill="#FFF9DF" stroke="#D5B77A" stroke-width="2"/>
+<path d="M27 41v28M40 42v25" stroke="#FFF2A2" stroke-opacity=".73" stroke-width="4" stroke-linecap="round"/>
+<path d="M7 89h71" stroke="#D13C2A" stroke-width="6" stroke-linecap="round"/>
+<!-- Wordmark redimensionado para leitura mesmo em tela estreita -->
+<text x="89" y="63" font-family="Impact,'Arial Narrow','Arial Black',sans-serif" font-size="62" font-weight="900" letter-spacing="-1" textLength="266" lengthAdjust="spacingAndGlyphs" fill="#FFE16C">O BUTECO</text>
+<path d="M93 70h262" stroke="#B43727" stroke-width="4" stroke-linecap="round"/>
+<text x="92" y="88" font-family="Arial,'DM Sans',sans-serif" font-size="14" font-weight="800" letter-spacing="2.2" textLength="260" lengthAdjust="spacingAndGlyphs" fill="#F5EADB">CHOPERIA &amp; PIZZARIA</text>
+</svg>
