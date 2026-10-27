@@ -6,6 +6,9 @@ const brl=n=>Number(n).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=s=>String(s??"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const map=new Map(P.map(p=>[p.id,p])),icons=Object.fromEntries(sections.map(x=>[x[0],x[2]]));
+const pizzaFlavors=P.filter(p=>p.category==="pizzas"&&p.prices);
+const pizzaSelected={P:pizzaFlavors[0]?.id,G:pizzaFlavors[0]?.id};
+let selectedPizzaSize="P";
 let category="all",query="",chosen=null,quantity=1,activeDrawer="",lastFocus=null,activeNav="inicio",toastTimeout;
 let cart;try{cart=JSON.parse(localStorage.getItem(KEY)||"[]")}catch{cart=[]}
 if(!Array.isArray(cart))cart=[];
@@ -20,25 +23,48 @@ function badge(){$$("[data-cart-count]").forEach(x=>x.textContent=count())}
 function picture(p){if(p.image)return '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" loading="lazy">';if(["pizzas","sanduiches"].includes(p.category))return '<img src="./assets/hero.svg" alt="Ilustração gastronômica" loading="lazy">';return '<span class="art-emoji" role="img" aria-label="Ícone do item">'+icons[p.category]+'</span>'}
 function render(){
  const found=P.filter(p=>(category==="all"||p.category===category)&&norm(p.name+" "+p.description).includes(norm(query)));
- $("#filters").innerHTML='<button type="button" class="filter'+(category==="all"?" active":"")+'" data-section="all">✳ Todos <em>'+P.length+'</em></button>'+sections.map(([id,name,icon])=>'<button type="button" class="filter'+(category===id?" active":"")+'" data-section="'+id+'">'+icon+" "+esc(name)+' <em>'+P.filter(p=>p.category===id).length+"</em></button>").join("");
- $("#result-count").textContent=found.length+" produto"+(found.length===1?"":"s")+" encontrados";
- const card=p=>'<article class="product-card"><div class="art">'+picture(p)+'<span class="art-label">'+esc(sections.find(s=>s[0]===p.category)?.[1]||p.category)+'</span></div><div class="product-text"><h3>'+esc(p.name)+'</h3><p>'+esc(p.description||"Toque para escolher e personalizar.")+'</p><div class="price-actions"><strong>'+(p.prices?"desde "+brl(p.prices.P):brl(p.price))+'</strong><button type="button" data-product="'+esc(p.id)+'" aria-label="Personalizar '+esc(p.name)+'">+</button></div></div></article>';
+ if(query.trim()){
+  const match=found.find(p=>p.category==="pizzas");
+  if(match){pizzaSelected.P=match.id;pizzaSelected.G=match.id}
+ }
+ $("#filters").innerHTML='<button type="button" class="filter'+(category==="all"?" active":"")+'" data-section="all" aria-pressed="'+String(category==="all")+'">✳ Todos <em>'+P.length+'</em></button>'+sections.map(([id,name,icon])=>'<button type="button" class="filter'+(category===id?" active":"")+'" data-section="'+id+'" aria-pressed="'+String(category===id)+'">'+icon+" "+esc(name)+' <em>'+(id==="pizzas"?pizzaFlavors.length:P.filter(p=>p.category===id).length)+"</em></button>").join("");
+ $("#result-count").textContent=category==="pizzas"&&found.length?pizzaFlavors.length+" sabores • escolha Pequena ou Grande":found.length+" opção"+(found.length===1?"":"ões")+" do cardápio";
+ const regularCard=p=>'<article class="product-card"><div class="art">'+picture(p)+'<span class="art-label">'+esc(sections.find(s=>s[0]===p.category)?.[1]||p.category)+'</span></div><div class="product-text"><h3>'+esc(p.name)+'</h3><p>'+esc(p.description||"Toque para escolher e personalizar.")+'</p><div class="price-actions"><strong>'+brl(p.price)+'</strong><button type="button" data-product="'+esc(p.id)+'" aria-label="Personalizar '+esc(p.name)+'">+</button></div></div></article>';
+ const pizzaCard=size=>{
+  const p=map.get(pizzaSelected[size])||pizzaFlavors[0];
+  if(!p)return "";
+  const title=size==="P"?"Pizza Pequena":"Pizza Grande";
+  const options=pizzaFlavors.map(f=>'<option value="'+esc(f.id)+'"'+(f.id===p.id?' selected':'')+'>'+esc(f.name)+' — '+brl(f.prices[size])+'</option>').join("");
+  return '<article class="product-card pizza-choice-card">'+
+   '<div class="art pizza-choice-art"><img src="./assets/hero.svg" alt="Ilustração de pizza" loading="lazy"><span class="art-label">'+(size==="P"?"TAMANHO P":"TAMANHO G")+'</span></div>'+
+   '<div class="product-text pizza-choice-body"><h3>'+title+'</h3><p class="pizza-subtitle">Escolha um sabor. O preço muda automaticamente.</p>'+
+   '<label class="pizza-flavor-label" for="pizza-flavor-'+size+'">Sabor da pizza</label>'+
+   '<select class="pizza-flavor-select" id="pizza-flavor-'+size+'" data-pizza-flavor="'+size+'" aria-label="Selecione o sabor da '+title+'">'+options+'</select>'+
+   '<p class="pizza-ingredients" data-pizza-description>'+esc(p.description||"")+'</p>'+
+   '<div class="pizza-price-label">Preço do sabor selecionado</div>'+
+   '<div class="price-actions pizza-action"><strong data-pizza-price>'+brl(p.prices[size])+'</strong>'+
+   '<button type="button" class="pizza-continue" data-pizza-size="'+size+'" aria-label="Continuar com '+title+' e escolher borda">ESCOLHER BORDA E PEDIR ↗</button></div></div></article>';
+ };
  const groups=sections.map(([id,label,icon])=>({id,label,icon,items:found.filter(p=>p.category===id)})).filter(g=>g.items.length);
- $("#products").innerHTML=found.length?groups.map(g=>'<h3 class="group-title"><span class="group-icon">'+g.icon+'</span><span>'+esc(g.label)+'<small>'+g.items.length+' itens</small></span></h3>'+g.items.map(card).join("")).join(""):'<div class="empty">Nenhum produto encontrado. Experimente outra busca.</div>';
+ $("#products").innerHTML=found.length?groups.map(g=>'<h3 class="group-title"><span class="group-icon">'+g.icon+'</span><span>'+esc(g.label)+'<small>'+(g.id==="pizzas"?pizzaFlavors.length+" sabores • escolha Pequena ou Grande":g.items.length+" itens")+'</small></span></h3>'+(g.id==="pizzas"?pizzaCard("P")+pizzaCard("G"):g.items.map(regularCard).join(""))).join(""):'<div class="empty">Nenhum produto encontrado. Experimente outra busca.</div>';
 }
 function show(kind){lastFocus=document.activeElement;activeDrawer=kind;$("#overlay").hidden=false;document.body.classList.add("drawer-open");["product","cart"].forEach(k=>{const e=$("#"+k+"-drawer");e.classList.toggle("open",k===kind);e.setAttribute("aria-hidden",String(k!==kind))});if(kind==="cart"){renderCart();nav("sacola")}$("#"+kind+"-drawer .close").focus()}
 function close(){["product","cart"].forEach(k=>{const e=$("#"+k+"-drawer");e.classList.remove("open");e.setAttribute("aria-hidden","true")});$("#overlay").hidden=true;document.body.classList.remove("drawer-open");activeDrawer="";nav(activeNav==="sacola"?"inicio":activeNav);lastFocus?.focus?.()}
 function chosenExtras(){return $$(".extra:checked").map(e=>({name:e.value,price:Number(e.dataset.price)}))}
 function eachPrice(){
  if(!chosen)return 0;
- const sz=$('input[name="size"]:checked')?.value||"P",base=chosen.prices?chosen.prices[sz]:chosen.price;
+ const base=chosen.prices?chosen.prices[selectedPizzaSize]:chosen.price;
  return base+(chosen.prices&&$('input[name="crust"]:checked')?.value?8:0)+chosenExtras().reduce((s,x)=>s+x.price,0);
 }
 function itemTotal(){$("#item-total").textContent=brl(eachPrice()*quantity)}
-function choose(id){
+function choose(id,size="P"){
  const p=map.get(id);if(!p)return;
- chosen=p;quantity=1;$("#quantity").textContent="1";$("#product-title").textContent=p.name;$("#detail-icon").textContent=icons[p.category];$("#detail-desc").textContent=p.description||"Personalize seu produto.";$("#item-note").value="";
- $("#size-options").innerHTML=p.prices?'<h3 class="option-heading">Tamanho da pizza</h3><div class="option-pills"><label><input type="radio" name="size" value="P" checked> Pequena — '+brl(p.prices.P)+'</label><label><input type="radio" name="size" value="G"> Grande — '+brl(p.prices.G)+'</label></div><h3 class="option-heading">Borda recheada (opcional)</h3><div class="option-pills"><label><input name="crust" type="radio" value="" checked> Sem borda</label><label><input name="crust" type="radio" value="Cheddar"> Cheddar +R$ 8,00</label><label><input name="crust" type="radio" value="Catupiry"> Catupiry +R$ 8,00</label></div>':"";
+ chosen=p;selectedPizzaSize=p.prices?size:"P";quantity=1;$("#quantity").textContent="1";
+ $("#product-title").textContent=p.prices?"Pizza "+(size==="P"?"Pequena":"Grande")+" • "+p.name:p.name;
+ $("#detail-icon").textContent=icons[p.category];$("#detail-desc").textContent=p.description||"Personalize seu produto.";$("#item-note").value="";
+ $("#size-options").innerHTML=p.prices?
+ '<h3 class="option-heading">Tamanho e sabor selecionados</h3><div class="pizza-selected"><strong>🍕 Pizza '+(size==="P"?"Pequena (P)":"Grande (G)")+'</strong><span>'+esc(p.name)+' — '+brl(p.prices[size])+'</span></div>'+
+ '<h3 class="option-heading">Quer adicionar borda recheada?</h3><div class="option-pills"><label><input name="crust" type="radio" value="" checked> Sem borda</label><label><input name="crust" type="radio" value="Cheddar"> Cheddar +'+brl(8)+'</label><label><input name="crust" type="radio" value="Catupiry"> Catupiry +'+brl(8)+'</label></div>':"";
  const flavor=/^(Suco copo|Jarra de suco|Pastéis 170g|Nevada com fruta)/i.test(p.name);
  $("#flavor-options").innerHTML=flavor?'<h3 class="option-heading">Selecione o sabor</h3><label class="form-label">Sabor<select id="flavor" required><option value="">Escolha uma opção</option>'+(p.name.startsWith("Pastéis")?["Carne de sol","Frango","Queijo","Misto","Pizza","Calabresa"]:D.flavors).map(f=>'<option>'+esc(f)+'</option>').join("")+'</select></label>':"";
  $("#extras-options").innerHTML=p.category==="sanduiches"?'<h3 class="option-heading">Adicionais (opcionais)</h3><div class="extra-pills">'+D.extras.map(([name,price])=>'<label><input type="checkbox" class="extra" value="'+esc(name)+'" data-price="'+price+'">'+esc(name)+' +'+brl(price)+'</label>').join("")+'</div>':"";
@@ -47,7 +73,7 @@ function choose(id){
 function addProduct(){
  if(!chosen)return;
  if($("#flavor")&&!$("#flavor").value){$("#flavor").reportValidity();return}
- const size=chosen.prices?$('input[name="size"]:checked')?.value||"P":"",crust=$('input[name="crust"]:checked')?.value||"",flavor=$("#flavor")?.value||"",extras=chosenExtras(),note=$("#item-note").value.trim(),unitPrice=eachPrice();
+ const size=chosen.prices?selectedPizzaSize:"",crust=$('input[name="crust"]:checked')?.value||"",flavor=$("#flavor")?.value||"",extras=chosenExtras(),note=$("#item-note").value.trim(),unitPrice=eachPrice();
  const key=JSON.stringify([chosen.id,size,crust,flavor,extras.map(x=>x.name).sort(),note]);
  const old=cart.find(x=>x.key===key);
  if(old)old.qty=Math.min(99,old.qty+quantity);else cart.push({key,id:chosen.id,name:chosen.name,size,crust,flavor,extras,note,unitPrice,qty:quantity});
@@ -78,6 +104,7 @@ function checkout(e){
  window.location.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(lines);
 }
 document.addEventListener("click",e=>{
+ const pizza=e.target.closest("[data-pizza-size]");if(pizza){const size=pizza.dataset.pizzaSize;return choose(pizzaSelected[size],size)}
  const product=e.target.closest("[data-product]");if(product)return choose(product.dataset.product);
  if(e.target.closest("[data-cart-open]"))return show("cart");
  if(e.target.closest("[data-close]")||e.target===$("#overlay"))return close();
@@ -88,6 +115,17 @@ document.addEventListener("click",e=>{
  const f=e.target.closest("[data-section]");if(f){category=f.dataset.section;return render()}
  if(e.target.closest("#reset")){category="all";query="";$("#search").value="";return render()}
  const n=e.target.closest("[data-nav]");if(n)nav(n.dataset.nav);
+});
+document.addEventListener("change",e=>{
+ const select=e.target.closest("[data-pizza-flavor]");
+ if(!select)return;
+ const size=select.dataset.pizzaFlavor,p=map.get(select.value);
+ if(!["P","G"].includes(size)||!p||!p.prices)return;
+ pizzaSelected[size]=p.id;
+ const card=select.closest(".pizza-choice-card");
+ if(!card)return;
+ card.querySelector("[data-pizza-price]").textContent=brl(p.prices[size]);
+ card.querySelector("[data-pizza-description]").textContent=p.description||"";
 });
 $("#search").addEventListener("input",e=>{query=e.target.value;render()});
 $("#custom-form").addEventListener("submit",e=>{e.preventDefault();addProduct()});
