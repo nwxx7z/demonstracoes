@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#111213">
+ <meta name="description" content="Recheada Burguer — demonstração moderna de cardápio digital, com produtos, carrinho e atendimento pelo WhatsApp.">
+ <title>Recheada Burguer | A fome pede mais</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="./style.css">
+ <script src="./catalog.js" defer></script><script src="./app.js" defer></script>
+</head>
+<body>
+ <a href="#cardapio" class="skip-link">Pular para o cardápio</a>
+ <div class="demo-bar"><span class="pulse-dot"></span> DEMONSTRAÇÃO VISUAL • PRODUTOS E PREÇOS TRANSCRITOS DO VÍDEO • CONTATO DO DESENVOLVEDOR</div>
+ <header class="top-header">
+  <div class="wrap nav">
+   <a class="brand" href="#inicio" aria-label="Recheada Burguer — voltar ao início">
+    <img src="./assets/logo.svg" alt="Logo Recheada Burguer" width="165" height="63">
+   </a>
+   <nav class="desktop-nav" aria-label="Menu principal">
+    <a href="#inicio">Início</a><a href="#destaques">Destaques</a><a href="#cardapio">Cardápio</a><a href="#contato">Contato</a>
+   </nav>
+   <div class="nav-end">
+    <a class="nav-wa" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Gostei%20da%20demonstra%C3%A7%C3%A3o%20Recheada%20Burguer." target="_blank" rel="noopener noreferrer">Falar no WhatsApp ↗</a>
+    <button class="cart-trigger" type="button" data-open-cart aria-label="Abrir sacola"><span aria-hidden="true">▣</span><b data-cart-count>0</b></button>
+   </div>
+  </div>
+ </header>
+ <main>
+  <section class="hero" id="inicio">
+   <div class="hero-glow glow-1"></div><div class="hero-glow glow-2"></div>
+   <div class="wrap hero-grid">
+    <div class="hero-copy">
+     <span class="eyebrow gold"><i></i> BURGUER • SABOR • ATITUDE</span>
+     <h1><span class="kinetic"><span>SUA FOME</span></span><span class="kinetic"><span class="outline-text">MERECE</span></span><span class="kinetic"><span class="yellow">RESPEITO.</span></span></h1>
+     <p>O lanche que rouba a cena. Uma nova experiência de cardápio para a <strong>Recheada Burguer</strong> — rápida, ousada e feita para dar água na boca.</p>
+     <div class="hero-actions"><a href="#cardapio" class="btn btn-yellow">EXPLORAR CARDÁPIO <span>↗</span></a><button class="btn btn-ghost" type="button" data-open-cart>MINHA SACOLA <span>▣</span></button></div>
+     <div class="hero-foot"><div><strong>54</strong><small>Entradas do catálogo</small></div><span class="foot-rule"></span><div><strong>3</strong><small>Seções para escolher</small></div></div>
+    </div>
+    <div class="hero-art" aria-label="Ilustração estilizada de hambúrguer em dourado e preto">
+     <div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div>
+     <div class="word-behind" aria-hidden="true">BURGUER</div>
+     <img class="burger-hero" src="./assets/burger-hero.svg" width="720" height="620" alt="Hambúrguer generoso ilustrado com pão dourado, queijo, carne e vegetais" fetchpriority="high">
+     <div class="floating-glass glass-a"><span class="bolt">✦</span><div><strong>MODO FOME ON</strong><small>Seu lanche, sua escolha.</small></div></div>
+     <div class="floating-glass glass-b"><span>★</span><div><strong>MAIS RECHEIO</strong><small>Mais vontade de pedir.</small></div></div>
+     <span class="sprinkle sprinkle-a" aria-hidden="true">✧</span><span class="sprinkle sprinkle-b" aria-hidden="true">✳</span>
+    </div>
+   </div>
+   <div class="hero-side-text" aria-hidden="true">SCROLL PARA DESCOBRIR ↓</div>
+  </section>
+  <div class="marquee" aria-hidden="true"><div>RECHEADA BURGUER ✳ LANCHE DE RESPEITO ✳ SUCOS GELADINHOS ✳ RECHEIO DE VERDADE ✳ RECHEADA BURGUER ✳ LANCHE DE RESPEITO ✳ SUCOS GELADINHOS ✳ RECHEIO DE VERDADE ✳ </div></div>
+
+  <section class="feature-section" id="destaques">
+   <div class="wrap feature-grid">
+    <article class="feature glass-card reveal"><div class="feat-symbol">◉</div><div><h2>Sabor de verdade</h2><p>Dos tradicionais aos burgers mais exagerados.</p></div></article>
+    <article class="feature glass-card reveal"><div class="feat-symbol">✳</div><div><h2>Seu pedido, seu jeito</h2><p>Explore o catálogo e monte sua sacola em segundos.</p></div></article>
+    <article class="feature glass-card reveal"><div class="feat-symbol">↗</div><div><h2>Direto no WhatsApp</h2><p>Pedido organizado em uma mensagem pronta.</p></div></article>
+   </div>
+  </section>
+
+  <section class="menu-section section" id="cardapio">
+   <div class="wrap">
+    <div class="menu-intro reveal">
+     <span class="eyebrow gold"><i></i> O CATÁLOGO RECHEADO</span>
+     <img class="menu-logo" src="./assets/logo.svg" alt="Recheada Burguer — marca em preto, branco e amarelo" loading="lazy">
+     <h2>ESCOLHE O QUE <em>TE CHAMA.</em></h2>
+     <p>Separei os itens do vídeo para você encontrar seu lanche, bebida ou acompanhamento favorito sem ficar rolando uma lista infinita.</p>
+    </div>
+    <div class="menu-tools">
+     <div class="filter-row" role="group" aria-label="Selecionar seção do cardápio">
+      <button class="filter selected" type="button" data-category="todos" aria-pressed="true">Tudo <span id="count-all"></span></button>
+      <button class="filter" type="button" data-category="comidas" aria-pressed="false">🍔 Comidas</button>
+      <button class="filter" type="button" data-category="bebidas" aria-pressed="false">🥤 Bebidas</button>
+      <button class="filter" type="button" data-category="acompanhamentos" aria-pressed="false">🍟 Acompanhamentos</button>
+     </div>
+     <label class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Buscar por nome ou ingrediente..." aria-label="Pesquisar no cardápio" autocomplete="off"></label>
+    </div>
+    <div class="catalog-head"><span id="result-count">Carregando...</span><button type="button" id="reset" class="reset">Limpar filtros ↺</button></div>
+    <div class="product-grid" id="products" aria-live="polite"></div>
+    <p class="catalog-footnote">* Preços e nomes transcritos do catálogo mostrado no vídeo enviado. Descrições com “…” estavam cortadas na gravação e exigem confirmação. As imagens são ilustrações substituíveis, não fotografias oficiais dos pratos.</p>
+   </div>
+  </section>
+
+  <section class="spotlight">
+   <div class="wrap spotlight-grid">
+    <div class="spotlight-art reveal"><div class="spotlight-circle"><img src="./assets/burger-hero.svg" alt="Ilustração de hambúrguer" loading="lazy"></div><span class="spotlight-sticker">FEITO PRA <strong>MATAR A FOME!</strong></span></div>
+    <div class="spotlight-copy reveal"><span class="eyebrow gold"><i></i> QUEM É RECHEADO SABE</span><h2>MAIS SABOR.<br><em>MENOS ENROLAÇÃO.</em></h2><p>Veja os lanches da casa, escolha suas bebidas e confira o pedido completo em uma sacola fácil de usar. Tudo com uma pegada visual única e mobile em primeiro lugar.</p><a href="#cardapio" class="btn btn-yellow">VOLTAR AO CARDÁPIO ↗</a></div>
+   </div>
+  </section>
+  <section class="contact-section section" id="contato">
+   <div class="wrap contact-panel reveal">
+    <div><span class="eyebrow gold"><i></i> GOSTOU DO CONCEITO?</span><h2>TRANSFORME VISITAS <span>EM PEDIDOS.</span></h2><p>Esta página é uma demonstração independente criada por Gunter Bauer Developer. Os botões de atendimento abrem o WhatsApp do desenvolvedor.</p></div>
+    <a class="btn btn-yellow" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Quero%20um%20site%20como%20o%20da%20demonstra%C3%A7%C3%A3o%20Recheada%20Burguer." target="_blank" rel="noopener noreferrer">FALE COMIGO NO WHATSAPP ↗</a>
+   </div>
+  </section>
+ </main>
+ <footer><div class="wrap footer-content"><img src="./assets/logo.svg" alt="Recheada Burguer" width="170" height="65" loading="lazy"><p>Site demonstrativo e independente. Pedidos, frete, horários e descrições devem ser confirmados com o estabelecimento real.</p><a href="#inicio">VOLTAR AO TOPO ↑</a></div></footer>
+
+ <nav class="mobile-homebar" aria-label="Navegação rápida mobile">
+  <span class="homebar-active" aria-hidden="true"></span>
+  <a class="home-link active" data-nav="inicio" href="#inicio" aria-current="location"><span aria-hidden="true">⌂</span><small>Início</small></a>
+  <a class="home-link" data-nav="cardapio" href="#cardapio"><span aria-hidden="true">▦</span><small>Cardápio</small></a>
+  <button class="home-link" type="button" data-open-cart><span aria-hidden="true">▣</span><small>Sacola <b data-cart-count>0</b></small></button>
+  <a class="home-link" data-nav="contato" href="#contato"><span aria-hidden="true">✉</span><small>Contato</small></a>
+ </nav>
+
+ <div class="backdrop" id="backdrop" hidden></div>
+ <aside class="cart-drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+  <div class="cart-head"><div><span class="eyebrow gold"><i></i> SUA ESCOLHA</span><h2 id="cart-title">MINHA SACOLA.</h2></div><button class="close" type="button" data-close-cart aria-label="Fechar sacola">×</button></div>
+  <div class="cart-scroll">
+   <div id="cart-items"></div>
+   <form id="order-form">
+    <h3>DADOS DO PEDIDO</h3>
+    <label class="field">Seu nome <span>*</span><input id="customer" name="customer" autocomplete="name" type="text" maxlength="80" placeholder="Como posso chamar você?" required></label>
+    <label class="field">Forma de recebimento<select id="delivery"><option value="Consultar entrega">Consultar entrega</option><option value="Retirada no balcão">Retirada no balcão</option></select></label>
+    <label class="field" id="address-label">Bairro e endereço (se for entrega)<input id="address" name="address" autocomplete="street-address" maxlength="180" placeholder="Rua, número, bairro..."></label>
+    <label class="field">Observações<textarea id="notes" rows="3" maxlength="360" placeholder="Ex.: sem cebola, preferências do pedido..."></textarea></label>
+   </form>
+  </div>
+  <div class="cart-foot">
+   <div class="total-line"><span>Itens</span><b data-cart-count>0</b></div>
+   <div class="total-line"><span>Subtotal dos produtos</span><b id="subtotal">R$ 0,00</b></div>
+   <div class="total-line"><span>Taxa de entrega</span><b>A confirmar</b></div>
+   <button type="submit" form="order-form" class="btn btn-yellow finish" id="finish">ENVIAR PEDIDO PELO WHATSAPP ↗</button>
+   <small>Abre o WhatsApp de Gunter Bauer Developer com o pedido preenchido, sem enviar automaticamente. A confirmação não é feita pelo restaurante.</small>
+  </div>
+ </aside>
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
