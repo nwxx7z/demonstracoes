@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 620" role="img" aria-labelledby="title desc">
+<title id="title">Hambúrguer da Recheada Burguer</title><desc id="desc">Ilustração vetorial de hambúrguer generoso em preto, amarelo, creme e dourado, com gergelim, queijo, hambúrguer e vegetais.</desc>
+<defs>
+<radialGradient id="halo"><stop stop-color="#f6cb32" stop-opacity=".5"/><stop offset=".7" stop-color="#f6cb32" stop-opacity=".11"/><stop offset="1" stop-color="#f6cb32" stop-opacity="0"/></radialGradient>
+<linearGradient id="bun" x1=".15" x2=".85" y1=".08" y2=".9"><stop stop-color="#ffef9d"/><stop offset=".35" stop-color="#f8cb47"/><stop offset=".77" stop-color="#c98b24"/><stop offset="1" stop-color="#8f581e"/></linearGradient>
+<linearGradient id="cheese" x1=".1" x2="1" y1="0" y2="1"><stop stop-color="#fff6ac"/><stop offset=".5" stop-color="#ffcd24"/><stop offset="1" stop-color="#e89c10"/></linearGradient>
+<linearGradient id="meat" x1=".1" x2=".85" y1="0" y2="1"><stop stop-color="#5b3524"/><stop offset=".5" stop-color="#211818"/><stop offset="1" stop-color="#140f0b"/></linearGradient>
+<filter id="shadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="25" stdDeviation="15" flood-color="#050505" flood-opacity=".55"/></filter>
+</defs>
+<circle cx="366" cy="289" r="265" fill="url(#halo)"/>
+<g opacity=".7" stroke="#f6ca29" stroke-width="3" fill="none">
+<circle cx="360" cy="300" r="255" stroke-dasharray="6 18"/><circle cx="365" cy="295" r="203" stroke-opacity=".25"/>
+</g>
+<g fill="#facc23"><path d="M129 149l14-22 14 22-14 22z"/><path d="M617 252l12-16 12 16-12 16z"/><path d="M181 444l10-17 10 17-10 17z"/></g>
+<ellipse cx="362" cy="533" rx="250" ry="38" fill="#040404" opacity=".35"/>
+<g transform="rotate(-7 355 319)" filter="url(#shadow)">
+<path d="M112 407Q140 383 614 395L606 444Q564 487 365 491Q165 487 123 452Z" fill="url(#bun)" stroke="#4a2815" stroke-width="11"/>
+<path d="M130 418Q360 455 603 419" fill="none" stroke="#fff0a2" stroke-width="13" stroke-linecap="round" opacity=".76"/>
+<path d="M113 380Q365 400 616 377L611 425Q365 459 120 421Z" fill="url(#meat)" stroke="#150f0b" stroke-width="10"/>
+<path d="M116 363Q222 337 365 349Q500 329 617 368L588 412L513 382L459 433L408 385L345 427L296 380L235 412L178 386L140 408Z" fill="url(#cheese)" stroke="#bc7b0d" stroke-width="6"/>
+<path d="M105 360Q184 338 274 360Q356 336 446 356Q536 332 623 358L607 388Q566 371 524 391L467 381L409 397L355 378L297 394L234 375L174 388Z" fill="#48802d" stroke="#244118" stroke-width="10"/>
+<path d="M110 338Q360 308 615 337" stroke="#b72824" stroke-width="22" stroke-linecap="round" fill="none"/>
+<path d="M111 314Q145 159 363 160Q579 161 616 314Q359 361 111 314Z" fill="url(#bun)" stroke="#744416" stroke-width="11"/>
+<path d="M133 296Q364 339 592 296" fill="none" stroke="#ffe27d" stroke-width="13" opacity=".7"/>
+<g fill="#fff6bc"><ellipse cx="226" cy="222" rx="12" ry="4" transform="rotate(-20 226 222)"/><ellipse cx="301" cy="194" rx="11" ry="4" transform="rotate(22 301 194)"/><ellipse cx="382" cy="211" rx="12" ry="4" transform="rotate(-16 382 211)"/><ellipse cx="472" cy="235" rx="12" ry="4" transform="rotate(17 472 235)"/><ellipse cx="535" cy="281" rx="11" ry="4" transform="rotate(10 535 281)"/><ellipse cx="187" cy="275" rx="10" ry="4" transform="rotate(-9 187 275)"/><ellipse cx="349" cy="248" rx="10" ry="4" transform="rotate(18 349 248)"/></g>
+</g>
+<path d="M66 289h71m492 0h49" stroke="#f4c822" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+</svg>
