@@ -81,9 +81,11 @@ function render(){
    '<div class="art pizza-choice-art"><span class="art-emoji pizza-only-icon" role="img" aria-label="Ícone de pizza">🍕</span><span class="art-label">'+(size==="P"?"TAMANHO P":"TAMANHO G")+'</span></div>'+
    '<div class="product-text pizza-choice-body"><h3>'+title+'</h3><p class="pizza-subtitle">Toque para escolher o sabor e conferir o preço.</p>'+
    '<div class="pizza-flavor-label" id="pizza-label-'+size+'">Sabor da pizza</div>'+
-   '<details class="pizza-flavor-disclosure" data-pizza-disclosure="'+size+'">'+
-   '<summary class="pizza-flavor-summary" aria-labelledby="pizza-label-'+size+' pizza-selected-'+size+'"><span class="pizza-selection-label" id="pizza-selected-'+size+'">'+esc(p.name)+'</span><span class="pizza-selection-price">'+brl(p.prices[size])+'</span><span class="pizza-chevron" aria-hidden="true">⌄</span></summary>'+
-   '<div class="pizza-flavor-list" role="group" aria-label="Sabores de '+title+'">'+options+'</div></details>'+
+   '<div class="pizza-flavor-disclosure" data-pizza-disclosure="'+size+'">'+
+   '<button type="button" class="pizza-flavor-summary" data-pizza-toggle="'+size+'" aria-expanded="false" aria-controls="pizza-options-'+size+'" aria-labelledby="pizza-label-'+size+' pizza-selected-'+size+'">'+
+   '<span class="pizza-selection-label" id="pizza-selected-'+size+'">'+esc(p.name)+'</span><span class="pizza-selection-price">'+brl(p.prices[size])+'</span>'+
+   '<svg class="pizza-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>'+
+   '<div class="pizza-flavor-panel" id="pizza-options-'+size+'" inert><div class="pizza-flavor-list" role="group" aria-label="Sabores de '+title+'">'+options+'</div></div></div>'+
    '<p class="pizza-ingredients" data-pizza-description>'+esc(p.description||"")+'</p>'+
    '<div class="pizza-price-label">Preço do sabor selecionado</div>'+
    '<div class="price-actions pizza-action"><strong data-pizza-price>'+brl(p.prices[size])+'</strong>'+
@@ -147,7 +149,22 @@ function checkout(e){
  "","Preços da foto sujeitos a confirmação. Nenhum pedido real foi registrado."].filter(Boolean).join("\n");
  window.location.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(lines);
 }
+function setPizzaAccordion(disclosure,expanded){
+ if(!disclosure)return;
+ disclosure.classList.toggle("is-expanded",expanded);
+ disclosure.querySelector(".pizza-flavor-summary")?.setAttribute("aria-expanded",String(expanded));
+ const panel=disclosure.querySelector(".pizza-flavor-panel");
+ if(panel){if(expanded)panel.removeAttribute("inert");else panel.setAttribute("inert","");}
+}
 document.addEventListener("click",e=>{
+ const toggle=e.target.closest("[data-pizza-toggle]");
+ if(toggle){
+  const disclosure=toggle.closest(".pizza-flavor-disclosure");
+  const expand=!!disclosure&&!disclosure.classList.contains("is-expanded");
+  if(expand)document.querySelectorAll(".pizza-flavor-disclosure.is-expanded").forEach(el=>setPizzaAccordion(el,false));
+  setPizzaAccordion(disclosure,expand);
+  return;
+ }
  const flavor=e.target.closest("[data-pizza-option]");
  if(flavor){
   const size=flavor.dataset.size,p=map.get(flavor.dataset.pizzaOption);
@@ -166,7 +183,7 @@ document.addEventListener("click",e=>{
     button.querySelector(".pizza-flavor-check").textContent=selected?"✓":"";
    });
    const disclosure=card.querySelector(".pizza-flavor-disclosure");
-   if(disclosure)disclosure.open=false;
+   setPizzaAccordion(disclosure,false);
    card.querySelector(".pizza-flavor-summary")?.focus();
   }
   return;
