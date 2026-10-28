@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 430" role="img" aria-labelledby="title desc"><title id="title">Sushi de salmão</title><desc id="desc">Peça de sushi japonesa ilustrada em vetor com salmão, arroz e recheio de pepino.</desc><defs><radialGradient id="shadow"><stop stop-color="#0b0a0a" stop-opacity=".55"/><stop offset="1" stop-color="#0b0a0a" stop-opacity="0"/></radialGradient><linearGradient id="rice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf4"/><stop offset=".6" stop-color="#e5e1d3"/><stop offset="1" stop-color="#b9b7a5"/></linearGradient><linearGradient id="salmon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb176"/><stop offset=".55" stop-color="#f26d47"/><stop offset="1" stop-color="#db473e"/></linearGradient><linearGradient id="nori" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1e3635"/><stop offset="1" stop-color="#081816"/></linearGradient><filter id="ds" x="-35%" y="-35%" width="170%" height="180%"><feDropShadow dx="0" dy="17" stdDeviation="14" flood-color="#040303" flood-opacity=".42"/></filter></defs>
+<ellipse cx="221" cy="363" rx="148" ry="35" fill="url(#shadow)"/>
+<g filter="url(#ds)" transform="rotate(-14 220 220)"><path d="M92 202c0-78 60-130 134-133s133 53 133 125v86c0 75-61 118-136 116-74-2-131-48-131-122Z" fill="url(#rice)" stroke="#eae5d8" stroke-width="12"/>
+<path d="M121 208c0-59 43-103 104-105 59-1 103 45 104 100v71c0 56-48 90-105 91-58 0-104-35-103-91Z" fill="url(#nori)"/>
+<path d="M139 204c0-46 33-81 85-84 50-3 87 36 88 82v67c0 46-38 77-88 78-51 0-85-31-85-78Z" fill="#ffecde"/>
+<path d="M169 212c0-25 25-47 53-46 30 0 53 19 53 46v50c0 28-22 45-53 45-30 0-53-18-53-46Z" fill="#f19d81"/>
+<path d="M178 221q44-43 87 0M179 244q42-41 83 0M183 266q40-33 77 0" fill="none" stroke="#ffd1aa" stroke-width="7" opacity=".64"/>
+<ellipse cx="227" cy="268" rx="20" ry="24" fill="#77b56c" stroke="#447850" stroke-width="5"/>
+<path d="M101 186c0-73 53-117 126-117 72 0 126 53 126 115v31c-43-32-85-40-126-36-47 3-88 19-126 50Z" fill="url(#salmon)" stroke="#d95f48" stroke-width="7"/>
+<g stroke="#ffd2ae" stroke-width="8" stroke-linecap="round" opacity=".76" fill="none"><path d="M128 151c29-24 54-36 83-44"/><path d="M163 171c33-28 61-38 93-46"/><path d="M210 175c35-31 66-38 99-40"/><path d="M255 184c27-19 48-24 65-24"/></g>
+<g fill="#fff9e8" opacity=".9"><ellipse cx="106" cy="260" rx="7" ry="4"/><ellipse cx="105" cy="292" rx="7" ry="4"/><ellipse cx="335" cy="280" rx="7" ry="4"/><ellipse cx="315" cy="335" rx="7" ry="4"/><ellipse cx="148" cy="344" rx="7" ry="4"/></g>
+</g></svg>
