@@ -2,7 +2,7 @@
 window.CARDJAPA_DATA={
   "brand": "Tempero do Japa",
   "whatsappDeveloper": "5582993188030",
-  "instagram": "@TEMPER0_DO_JAPA",
+  "instagram": "@TEMPERO_DO_JAPA",
   "originalPhone": "(82) 99646-2700",
   "deliveryFee": 3,
   "source": "CARDAPIO_TEMPERO_DO_JAPA.pdf (6 pages, October 2026)",
