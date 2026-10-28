@@ -85,7 +85,7 @@ function render(){
    '<button type="button" class="pizza-flavor-summary" data-pizza-toggle="'+size+'" aria-expanded="false" aria-controls="pizza-options-'+size+'" aria-labelledby="pizza-label-'+size+' pizza-selected-'+size+'">'+
    '<span class="pizza-selection-label" id="pizza-selected-'+size+'">'+esc(p.name)+'</span><span class="pizza-selection-price">'+brl(p.prices[size])+'</span>'+
    '<svg class="pizza-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button>'+
-   '<div class="pizza-flavor-panel" id="pizza-options-'+size+'" inert><div class="pizza-flavor-list" role="group" aria-label="Sabores de '+title+'">'+options+'</div></div></div>'+
+   '<div class="pizza-flavor-panel" id="pizza-options-'+size+'" hidden inert><div class="pizza-flavor-list" role="group" aria-label="Sabores de '+title+'">'+options+'</div></div></div>'+
    '<p class="pizza-ingredients" data-pizza-description>'+esc(p.description||"")+'</p>'+
    '<div class="pizza-price-label">Preço do sabor selecionado</div>'+
    '<div class="price-actions pizza-action"><strong data-pizza-price>'+brl(p.prices[size])+'</strong>'+
@@ -151,10 +151,15 @@ function checkout(e){
 }
 function setPizzaAccordion(disclosure,expanded){
  if(!disclosure)return;
+ const panel=disclosure.querySelector(".pizza-flavor-panel");
+ if(panel){
+  // Apenas uma atualização de layout por toque: sem animar altura/grid.
+  panel.hidden=!expanded;
+  if(expanded)panel.removeAttribute("inert");
+  else panel.setAttribute("inert","");
+ }
  disclosure.classList.toggle("is-expanded",expanded);
  disclosure.querySelector(".pizza-flavor-summary")?.setAttribute("aria-expanded",String(expanded));
- const panel=disclosure.querySelector(".pizza-flavor-panel");
- if(panel){if(expanded)panel.removeAttribute("inert");else panel.setAttribute("inert","");}
 }
 document.addEventListener("click",e=>{
  const toggle=e.target.closest("[data-pizza-toggle]");
