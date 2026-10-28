@@ -14,7 +14,7 @@ Os nomes, descrições e preços foram transcritos das **nove fotografias fornec
 - 24 bebidas, sucos e cervejas.
 - 26 doses, vinhos e garrafas.
 
-**Total: 106 produtos cadastrados, apresentados em 93 cartões na interface.** Os 15 sabores de pizza continuam no catálogo de dados com os preços P/G originais, mas aparecem ao público em apenas **dois cartões: Pizza Pequena e Pizza Grande**. Em cada cartão, um dropdown lista os 15 sabores com o **preço exato de cada sabor e tamanho**. Selecionar um sabor atualiza o valor e a descrição imediatamente; o botão permite escolher a borda, a quantidade e as observações antes de adicionar ao carrinho. **Não há preço “a partir de”.** A taxa de entrega de referência é **R$ 2,00**, conforme cardápio fotografado.
+**Total: 106 produtos cadastrados, apresentados em 93 cartões na interface.** Os 15 sabores de pizza continuam no catálogo de dados com os preços P/G originais, mas aparecem ao público em apenas **dois cartões: Pizza Pequena e Pizza Grande**. Em cada cartão, um **menu expansível embutido na própria página** (elementos nativos sem pop-up: `<details>/<summary>`) lista os 15 sabores com o **preço exato de cada sabor e tamanho**. Ao abrir, a lista **aumenta a altura do cartão e empurra o restante do conteúdo**; nenhuma lista nativa do navegador cobre a tela. Selecionar uma linha fecha o menu e atualiza o preço, o nome e a descrição imediatamente; o botão permite escolher a borda, a quantidade e as observações antes de adicionar ao carrinho. **Não há preço “a partir de”.** A taxa de entrega de referência é **R$ 2,00**, conforme cardápio fotografado.
 
 ### Dados que devem ser conferidos
 - As pizzas Filé com fritas e Nordestina: R$ 42,00 (P) e R$ 52,00 (G), valor parcialmente sobreposto nos prints.
@@ -25,7 +25,7 @@ Os nomes, descrições e preços foram transcritos das **nove fotografias fornec
 ## Interface e funções
 - Identidade preta, amarela, vermelha, textura industrial, logo e hero vetoriais **originais**.
 - Animações, kinetic type, glassmorphism, barra de navegação inferior no celular, `prefers-reduced-motion`.
-- Busca, filtros por seção, ícones ilustrativos, cartões do menu.
+- Busca, filtros por seção e cartões do menu. Os ícones são **específicos do item** (pizza 🍕, hambúrguer 🍔, sanduíche 🥪, cachorro-quente/passaporte 🌭, fritas 🍟, caldo 🥣, suco 🧃, etc.), em vez de ilustrações misturadas de pizza + hambúrguer + chope; possíveis fotos cadastradas no futuro continuam sendo suportadas.
 - Seletor de sabores independente para **Pizza Pequena (P)** e **Pizza Grande (G)** com preços visíveis nas opções e valor atualizado instantaneamente, seguido de bordas, quantidade e observações.
 - Adicionais de sanduíches, sabores de sucos e pastéis, observações por item e quantidade.
 - Carrinho com `localStorage`, escolha entrega/retirada, taxa demonstrativa, nome/endereço/pagamento/observações.
