@@ -11,6 +11,7 @@ Demonstrações front-end independentes, compatíveis com GitHub Pages, sem buil
 - `/notacho/` — No Tacho Restaurante, identidade sertaneja, cactos, hero animado, menu regional, homebar, ícones e sacola demonstrativa.
 - `/recheadob/` — Recheada Burguer, 54 itens transcritos do vídeo, design preto/amarelo/branco, homebar, sacola e checkout WhatsApp.
 - `/obuteco/` — O Buteco Choperia & Pizzaria, 106 itens transcritos das fotografias, pizza P/G, adicionais, hero, homebar e checkout WhatsApp.
+- `/cardjapa/` — Tempero do Japa, 78 itens transcritos do PDF de 6 páginas, hero, scroll animado com hashi e sushi, homebar, sacola e pedido por WhatsApp.
 - Outras demonstrações podem ser criadas como `/nomedademo/`, cada uma contendo seu próprio `index.html`.
 
 ## Publicação no GitHub Pages
