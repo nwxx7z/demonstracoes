@@ -20,7 +20,46 @@ function count(){return cart.reduce((n,x)=>n+x.qty,0)}
 function subtotal(){return cart.reduce((n,x)=>n+x.unitPrice*x.qty,0)}
 function deliveryFee(){return cart.length&&$("#delivery").value==="Entrega"?D.deliveryFee:0}
 function badge(){$$("[data-cart-count]").forEach(x=>x.textContent=count())}
-function picture(p){if(p.image)return '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" loading="lazy">';if(["pizzas","sanduiches"].includes(p.category))return '<img src="./assets/hero.svg" alt="Ilustração gastronômica" loading="lazy">';return '<span class="art-emoji" role="img" aria-label="Ícone do item">'+icons[p.category]+'</span>'}
+function itemIcon(p){
+ if(!p)return "🍽️";
+ const name=norm(p.name),type=p.category;
+ if(type==="pizzas")return "🍕";
+ if(type==="sanduiches"){
+  if(/passaporte|cachorro.?quente/.test(name))return "🌭";
+  if(/misto|americano|beirute|file de frango|file de carne/.test(name))return "🥪";
+  return "🍔";
+ }
+ if(type==="petiscos"){
+  if(/batata/.test(name)&&!/file|calabresa/.test(name))return "🍟";
+  if(/file|alcatra/.test(name))return "🥩";
+  if(/paste/.test(name))return "🥟";
+  if(/caldinho/.test(name))return "🥣";
+  if(/torresmo/.test(name))return "🥓";
+  if(/codorna/.test(name))return "🥚";
+  if(/frios/.test(name))return "🧀";
+  if(/calabresa/.test(name))return "🌭";
+  return "🍽️";
+ }
+ if(type==="drinks")return "🍹";
+ if(type==="torres")return "🍺";
+ if(type==="bebidas"){
+  if(/agua/.test(name))return "💧";
+  if(/suco|laranja/.test(name))return "🧃";
+  if(/heineken|amstel|budweiser|devassa|beats|ice/.test(name))return "🍺";
+  if(/red bull/.test(name))return "⚡";
+  return "🥤";
+ }
+ if(type==="destilados"){
+  if(/baldinho/.test(name))return "🍺";
+  if(/vinho|taca|pergola|morgado/.test(name))return "🍷";
+  return "🥃";
+ }
+ return icons[type]||"🍽️";
+}
+function picture(p){
+ if(p.image)return '<img src="'+esc(p.image)+'" alt="'+esc(p.name)+'" loading="lazy">';
+ return '<span class="art-emoji" role="img" aria-label="Ícone ilustrativo de '+esc(p.name)+'">'+itemIcon(p)+'</span>';
+}
 function render(){
  const found=P.filter(p=>(category==="all"||p.category===category)&&norm(p.name+" "+p.description).includes(norm(query)));
  if(query.trim()){
@@ -34,12 +73,17 @@ function render(){
   const p=map.get(pizzaSelected[size])||pizzaFlavors[0];
   if(!p)return "";
   const title=size==="P"?"Pizza Pequena":"Pizza Grande";
-  const options=pizzaFlavors.map(f=>'<option value="'+esc(f.id)+'"'+(f.id===p.id?' selected':'')+'>'+esc(f.name)+' — '+brl(f.prices[size])+'</option>').join("");
+  const options=pizzaFlavors.map(f=>
+   '<button type="button" class="pizza-flavor-option'+(f.id===p.id?' is-selected':'')+'" data-pizza-option="'+esc(f.id)+'" data-size="'+size+'" aria-pressed="'+String(f.id===p.id)+'">'+
+   '<span class="pizza-flavor-name">'+esc(f.name)+'</span><strong class="pizza-flavor-value">'+brl(f.prices[size])+'</strong><span class="pizza-flavor-check" aria-hidden="true">'+(f.id===p.id?'✓':'')+'</span></button>'
+  ).join("");
   return '<article class="product-card pizza-choice-card">'+
-   '<div class="art pizza-choice-art"><img src="./assets/hero.svg" alt="Ilustração de pizza" loading="lazy"><span class="art-label">'+(size==="P"?"TAMANHO P":"TAMANHO G")+'</span></div>'+
-   '<div class="product-text pizza-choice-body"><h3>'+title+'</h3><p class="pizza-subtitle">Escolha um sabor. O preço muda automaticamente.</p>'+
-   '<label class="pizza-flavor-label" for="pizza-flavor-'+size+'">Sabor da pizza</label>'+
-   '<select class="pizza-flavor-select" id="pizza-flavor-'+size+'" data-pizza-flavor="'+size+'" aria-label="Selecione o sabor da '+title+'">'+options+'</select>'+
+   '<div class="art pizza-choice-art"><span class="art-emoji pizza-only-icon" role="img" aria-label="Ícone de pizza">🍕</span><span class="art-label">'+(size==="P"?"TAMANHO P":"TAMANHO G")+'</span></div>'+
+   '<div class="product-text pizza-choice-body"><h3>'+title+'</h3><p class="pizza-subtitle">Toque para escolher o sabor e conferir o preço.</p>'+
+   '<div class="pizza-flavor-label" id="pizza-label-'+size+'">Sabor da pizza</div>'+
+   '<details class="pizza-flavor-disclosure" data-pizza-disclosure="'+size+'">'+
+   '<summary class="pizza-flavor-summary" aria-labelledby="pizza-label-'+size+' pizza-selected-'+size+'"><span class="pizza-selection-label" id="pizza-selected-'+size+'">'+esc(p.name)+'</span><span class="pizza-selection-price">'+brl(p.prices[size])+'</span><span class="pizza-chevron" aria-hidden="true">⌄</span></summary>'+
+   '<div class="pizza-flavor-list" role="group" aria-label="Sabores de '+title+'">'+options+'</div></details>'+
    '<p class="pizza-ingredients" data-pizza-description>'+esc(p.description||"")+'</p>'+
    '<div class="pizza-price-label">Preço do sabor selecionado</div>'+
    '<div class="price-actions pizza-action"><strong data-pizza-price>'+brl(p.prices[size])+'</strong>'+
@@ -61,7 +105,7 @@ function choose(id,size="P"){
  const p=map.get(id);if(!p)return;
  chosen=p;selectedPizzaSize=p.prices?size:"P";quantity=1;$("#quantity").textContent="1";
  $("#product-title").textContent=p.prices?"Pizza "+(size==="P"?"Pequena":"Grande")+" • "+p.name:p.name;
- $("#detail-icon").textContent=icons[p.category];$("#detail-desc").textContent=p.description||"Personalize seu produto.";$("#item-note").value="";
+ $("#detail-icon").textContent=itemIcon(p);$("#detail-desc").textContent=p.description||"Personalize seu produto.";$("#item-note").value="";
  $("#size-options").innerHTML=p.prices?
  '<h3 class="option-heading">Tamanho e sabor selecionados</h3><div class="pizza-selected"><strong>🍕 Pizza '+(size==="P"?"Pequena (P)":"Grande (G)")+'</strong><span>'+esc(p.name)+' — '+brl(p.prices[size])+'</span></div>'+
  '<h3 class="option-heading">Quer adicionar borda recheada?</h3><div class="option-pills"><label><input name="crust" type="radio" value="" checked> Sem borda</label><label><input name="crust" type="radio" value="Cheddar"> Cheddar +'+brl(8)+'</label><label><input name="crust" type="radio" value="Catupiry"> Catupiry +'+brl(8)+'</label></div>':"";
@@ -82,7 +126,7 @@ function addProduct(){
 function renderCart(){
  $("#cart-items").innerHTML=cart.length?cart.map((x,i)=>{
  const desc=[x.size?"Tamanho "+x.size:"",x.crust?"Borda "+x.crust:"",x.flavor,x.extras?.map(a=>a.name).join(", "),x.note].filter(Boolean).join(" • ");
- return '<div class="cart-line"><div class="cart-icon">'+icons[map.get(x.id)?.category]+'</div><div class="cart-info"><strong>'+esc(x.name)+'</strong><small>'+esc(desc)+'</small><small>'+x.qty+' × '+brl(x.unitPrice)+' = '+brl(x.qty*x.unitPrice)+'</small></div><div class="cart-qty"><button type="button" data-minus="'+i+'" aria-label="Diminuir">−</button><b>'+x.qty+'</b><button type="button" data-plus="'+i+'" aria-label="Aumentar">+</button></div></div>';
+ return '<div class="cart-line"><div class="cart-icon">'+itemIcon(map.get(x.id))+'</div><div class="cart-info"><strong>'+esc(x.name)+'</strong><small>'+esc(desc)+'</small><small>'+x.qty+' × '+brl(x.unitPrice)+' = '+brl(x.qty*x.unitPrice)+'</small></div><div class="cart-qty"><button type="button" data-minus="'+i+'" aria-label="Diminuir">−</button><b>'+x.qty+'</b><button type="button" data-plus="'+i+'" aria-label="Aumentar">+</button></div></div>';
  }).join(""):'<div class="empty-cart">Sua sacola está vazia. Escolha uma pizza ou outro item do cardápio para começar! 🍕</div>';
  $("#finish").disabled=cart.length===0;
  $("#subtotal").textContent=brl(subtotal());$("#shipping").textContent=brl(deliveryFee());$("#grand-total").textContent=brl(subtotal()+deliveryFee());badge();
@@ -104,6 +148,29 @@ function checkout(e){
  window.location.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(lines);
 }
 document.addEventListener("click",e=>{
+ const flavor=e.target.closest("[data-pizza-option]");
+ if(flavor){
+  const size=flavor.dataset.size,p=map.get(flavor.dataset.pizzaOption);
+  if(!["P","G"].includes(size)||!p||!p.prices)return;
+  pizzaSelected[size]=p.id;
+  const card=flavor.closest(".pizza-choice-card");
+  if(card){
+   card.querySelector("[data-pizza-price]").textContent=brl(p.prices[size]);
+   card.querySelector(".pizza-selection-price").textContent=brl(p.prices[size]);
+   card.querySelector(".pizza-selection-label").textContent=p.name;
+   card.querySelector("[data-pizza-description]").textContent=p.description||"";
+   card.querySelectorAll("[data-pizza-option]").forEach(button=>{
+    const selected=button.dataset.pizzaOption===p.id;
+    button.classList.toggle("is-selected",selected);
+    button.setAttribute("aria-pressed",String(selected));
+    button.querySelector(".pizza-flavor-check").textContent=selected?"✓":"";
+   });
+   const disclosure=card.querySelector(".pizza-flavor-disclosure");
+   if(disclosure)disclosure.open=false;
+   card.querySelector(".pizza-flavor-summary")?.focus();
+  }
+  return;
+ }
  const pizza=e.target.closest("[data-pizza-size]");if(pizza){const size=pizza.dataset.pizzaSize;return choose(pizzaSelected[size],size)}
  const product=e.target.closest("[data-product]");if(product)return choose(product.dataset.product);
  if(e.target.closest("[data-cart-open]"))return show("cart");
@@ -115,17 +182,6 @@ document.addEventListener("click",e=>{
  const f=e.target.closest("[data-section]");if(f){category=f.dataset.section;return render()}
  if(e.target.closest("#reset")){category="all";query="";$("#search").value="";return render()}
  const n=e.target.closest("[data-nav]");if(n)nav(n.dataset.nav);
-});
-document.addEventListener("change",e=>{
- const select=e.target.closest("[data-pizza-flavor]");
- if(!select)return;
- const size=select.dataset.pizzaFlavor,p=map.get(select.value);
- if(!["P","G"].includes(size)||!p||!p.prices)return;
- pizzaSelected[size]=p.id;
- const card=select.closest(".pizza-choice-card");
- if(!card)return;
- card.querySelector("[data-pizza-price]").textContent=brl(p.prices[size]);
- card.querySelector("[data-pizza-description]").textContent=p.description||"";
 });
 $("#search").addEventListener("input",e=>{query=e.target.value;render()});
 $("#custom-form").addEventListener("submit",e=>{e.preventDefault();addProduct()});
