@@ -75,3 +75,9 @@
 }
 @media(max-width:360px){.pizza-choice-body{padding:13px}.pizza-choice-body h3{font-size:27px}.pizza-flavor-option{grid-template-columns:minmax(0,1fr) auto 19px;gap:6px}.pizza-flavor-name,.pizza-flavor-value{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.pizza-chevron{transition:none!important}.pizza-flavor-list{animation:none!important}}
+
+
+/* Resposta tátil imediata; não deixa :hover deslocar o cartão em touchscreen. */
+.pizza-flavor-summary,.pizza-flavor-option{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.pizza-flavor-summary:active{background:#513c27}
+@media(hover:none){.pizza-choice-card:hover{transform:none;border-color:#9c793b}.pizza-flavor-option:hover{background:transparent}.pizza-flavor-option.is-selected:hover{background:#574122}}
