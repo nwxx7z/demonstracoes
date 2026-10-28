@@ -13,59 +13,64 @@
 @media(max-width:355px){.brand img{width:min(196px,calc(100vw - 115px));max-height:56px}.header-inner{min-height:72px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
-/* Pizza P/G: cada tamanho possui um único cartão com todos os sabores e preço exato. */
-.pizza-choice-card{grid-column:span 2;display:grid;grid-template-columns:minmax(135px,36%) minmax(0,1fr);overflow:hidden;border-color:#9c793b;background:linear-gradient(125deg,#31271d,#231f1a)}
-.pizza-choice-art{min-height:315px;height:100%;background:radial-gradient(circle,#8c602e,#44311e 65%,#28221c)}
-.pizza-choice-art img{height:100%;max-height:310px;width:100%;object-fit:contain}
-.pizza-choice-body{min-width:0;padding:21px;justify-content:center}
-.pizza-choice-body h3{font-size:31px;margin:0 0 5px}
-.pizza-choice-body p.pizza-subtitle{font-size:12px;line-height:1.5;margin:0 0 17px;flex:none;color:#d3c2a7}
-.pizza-flavor-label{font-size:12px;font-weight:900;letter-spacing:.02em;display:block;margin-bottom:8px;color:#f8d672}
-/* A lista fica no fluxo normal da página: abrir <details> aumenta a altura
-   do cartão e empurra os elementos seguintes, sem menu nativo/flutuante. */
-.pizza-flavor-disclosure{display:block;position:static;overflow:visible;width:100%;border:1px solid #aa8443;background:#30271f;border-radius:14px;margin:0;isolation:isolate}
-.pizza-flavor-disclosure[open]{border-color:#e5bb59;box-shadow:0 0 0 1px #c89e4c44}
-.pizza-flavor-summary{list-style:none;display:flex;align-items:center;gap:10px;min-height:52px;padding:11px 13px;cursor:pointer;color:#fff7e4;user-select:none;-webkit-user-select:none}
-.pizza-flavor-summary::-webkit-details-marker{display:none}
-.pizza-flavor-summary::marker{content:""}
-.pizza-flavor-summary:hover{background:#453523;border-radius:13px}
-.pizza-selection-label{flex:1;min-width:0;font-size:13px;font-weight:850;line-height:1.4;overflow-wrap:anywhere}
-.pizza-selection-price{flex:none;white-space:nowrap;color:#ffe088;font:900 15px "Barlow Condensed",sans-serif}
-.pizza-chevron{flex:none;font-size:23px;line-height:1;color:#ffda70;transition:transform .24s ease}
-.pizza-flavor-disclosure[open] .pizza-chevron{transform:rotate(180deg)}
-.pizza-flavor-list{position:static;display:flex;flex-direction:column;width:100%;padding:5px 8px 9px;border-top:1px solid #705a38;max-height:none;overflow:visible}
-.pizza-flavor-option{width:100%;min-height:51px;display:flex;align-items:center;justify-content:space-between;gap:11px;padding:11px 9px;border:0;border-bottom:1px solid #6e5a382a;border-radius:8px;background:transparent;color:#f4ebd9;text-align:left;cursor:pointer}
-.pizza-flavor-option:last-child{border-bottom:0}
-.pizza-flavor-option:hover,.pizza-flavor-option:focus-visible{background:#513c23}
-.pizza-flavor-option.is-selected{background:#554022;color:#fff7df}
-.pizza-flavor-name{flex:1;min-width:0;font-size:12px;font-weight:800;line-height:1.45;overflow-wrap:anywhere}
-.pizza-flavor-value{flex:none;white-space:nowrap;font-size:12px;color:#f9d769}
-.pizza-flavor-check{flex:none;display:grid;place-items:center;width:21px;height:21px;border-radius:50%;border:1px solid #ae955d;color:#281707;font-size:12px;font-weight:900}
-.pizza-flavor-option.is-selected .pizza-flavor-check{background:var(--gold);border-color:var(--gold)}
-.pizza-choice-art{height:auto;align-self:start;min-height:250px}
-.pizza-only-icon{font-size:112px;line-height:1.2;transform:rotate(-10deg);filter:drop-shadow(0 17px 12px #0009)}
-.pizza-choice-card{overflow:visible}
-.pizza-choice-card .art-label{z-index:1}
-.pizza-choice-body .pizza-ingredients{margin:11px 0 17px;flex:1;min-height:25px;font-size:11px;line-height:1.55;color:#beb19c}
-.pizza-price-label{color:#d2bda2;font-size:10px;letter-spacing:.02em;margin-bottom:3px}
-.pizza-action{align-items:center;gap:10px;flex-wrap:wrap}
-.pizza-action strong{font-size:31px;font-weight:900;color:var(--gold);white-space:nowrap}
-.price-actions .pizza-continue{width:auto;min-width:0;height:auto;min-height:43px;border-radius:12px;padding:10px 14px;font:900 11px "DM Sans",sans-serif;line-height:1.2;white-space:normal;text-align:center}
-.pizza-selected{display:flex;flex-direction:column;gap:5px;border-radius:14px;background:#3d3326;border:1px solid #ba9557;padding:14px 15px}
+
+/* Cards P/G compactos: 15 sabores por cartão, sem janelas nativas. */
+.pizza-choice-card{grid-column:span 2;display:grid;grid-template-columns:minmax(132px,33%) minmax(0,1fr);min-width:0;overflow:visible;border:1px solid #9c793b;background:linear-gradient(125deg,#33271d,#231f1a);border-radius:23px}
+.pizza-choice-art{align-self:start;position:relative;min-height:250px;display:grid;place-items:center;background:radial-gradient(circle,#86602d,#372a1d 75%);border-radius:22px 0 0 22px;overflow:hidden}
+.pizza-only-icon{display:block;font-size:105px;line-height:1.2;transform:rotate(-8deg)}
+.pizza-choice-body{min-width:0;padding:20px;display:flex;flex-direction:column}
+.pizza-choice-body h3{font-size:31px;margin:0 0 6px}
+.pizza-choice-body .pizza-subtitle{flex:none;margin:0 0 15px;font-size:12px;color:#d2c5b2;line-height:1.55}
+.pizza-flavor-label{font-size:12px;font-weight:900;letter-spacing:.01em;color:#f8d672;margin-bottom:8px}
+.pizza-flavor-disclosure{display:block;position:relative;min-width:0;overflow:hidden;background:#31271e;border:1px solid #a38447;border-radius:15px;transition:border-color .22s ease}
+.pizza-flavor-disclosure.is-expanded{border-color:#ffdf78}
+/* Button is the only interactive surface that opens the list. */
+.pizza-flavor-summary{appearance:none;-webkit-appearance:none;display:flex;align-items:center;gap:11px;width:100%;min-height:55px;margin:0;padding:12px 13px;text-align:left;border:0;border-radius:14px;background:transparent;color:#fff7e7;font-family:"DM Sans",system-ui,sans-serif;cursor:pointer}
+.pizza-flavor-summary:hover{background:#483521}
+.pizza-flavor-summary:focus-visible{outline:2px solid #ffdf78;outline-offset:-3px}
+.pizza-selection-label{flex:1;min-width:0;line-height:1.45;font-size:13px;font-weight:800;overflow-wrap:anywhere}
+.pizza-selection-price{flex:none;white-space:nowrap;font-size:13px;font-weight:900;color:#ffdb75}
+.pizza-chevron{width:20px;height:20px;flex:none;color:#f6d377;transition:transform .26s cubic-bezier(.2,.78,.24,1);transform:rotate(0deg);transform-origin:center}
+.pizza-flavor-disclosure.is-expanded .pizza-chevron{transform:rotate(180deg)}
+/* Grid tracks animate within normal document flow, pushing the cards below. 
+   Capping height to a phone-viewport portion avoids a costly 800px reflow. */
+.pizza-flavor-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s cubic-bezier(.22,.74,.28,1);background:#29221b}
+.pizza-flavor-disclosure.is-expanded .pizza-flavor-panel{grid-template-rows:1fr}
+.pizza-flavor-list{min-height:0;max-height:min(53vh,385px);overflow:hidden;display:flex;flex-direction:column;gap:0;margin:0;padding:0 8px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#937644 #2a221a;transition:opacity .2s ease;opacity:0}
+.pizza-flavor-disclosure.is-expanded .pizza-flavor-list{overflow-y:auto;opacity:1;border-top:1px solid #685333;padding:6px 8px 9px}
+.pizza-flavor-option{appearance:none;-webkit-appearance:none;display:grid;grid-template-columns:minmax(0,1fr) auto 21px;align-items:center;gap:11px;flex:none;width:100%;min-height:49px;margin:0;padding:10px 9px;border:0;border-radius:9px;background:transparent;color:#f7ecdd;font-family:"DM Sans",system-ui,sans-serif;text-align:left;cursor:pointer}
+.pizza-flavor-option+.pizza-flavor-option{border-top:1px solid #765e382e}
+.pizza-flavor-option:hover,.pizza-flavor-option:focus-visible{background:#4c3924}
+.pizza-flavor-option.is-selected{background:#574122}
+.pizza-flavor-name{min-width:0;display:block;font-size:12px;font-weight:800;line-height:1.45;overflow-wrap:anywhere}
+.pizza-flavor-value{flex:none;display:block;color:#ffda77;white-space:nowrap;font-size:12px;font-weight:900}
+.pizza-flavor-check{display:grid;place-items:center;width:21px;height:21px;flex:none;border:1px solid #a58a57;border-radius:50%;font-size:12px;font-weight:900;color:#211508}
+.pizza-flavor-option.is-selected .pizza-flavor-check{border-color:var(--gold);background:var(--gold)}
+.pizza-choice-body .pizza-ingredients{flex:1;min-height:25px;margin:12px 0 17px;font-size:11px;line-height:1.6;color:#c6b9a7}
+.pizza-price-label{font-size:10px;color:#cdbca5;margin-bottom:4px}
+.pizza-action{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.pizza-action [data-pizza-price]{font:900 30px "Barlow Condensed",sans-serif;color:var(--gold);white-space:nowrap}
+.price-actions .pizza-continue{appearance:none;-webkit-appearance:none;width:auto;min-width:0;max-width:100%;min-height:45px;height:auto;padding:11px 14px;border:0;border-radius:12px;background:var(--gold);color:#26170c;font:900 11px/1.3 "DM Sans",sans-serif;white-space:normal;text-align:center}
+.pizza-selected{display:flex;flex-direction:column;gap:6px;border:1px solid #ba9557;border-radius:14px;padding:13px 14px;background:#3d3326}
 .pizza-selected strong{font-size:15px;color:var(--gold)}
 .pizza-selected span{font-size:13px;color:#fff0d6}
-@media(max-width:820px){.pizza-choice-card{grid-template-columns:minmax(112px,37%) minmax(0,1fr)}.pizza-choice-art{min-height:300px}.pizza-choice-body{padding:17px}}
-@media(max-width:560px){.pizza-choice-card{grid-column:span 2;grid-template-columns:1fr}.pizza-choice-art{height:145px;min-height:145px}.pizza-choice-art img{height:145px;max-height:145px;width:100%}.pizza-choice-art{min-height:145px;height:145px}.pizza-only-icon{font-size:79px}.pizza-choice-body{padding:17px}.pizza-choice-body h3{font-size:29px}.pizza-choice-body p.pizza-subtitle{margin-bottom:13px}.pizza-choice-body .pizza-ingredients{margin:9px 0 13px;min-height:0}.pizza-action strong{font-size:29px}.price-actions .pizza-continue{min-height:44px;font-size:11px}}
-@media(max-width:360px){.pizza-choice-body{padding:14px}.pizza-choice-body h3{font-size:27px}.pizza-flavor-name{font-size:11px}.pizza-flavor-value{font-size:11px}.pizza-only-icon{font-size:70px}.pizza-action strong{font-size:27px}}
-
-
-/* Regra final: listas expandem sem cobrir os próximos cartões. */
-@media(max-width:560px){
- .pizza-choice-card{grid-column:1/-1;overflow:visible}
- .pizza-flavor-summary{min-height:54px}
- .pizza-flavor-list{padding:5px 9px 10px}
- .pizza-flavor-option{min-height:52px}
- .pizza-flavor-name{font-size:12px}
- .pizza-flavor-value{font-size:12px}
+@supports (content-visibility:auto){
+/* Skip paint/layout work for the many offscreen non-pizza products on mobile. */
+@media(max-width:820px){.product-card:not(.pizza-choice-card){content-visibility:auto;contain-intrinsic-size:auto 285px}}
 }
-@media(prefers-reduced-motion:reduce){.pizza-chevron{transition:none}}
+@media(max-width:820px){.pizza-choice-card{grid-template-columns:minmax(115px,36%) minmax(0,1fr)}.pizza-choice-art{min-height:230px}.pizza-choice-body{padding:16px}}
+@media(max-width:560px){
+ .pizza-choice-card{grid-column:1/-1;grid-template-columns:1fr;overflow:visible}
+ .pizza-choice-art{height:125px;min-height:125px;border-radius:22px 22px 0 0}
+ .pizza-only-icon{font-size:71px;filter:none}
+ .pizza-choice-body{padding:16px}
+ .pizza-choice-body h3{font-size:30px}
+ .pizza-choice-body .pizza-subtitle{margin-bottom:13px}
+ .pizza-flavor-list{max-height:min(49vh,340px)}
+ .pizza-flavor-option{min-height:48px;gap:8px;padding:9px 8px}
+ .pizza-flavor-name,.pizza-flavor-value{font-size:12px}
+ .pizza-action [data-pizza-price]{font-size:28px}
+ .product-card{box-shadow:0 4px 12px #0002}
+}
+@media(max-width:360px){.pizza-choice-body{padding:13px}.pizza-choice-body h3{font-size:27px}.pizza-flavor-option{grid-template-columns:minmax(0,1fr) auto 19px;gap:6px}.pizza-flavor-name,.pizza-flavor-value{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.pizza-flavor-panel,.pizza-flavor-disclosure,.pizza-chevron,.pizza-flavor-list{transition:none!important}}
