@@ -12,6 +12,7 @@ Demonstrações front-end independentes, compatíveis com GitHub Pages, sem buil
 - `/recheadob/` — Recheada Burguer, 54 itens transcritos do vídeo, design preto/amarelo/branco, homebar, sacola e checkout WhatsApp.
 - `/obuteco/` — O Buteco Choperia & Pizzaria, 106 itens transcritos das fotografias, pizza P/G, adicionais, hero, homebar e checkout WhatsApp.
 - `/cardjapa/` — Tempero do Japa, 78 itens transcritos do PDF de 6 páginas, hero, scroll animado com hashi e sushi, homebar, sacola e pedido por WhatsApp.
+- `/maro/` — Marô Restaurante (Pajuçara, Maceió), site institucional: hero, cardápio por categorias, pratos da casa, cozinha, depoimentos, reservas via WhatsApp, mapa, schema LocalBusiness e WhatsApp flutuante. Preços/horários em `[PLACEHOLDER]`.
 - Outras demonstrações podem ser criadas como `/nomedademo/`, cada uma contendo seu próprio `index.html`.
 
 ## Publicação no GitHub Pages
