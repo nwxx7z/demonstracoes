@@ -163,6 +163,7 @@ function openViewer(id, fromQr) {
   $("#viewer-price").textContent = money(p.price);
   $("#viewer-qr-img").src = qrSrc(pageUrl() + "?prato=" + p.id + "&ar=1", 240);
   $("#viewer-qr").hidden = isTouchMobile;
+  window.MesaVivaAR?.preload?.(p.model);
   const v = $("#viewer");
   v.hidden = false;
   v.setAttribute("aria-hidden", "false");
@@ -239,6 +240,22 @@ function reveals() {
   const ob = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); ob.unobserve(e.target); } }), { threshold: 0.08 });
   $$(".reveal").forEach(el => ob.observe(el));
 }
+
+/* ---------- realidade aumentada própria (Chrome/Android com âncoras) ---------- */
+// intercepta o botão antes do model-viewer: se o aparelho suporta WebXR, usamos o ar.js,
+// que prende o prato na mesa com âncora; senão segue o model-viewer (Quick Look no iPhone).
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".ar-btn");
+  if (!btn) return;
+  const AR = window.MesaVivaAR;
+  if (!AR || !AR.supported) return;
+  const item = btn.closest("#hero-mv") ? byId.get("hamburguer") : current;
+  if (!item) return;
+  e.preventDefault();
+  e.stopPropagation();
+  AR.start(item);
+}, true);
+window.addEventListener("mesaviva-ar-failed", () => notice("Não deu para abrir a câmera. Permita o acesso e tente de novo."));
 
 /* ---------- eventos ---------- */
 document.addEventListener("click", e => {

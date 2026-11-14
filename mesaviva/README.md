@@ -6,7 +6,8 @@ Restaurante, pratos e preços são fictícios.
 
 ## Como funciona
 
-- `<model-viewer>` (Google) carregado por CDN, com `ar-modes="scene-viewer quick-look webxr"`. No Android abre primeiro o **Scene Viewer** (app de RA do Google), que fixa o prato na mesa com âncoras do ARCore. O WebXR do navegador fica só como alternativa, porque nele o modelo pode "deslizar" conforme o rastreamento se ajusta. No iPhone/iPad abre o **AR Quick Look** (o `.usdz` é gerado na hora a partir do `.glb`).
+- **Android (Chrome):** realidade aumentada própria em `ar.js` (WebXR + three.js). O cliente toca na mesa e o prato fica preso numa **âncora do ARCore** (não desliza), com sombra sobre a mesa e giro com um dedo.
+- **iPhone/iPad:** `<model-viewer>` abre o **AR Quick Look** (o `.usdz` é gerado na hora a partir do `.glb`). Em navegadores sem WebXR, o model-viewer tenta o Scene Viewer do Google.
 - `ar-scale="fixed"`: o modelo aparece com as medidas reais, em metros.
 - No computador, o botão de realidade aumentada some e aparece um **QR code** que abre o mesmo prato no celular (`?prato=<id>&ar=1`).
 - Sacola com número da mesa e pedido montado no WhatsApp, como nas outras demonstrações.
@@ -14,6 +15,7 @@ Restaurante, pratos e preços são fictícios.
 ## Arquivos
 
 - `index.html`, `style.css`, `app.js`: página e lógica.
+- `ar.js`: realidade aumentada com âncora (Chrome/Android).
 - `data.js`: cardápio. Cada item aponta para `models/<id>.glb` e `img/<id>.webp`.
 - `models/`: modelos 3D (glTF binário) em tamanho real.
 - `img/`: imagens dos cards, renderizadas a partir dos próprios modelos.
