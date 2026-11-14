@@ -440,6 +440,18 @@ class Scene:
 
         for name, geos in self.parts.items():
             g = merge(geos)
+            # remove triângulos degenerados (área zero / índices repetidos) — alguns visualizadores AR travam com eles
+            I3 = g.I
+            Pf = g.P.astype(np.float32).astype(np.float64)
+            area = np.linalg.norm(np.cross(Pf[I3[:, 1]] - Pf[I3[:, 0]], Pf[I3[:, 2]] - Pf[I3[:, 0]]), axis=1)
+            ok = (area > 1e-13) & (I3[:, 0] != I3[:, 1]) & (I3[:, 1] != I3[:, 2]) & (I3[:, 0] != I3[:, 2])
+            I3 = I3[ok]
+            used = np.unique(I3)
+            remap = np.full(len(g.P), -1, np.int64)
+            remap[used] = np.arange(len(used))
+            Nm = g.N
+            g = Geo(g.P[used], remap[I3], g.UV[used])
+            g.N = Nm[used]
             P = g.P.astype(np.float32)
             N = g.N.astype(np.float32)
             UV = g.UV.astype(np.float32)

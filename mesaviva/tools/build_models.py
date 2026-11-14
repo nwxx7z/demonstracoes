@@ -83,9 +83,9 @@ def wood_board(scene, R, thick, seed=1, name='madeira', handle=False):
     mat = Material(name, rough=0.62, tex=tex_wood(seed))
     prof = [(R - 0.006, 0), (R - 0.002, 0.0015), (R, 0.005), (R, thick - 0.005), (R - 0.002, thick - 0.0015),
             (R - 0.006, thick)]
-    side = lathe(spline(prof, 4), seg=128, u_rep=4)
-    top = disc(R - 0.006, thick, seg=128, rings=10, up=True, uv_radius=R * 0.9)
-    bot = disc(R - 0.006, 0.0, seg=128, rings=4, up=False, uv_radius=R * 0.9)
+    side = lathe(spline(prof, 3), seg=80, u_rep=4)
+    top = disc(R - 0.006, thick, seg=80, rings=4, up=True, uv_radius=R * 0.9)
+    bot = disc(R - 0.006, 0.0, seg=80, rings=1, up=False, uv_radius=R * 0.9)
     g = merge([side, top, bot])
     if handle:
         L = R * 0.55
@@ -109,7 +109,7 @@ def ceramic_plate(scene, R, name='prato', color='#f6f4ef', seed=3, rim_h=0.016):
         (R * 0.86, rim_h * 0.7 + 0.0042), (R * 0.6, 0.0103), (R * 0.56, 0.0085), (R * 0.3, 0.0085), (0.0, 0.0085)
     ], 6)
     # percorre por baixo (de dentro p/ fora), sobe pela borda e volta por cima: normais para fora
-    g = lathe(prof, seg=128)
+    g = lathe(prof, seg=80)
     scene.add(mat, g)
     return 0.0085
 
@@ -174,7 +174,7 @@ def burger():
     t = noisy(t, 21, 0.10)
     t = speckle(t, 22, 0.02, '#c9a46a', 1)
     bun_b = Material('pao-base', rough=0.7, tex=to_image(t))
-    g = lathe(prof, seg=112)
+    g = lathe(prof, seg=72)
     g.displace(lambda P: 0.0006 * Noise3(5, 160)(P))
     sc.add(bun_b, g)
     y += hb
@@ -192,7 +192,7 @@ def burger():
         hp = 0.0125
         prof = spline([(0.0, y), (Rp - 0.006, y), (Rp - 0.001, y + 0.002), (Rp + 0.0005, y + hp * 0.5),
                        (Rp - 0.001, y + hp - 0.002), (Rp - 0.006, y + hp), (0.0, y + hp)], 6)
-        g = lathe(prof, seg=128, u_rep=3)
+        g = lathe(prof, seg=80, u_rep=3)
         n1 = Noise3(40 + k, 55)
         n2 = Noise3(50 + k, 260)
 
@@ -226,7 +226,7 @@ def burger():
             yy = y0 + 0.0012 - over * 0.95 * drip
             k = rn / np.maximum(r, 1e-9)
             return xr * k, yy, zr * k
-        cg = surface(cfn, 46, 46)
+        cg = surface(cfn, 32, 32)
         sc.add(cheese, cg.normals().double())
         y += 0.0018
 
@@ -244,7 +244,7 @@ def burger():
         wob = nl(P).reshape(x.shape) * 0.002 * V
         yy = y0 + 0.001 + ruff + wob - 0.006 * np.clip(V - 0.6, 0, None) ** 2 * 6
         return x, yy, z
-    lg = surface(lfn, 220, 14)
+    lg = surface(lfn, 170, 9)
     sc.add(lettuce, lg.normals().double())
     y += 0.0045
 
@@ -279,7 +279,7 @@ def burger():
     t = blotches(t, 82, '#8f4914', 0.76, cells=(12, 24, 48), mask=vmask(H, W, f[6], 1.05))
     top_tex = to_image(t)
     bun_t = Material('pao-topo', rough=0.38, tex=top_tex)
-    g = lathe(prof, seg=128)
+    g = lathe(prof, seg=84)
     g.displace(lambda P: 0.0008 * Noise3(85, 90)(P) + 0.0003 * Noise3(86, 300)(P))
     g.normals()
     sc.add(bun_t, g)
@@ -296,7 +296,7 @@ def burger():
         p = Pdome[i]
         if all(np.sum((p - q) ** 2) > 0.0072 ** 2 for q in chosen):
             chosen.append(p)
-            e = ellipsoid(0.0016, 0.0006, 0.0028, seg=10, rings=6)
+            e = ellipsoid(0.0016, 0.0006, 0.0028, seg=7, rings=4)
             e.apply(rot_to(Ndome[i], r.uniform(0, TAU)), p + Ndome[i] * 0.0003)
             seeds.append(e)
         if len(chosen) >= 70:
@@ -365,7 +365,7 @@ def pizza():
     t = blotches(t, 105, '#cf4026', 0.62, cells=(16, 32, 64), soft=0.08, mask=sauce_m)
     t = blotches(t, 106, '#8f1f10', 0.66, cells=(16, 32, 64), soft=0.08, mask=sauce_m)
     dough = Material('massa-molho', rough=0.5, tex=to_image(t))
-    g = lathe(prof, seg=180, u_rep=2)
+    g = lathe(prof, seg=128, u_rep=2)
     r = np.linalg.norm(g.P[:, [0, 2]], axis=1)
     rim = smoothstep(Rz - 0.04, Rz - 0.02, r)
     g.P[:, 1] += (0.003 * nC(g.P) + 0.0012 * nC2(g.P)) * rim * (g.P[:, 1] > y + 0.004)
@@ -387,7 +387,7 @@ def pizza():
     blobs = []
     for (x, z) in pts:
         a = rng.uniform(0.022, 0.03)
-        e = ellipsoid(a, 0.006, a * rng.uniform(0.75, 1.0), seg=36, rings=14)
+        e = ellipsoid(a, 0.006, a * rng.uniform(0.75, 1.0), seg=28, rings=10)
         e.apply(rot_y(rng.uniform(0, TAU)))
         nb = Noise3(int(rng.integers(1e6)), 90)
         e.P[:, 0] *= 1 + 0.18 * nb(e.P * 0.5)
@@ -539,7 +539,7 @@ def acai():
         a = tt * math.pi / 2
         pts.append(((Rb - 0.006) * math.cos(a) ** 0.6, Hb - 0.006 - (Hb - 0.016) * math.sin(a) ** 1.4))
     pts[-1] = (0.0, 0.012)
-    bowl = lathe(spline(pts, 4), seg=128)
+    bowl = lathe(spline(pts, 3), seg=80)
     sc.add(bowl_m, bowl)
     # creme de açaí
     ys = Hb - 0.007
@@ -555,7 +555,7 @@ def acai():
         r = V * Ra
         x, z = r * np.cos(th), r * np.sin(th)
         return x, surf_h(x, z), z
-    ag = surface(afn, 160, 40)
+    ag = surface(afn, 110, 26)
     at = np.zeros((256, 256, 3)) + srgb('#3d0f37')
     at = noisy(at, 411, 0.3, cells=(6, 12, 24, 48))
     at = blotches(at, 412, '#5b1c4f', 0.62, cells=(8, 16, 32), soft=0.12)
@@ -704,7 +704,7 @@ def milkshake():
     outer = [(0.0, 0.0), (0.036, 0.0), (0.038, 0.003), (0.037, 0.012), (0.033, 0.02), (0.032, 0.03),
              (0.036, 0.06), (0.043, 0.11), (0.0455, Hg - 0.002), (0.0458, Hg), (0.0445, Hg + 0.0008),
              (0.0435, Hg - 0.002), (0.0412, 0.11), (0.0345, 0.062), (0.0305, 0.034), (0.0, 0.031)]
-    glass = lathe(spline(outer, 5), seg=96)
+    glass = lathe(spline(outer, 4), seg=72)
     sc.add(glass_m, glass)
     # milkshake dentro (opaco)
     shake = Material('milkshake', rough=0.6, tex=tex_shake())
@@ -722,7 +722,7 @@ def milkshake():
         yy = fill + 0.052 * t ** 0.95
         prof.append((rr, yy))
     prof[-1] = (0.0, fill + 0.056)
-    cg = lathe(spline(prof, 4), seg=160)
+    cg = lathe(spline(prof, 3), seg=112)
     th = np.arctan2(cg.P[:, 2], cg.P[:, 0])
     hgt = (cg.P[:, 1] - fill) / 0.056
     ridge = 0.5 + 0.5 * np.cos(th * 7 + hgt * 9.0)

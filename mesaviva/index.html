@@ -61,7 +61,7 @@
       camera-controls touch-action="pan-y" disable-zoom auto-rotate auto-rotate-delay="0" rotation-per-second="16deg"
       camera-orbit="30deg 72deg auto" shadow-intensity="1.15" shadow-softness="0.85" exposure="1.08"
       environment-image="neutral" tone-mapping="neutral" interaction-prompt="none" loading="eager"
-      ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor">
+      ar ar-modes="scene-viewer quick-look webxr" ar-scale="fixed" ar-placement="floor">
       <button slot="ar-button" class="ar-btn hero-ar"><span class="ar-ico" aria-hidden="true"></span> Ver na minha mesa</button>
       <div slot="progress-bar" class="mv-progress"><span></span></div>
      </model-viewer>
@@ -158,7 +158,7 @@
     <model-viewer id="mv"
      camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="2500" rotation-per-second="14deg"
      shadow-intensity="1.15" shadow-softness="0.85" exposure="1.08" environment-image="neutral" tone-mapping="neutral"
-     interaction-prompt="auto" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor">
+     interaction-prompt="auto" ar ar-modes="scene-viewer quick-look webxr" ar-scale="fixed" ar-placement="floor">
      <button slot="ar-button" class="ar-btn" id="ar-btn"><span class="ar-ico" aria-hidden="true"></span> Ver na minha mesa</button>
      <div slot="progress-bar" class="mv-progress"><span></span></div>
      <div class="ar-hint" slot="ar-prompt"><span>Mova o celular devagar para encontrar a mesa</span></div>
