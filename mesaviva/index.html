@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#120e0b">
+ <title>Mesa Viva | Cardápio em realidade aumentada</title>
+ <meta name="description" content="Demonstração de cardápio em realidade aumentada: veja o prato em 3D e em tamanho real na sua mesa, direto pelo navegador do celular.">
+ <meta property="og:title" content="Mesa Viva — veja o prato na sua mesa antes de pedir">
+ <meta property="og:description" content="Cardápio digital com realidade aumentada: hambúrguer, pizza, açaí e sobremesas em 3D, em tamanho real.">
+ <meta property="og:image" content="./img/hamburguer.webp">
+ <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+ <link rel="preload" as="image" href="./img/hamburguer.webp">
+ <link rel="stylesheet" href="./style.css">
+ <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+ <script src="./data.js" defer></script>
+ <script src="./app.js" defer></script>
+</head>
+<body>
+ <a href="#cardapio" class="skip-link">Pular para o cardápio</a>
+ <div class="demo-bar"><span class="pulse-dot"></span> DEMONSTRAÇÃO • RESTAURANTE E PREÇOS FICTÍCIOS<span class="demo-extra">&nbsp;• GUNTER BAUER DEVELOPER</span></div>
+
+ <header class="top-header">
+  <div class="wrap nav">
+   <a class="brand" href="#inicio" aria-label="Mesa Viva — voltar ao início">
+    <img src="./assets/icon.svg" alt="" width="38" height="38"><span>Mesa<b>Viva</b></span>
+   </a>
+   <nav class="desktop-nav" aria-label="Menu principal">
+    <a href="#inicio">Início</a><a href="#como">Como funciona</a><a href="#cardapio">Cardápio</a><a href="#restaurantes">Para restaurantes</a>
+   </nav>
+   <button class="cart-trigger" type="button" data-open-cart aria-label="Abrir sacola"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><b data-cart-count>0</b></button>
+  </div>
+ </header>
+
+ <main>
+  <section class="hero" id="inicio">
+   <div class="hero-glow g1"></div><div class="hero-glow g2"></div>
+   <div class="wrap hero-grid">
+    <div class="hero-copy">
+     <span class="eyebrow"><i></i> CARDÁPIO EM REALIDADE AUMENTADA</span>
+     <h1><span class="kin"><span>Veja o prato</span></span> <span class="kin"><span>na <em>sua mesa</em></span></span> <span class="kin"><span>antes de pedir.</span></span></h1>
+     <p class="lead">Toque em <strong>Ver na minha mesa</strong>, aponte a câmera para a mesa e o prato aparece em 3D, em <strong>tamanho real</strong>. Direto pelo navegador, sem baixar app.</p>
+     <div class="hero-actions">
+      <a href="#cardapio" class="btn btn-primary">Abrir cardápio 3D <span aria-hidden="true">↓</span></a>
+      <button class="btn btn-ghost" type="button" data-view="hamburguer">Testar com o Smash <span aria-hidden="true">◎</span></button>
+     </div>
+     <ul class="hero-pills" aria-label="Destaques">
+      <li><span aria-hidden="true">◎</span> Tamanho real</li>
+      <li><span aria-hidden="true">⌁</span> Android e iPhone</li>
+      <li><span aria-hidden="true">✦</span> Sem app</li>
+     </ul>
+    </div>
+
+    <div class="hero-stage reveal">
+     <div class="stage-ring" aria-hidden="true"></div>
+     <model-viewer id="hero-mv" class="hero-mv"
+      src="./models/hamburguer.glb" poster="./img/hamburguer.webp"
+      alt="Modelo 3D do Smash Duplo da Casa girando sobre uma tábua de madeira"
+      camera-controls touch-action="pan-y" disable-zoom auto-rotate auto-rotate-delay="0" rotation-per-second="16deg"
+      camera-orbit="30deg 72deg auto" shadow-intensity="1.15" shadow-softness="0.85" exposure="1.08"
+      environment-image="neutral" tone-mapping="neutral" interaction-prompt="none" loading="eager"
+      ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor">
+      <button slot="ar-button" class="ar-btn hero-ar"><span class="ar-ico" aria-hidden="true"></span> Ver na minha mesa</button>
+      <div slot="progress-bar" class="mv-progress"><span></span></div>
+     </model-viewer>
+     <div class="stage-card stage-top glass"><span class="dot-live"></span><div><strong>Smash Duplo da Casa</strong><small>Modelo 3D • arraste para girar</small></div></div>
+     <div class="stage-card stage-bottom glass"><strong>R$ 34,90</strong><small>tábua de 21 cm</small></div>
+     <div class="stage-qr glass" hidden data-desktop-only>
+      <img alt="QR code para abrir esta demonstração no celular" width="92" height="92" data-qr="hero">
+      <small>No computador? <b>Aponte o celular</b> para ver na sua mesa.</small>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <section class="steps" id="como" aria-labelledby="como-title">
+   <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow"><i></i> COMO FUNCIONA</span><h2 id="como-title">Três toques e o prato <em>está na mesa.</em></h2></div>
+    <ol class="step-grid">
+     <li class="step glass reveal"><span class="step-n">01</span><div class="step-art art-qr" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h3>Escaneie o QR da mesa</h3><p>O cardápio abre no navegador do celular. Nada para instalar.</p></li>
+     <li class="step glass reveal"><span class="step-n">02</span><div class="step-art art-tap" aria-hidden="true"><span>Ver na minha mesa</span></div><h3>Escolha e toque em “Ver na minha mesa”</h3><p>Cada prato tem um modelo 3D feito na medida real da porção.</p></li>
+     <li class="step glass reveal"><span class="step-n">03</span><div class="step-art art-table" aria-hidden="true"><img src="./img/hamburguer.webp" alt="" width="120" height="120" loading="lazy"></div><h3>Aponte para a mesa</h3><p>Mova o celular devagar até ele achar a mesa. Depois é só girar, aproximar e conferir o tamanho.</p></li>
+    </ol>
+   </div>
+  </section>
+
+  <section class="menu-section" id="cardapio" aria-labelledby="menu-title">
+   <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow"><i></i> CARDÁPIO 3D</span><h2 id="menu-title">Escolha com os <em>olhos</em>.</h2><p>Todos os itens abrem em 3D. No celular, o botão <strong>Ver na minha mesa</strong> coloca o prato na sua frente.</p></div>
+    <div class="filter-row" id="filters" role="group" aria-label="Filtrar cardápio"></div>
+    <div class="product-grid" id="products" aria-live="polite"></div>
+    <p class="footnote">* Restaurante, pratos e preços fictícios, criados só para esta demonstração. Os modelos 3D são ilustrativos; num projeto real, os pratos são digitalizados a partir de fotos da comida de verdade.</p>
+   </div>
+  </section>
+
+  <section class="biz" id="restaurantes" aria-labelledby="biz-title">
+   <div class="wrap biz-grid">
+    <div class="biz-copy reveal">
+     <span class="eyebrow"><i></i> PARA RESTAURANTES</span>
+     <h2 id="biz-title">Um cardápio que o cliente <em>quer abrir.</em></h2>
+     <p>O cliente vê o tamanho da porção antes de pedir, se diverte na mesa e pede com mais confiança. Funciona no mesmo link do seu cardápio digital, com pedido pelo WhatsApp.</p>
+     <ul class="biz-list">
+      <li><b>Sem aplicativo</b><span>Abre pelo QR code da mesa, no navegador.</span></li>
+      <li><b>Android e iPhone</b><span>Usa o Scene Viewer (Android) e o AR Quick Look (iPhone/iPad).</span></li>
+      <li><b>Tamanho real</b><span>Cada modelo é feito na medida do prato servido.</span></li>
+      <li><b>Seus pratos de verdade</b><span>Digitalização 3D a partir de fotos da comida real, otimizada para abrir rápido no 4G.</span></li>
+     </ul>
+     <a class="btn btn-primary" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20Mesa%20Viva%20e%20quero%20um%20card%C3%A1pio%20em%20realidade%20aumentada%20para%20o%20meu%20restaurante." target="_blank" rel="noopener noreferrer">Quero no meu restaurante ↗</a>
+    </div>
+    <div class="biz-art reveal" aria-hidden="true">
+     <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+       <div class="cam-table"></div>
+       <img src="./img/acai.webp" alt="" width="260" height="260" loading="lazy">
+       <span class="scan-ring"></span>
+       <span class="phone-chip">Tigela de 16 cm • tamanho real</span>
+      </div>
+     </div>
+     <img class="float-dish fd1" src="./img/milkshake.webp" alt="" width="150" height="150" loading="lazy">
+     <img class="float-dish fd2" src="./img/batata.webp" alt="" width="130" height="130" loading="lazy">
+    </div>
+   </div>
+  </section>
+
+  <section class="contact" id="contato">
+   <div class="wrap contact-panel glass reveal">
+    <div><span class="eyebrow"><i></i> GOSTOU DO CONCEITO?</span><h2>Leve o seu cardápio <em>para a mesa do cliente.</em></h2><p>Demonstração independente criada por Gunter Bauer Developer. Os botões de contato e de pedido abrem o WhatsApp do desenvolvedor.</p></div>
+    <a class="btn btn-primary" href="https://wa.me/5582993188030?text=Ol%C3%A1%21%20Quero%20um%20card%C3%A1pio%20com%20realidade%20aumentada%20como%20o%20da%20demonstra%C3%A7%C3%A3o%20Mesa%20Viva." target="_blank" rel="noopener noreferrer">Falar no WhatsApp ↗</a>
+   </div>
+  </section>
+ </main>
+
+ <footer>
+  <div class="wrap footer-content">
+   <a class="brand" href="#inicio"><img src="./assets/icon.svg" alt="" width="32" height="32"><span>Mesa<b>Viva</b></span></a>
+   <p>A realidade aumentada funciona em celulares Android compatíveis com ARCore e em iPhone/iPad recentes. No computador, os pratos aparecem em 3D na tela.</p>
+   <a href="../">← Outras demonstrações</a>
+  </div>
+ </footer>
+
+ <nav class="mobile-homebar" aria-label="Navegação rápida">
+  <span class="homebar-active" aria-hidden="true"></span>
+  <a class="home-link active" data-nav="inicio" href="#inicio" aria-current="location"><span aria-hidden="true">⌂</span><small>Início</small></a>
+  <a class="home-link" data-nav="cardapio" href="#cardapio"><span aria-hidden="true">◎</span><small>Cardápio 3D</small></a>
+  <button class="home-link" type="button" data-open-cart data-nav="sacola"><span aria-hidden="true">▣</span><small>Sacola <b data-cart-count>0</b></small></button>
+  <a class="home-link" data-nav="contato" href="#contato"><span aria-hidden="true">✉</span><small>Contato</small></a>
+ </nav>
+
+ <!-- visualizador 3D / AR -->
+ <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" aria-hidden="true" hidden>
+  <div class="viewer-backdrop" data-close-viewer></div>
+  <div class="viewer-sheet">
+   <button class="close" type="button" data-close-viewer aria-label="Fechar visualizador">×</button>
+   <div class="viewer-stage">
+    <model-viewer id="mv"
+     camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="2500" rotation-per-second="14deg"
+     shadow-intensity="1.15" shadow-softness="0.85" exposure="1.08" environment-image="neutral" tone-mapping="neutral"
+     interaction-prompt="auto" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor">
+     <button slot="ar-button" class="ar-btn" id="ar-btn"><span class="ar-ico" aria-hidden="true"></span> Ver na minha mesa</button>
+     <div slot="progress-bar" class="mv-progress"><span></span></div>
+     <div class="ar-hint" slot="ar-prompt"><span>Mova o celular devagar para encontrar a mesa</span></div>
+    </model-viewer>
+    <span class="viewer-tip">Arraste para girar • pinça para aproximar</span>
+   </div>
+   <div class="viewer-info">
+    <span class="eyebrow" id="viewer-cat"><i></i> SALGADOS</span>
+    <h2 id="viewer-title">Prato</h2>
+    <p id="viewer-desc"></p>
+    <p class="viewer-size"><span aria-hidden="true">⤢</span> <span id="viewer-size"></span></p>
+    <div class="viewer-qr" id="viewer-qr" hidden>
+     <img alt="QR code para abrir este prato no celular" width="120" height="120" id="viewer-qr-img">
+     <div><strong>Ver na sua mesa</strong><small>Aponte a câmera do celular para o código. O prato abre direto, pronto para a realidade aumentada.</small></div>
+    </div>
+    <div class="viewer-foot">
+     <strong class="price" id="viewer-price">R$ 0,00</strong>
+     <button class="btn btn-primary" type="button" id="viewer-add">Adicionar à sacola +</button>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="backdrop" id="backdrop" hidden></div>
+ <aside class="cart-drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+  <div class="cart-head"><div><span class="eyebrow"><i></i> SEU PEDIDO</span><h2 id="cart-title">Sacola da mesa</h2></div><button class="close" type="button" data-close-cart aria-label="Fechar sacola">×</button></div>
+  <div class="cart-scroll">
+   <div id="cart-items"></div>
+   <form id="order-form">
+    <h3>Dados do pedido</h3>
+    <label class="field">Seu nome <span>*</span><input id="customer" autocomplete="name" type="text" maxlength="80" placeholder="Como podemos chamar você?" required></label>
+    <label class="field">Número da mesa <span>*</span><input id="table" inputmode="numeric" type="text" maxlength="4" placeholder="Ex.: 12" required></label>
+    <label class="field">Observações<textarea id="notes" rows="3" maxlength="300" placeholder="Ex.: sem cebola, ponto da carne..."></textarea></label>
+   </form>
+  </div>
+  <div class="cart-foot">
+   <div class="total-line"><span>Itens</span><b data-cart-count>0</b></div>
+   <div class="total-line big"><span>Total</span><b id="subtotal">R$ 0,00</b></div>
+   <button type="submit" form="order-form" class="btn btn-primary finish" id="finish">Enviar pedido pelo WhatsApp ↗</button>
+   <small>Abre o WhatsApp de Gunter Bauer Developer com o pedido preenchido, sem enviar automaticamente. Nenhum pedido real é registrado.</small>
+  </div>
+ </aside>
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

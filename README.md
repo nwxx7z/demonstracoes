@@ -13,6 +13,7 @@ Demonstrações front-end independentes, compatíveis com GitHub Pages, sem buil
 - `/obuteco/` — O Buteco Choperia & Pizzaria, 106 itens transcritos das fotografias, pizza P/G, adicionais, hero, homebar e checkout WhatsApp.
 - `/cardjapa/` — Tempero do Japa, 78 itens transcritos do PDF de 6 páginas, hero, scroll animado com hashi e sushi, homebar, sacola e pedido por WhatsApp.
 - `/maro/` — Marô Restaurante (Pajuçara, Maceió), site institucional: hero, cardápio por categorias, pratos da casa, cozinha, depoimentos, reservas via WhatsApp, mapa, schema LocalBusiness e WhatsApp flutuante. Preços/horários em `[PLACEHOLDER]`.
+- `/mesaviva/` — Mesa Viva, cardápio em realidade aumentada: 6 pratos em 3D (GLB) em tamanho real, botão “Ver na minha mesa” (Android/iPhone via model-viewer), QR code no computador, sacola e pedido por WhatsApp com número da mesa. Restaurante e preços fictícios.
 - Outras demonstrações podem ser criadas como `/nomedademo/`, cada uma contendo seu próprio `index.html`.
 
 ## Publicação no GitHub Pages
